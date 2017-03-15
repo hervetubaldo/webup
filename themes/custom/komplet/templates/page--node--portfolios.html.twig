@@ -1,0 +1,198 @@
+{% set portfolio_format = node.field_portfolio_format.0.value %}
+{% if portfolio_format == '' %}
+    {% set portfolio_format = 'slider' %}
+{% endif %}
+<div class="master-wrapper">
+
+    {% if setting_header == 'style2' %}
+      {% include theme_path ~ "/templates/header/header-2.html.twig" %}
+    {% elseif setting_header == 'style3' %}
+      {% include theme_path ~ "/templates/header/header-3.html.twig" %}
+    {% elseif setting_header == 'style4' %}
+      {% include theme_path ~ "/templates/header/header-4.html.twig" %}
+    {% elseif setting_header == 'style5' %}
+      {% include theme_path ~ "/templates/header/header-5.html.twig" %}
+    {% elseif setting_header == 'style6' %}
+      {% include theme_path ~ "/templates/header/header-6.html.twig" %}
+    {% else %}
+      {% include theme_path ~ "/templates/header/header-1.html.twig" %}
+    {% endif %}
+    <!-- Header -->
+    {% if portfolio_format == 'fullscreen_video' %}
+        <header id="headerwrap" class="fullheight background--dark">
+            <div id="BigVideo" class="player" data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
+            <div class="container vertical-center text-center">
+                <div class="mt30 wow">
+                    <h2 class="section-heading white">{{ title }}</h2>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-inner">
+                <div class="container pad-sides-120">
+                    {{ page.content_full_bar }}
+                    {{ page.content }}
+                </div>
+            </div>
+        </section>
+    {% elseif portfolio_format == 'carousel' %}
+        <!-- Header -->
+        <header>
+            <ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider" data-items="3" data-items-desktop="[1200,3]" data-items-desktop-small="[980,3]" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
+                {% for img in node.field_portfolio_image %}
+                {% set image_url = file_url(img.entity.uri.value) %}
+                    <li>
+                        <div class="hover-item mb30 post-slide">
+                            <img src="{{ image_url }}" class="img-responsive smoothie" alt="{{ title }}">
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </header>
+
+        <section>
+            <div class="section-inner">
+                <div class="container pad-sides-120">
+                        {{ page.content_full_bar }}
+                        {{ page.content }}
+                </div>
+            </div>
+        </section>
+    {% elseif portfolio_format == 'video' %}
+        {% set bg_img_url = file_url(node.field_portfolio_header_bg.entity.uri.value) %}
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ bg_img_url }}" data-speed="0.7">
+            <div class="section-inner pad-top-200">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-lg-12 mt30 wow">
+                            <h2 class="section-heading">{{ title }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-inner">
+                <div class="container pad-sides-120">
+                    {{ page.content_full_bar }}   
+                    {{ page.content }}
+                </div>
+            </div>
+        </section>
+    {% elseif portfolio_format == 'image_list' %}
+        {% set bg_img_url = file_url(node.field_portfolio_header_bg.entity.uri.value) %}
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ bg_img_url }}" data-speed="0.7">
+            <div class="section-inner pad-top-200">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-lg-12 mt30 wow">
+                            <h2 class="section-heading">{{ title }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row project-item">
+                        {{ page.content_full_bar }}
+                        {{ page.content }}
+                        <div class="col-sm-9 mb60 wow">
+                            <div class="row">
+                                <div class="col-xs-12 single-post-content">
+                                    {% for img in node.field_portfolio_image %}
+                                    {% set image_url = file_url(img.entity.uri.value) %}
+                                        <div class="hover-item gap">
+                                            <img src="{{ image_url }}" class="img-responsive " alt="{{ title }}">
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% elseif portfolio_format == 'slider' %}
+        {% set bg_img_url = file_url(node.field_portfolio_header_bg.entity.uri.value) %}
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ bg_img_url }}" data-speed="0.7">
+            <div class="section-inner pad-top-200">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-lg-12 mt30 wow">
+                            <h2 class="section-heading">{{ title }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-inner">
+                <div class="container pad-sides-120">
+                    <div class="row mb100">
+                        <ul id="single-slider" class="wow fadeIn list-unstyled no-item-padding" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                            {% for img in node.field_portfolio_image %}
+                            {% set image_url = file_url(img.entity.uri.value) %}
+                                <li class="portfolio-item">
+                                    <a class="lb-link" href="{{ image_url }}" title="View Image">
+                                        <img src="{{ image_url }}" class="img-responsive" alt="{{ title }}">
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {{ page.content_full_bar }}
+                    {{ page.content }}
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <header id="headerwrap" class="backstretched fullheight no-overlay komplet-section-portfolio-single">
+            {% for img in node.field_portfolio_header_bg %}
+            {% set image_url = file_url(img.entity.uri.value) %}
+                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+            {% endfor %}
+            <div class="container vertical-center text-center">
+                <div class="mt30 wow">
+                    <h2 class="section-heading white">{{ title }}</h2>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-inner">
+                <div class="container pad-sides-120">
+                    {{ page.content_full_bar }}
+                    {{ page.content }}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% if setting_footer == 'style2' %}
+      {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
+    {% elseif setting_footer == 'style3' %}
+      {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
+    {% elseif setting_footer == 'style4' %}
+      {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
+    {% elseif setting_footer == 'style5' %}
+      {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
+    {% elseif setting_footer == 'style6' %}
+      {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
+    {% else %}
+      {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
+    {% endif %}
+
+</div>
+
+<div class="flexpanel">
+    <div class="viewport-wrap">
+        <div class="viewport">
+            {{ page.slid_bar }}
+        </div>
+    </div>
+</div>

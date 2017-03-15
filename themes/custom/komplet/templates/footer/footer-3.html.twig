@@ -1,0 +1,31 @@
+<div id="footer-wrapper" class="dark-footer-image-bg" style="background-image: url({{ footer_image_bg_2 }});">
+    <section class="dark-wrapper">
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    {{ page.footer_column_1}}
+                    {{ page.footer_column_2}}
+                    {{ page.footer_column_3}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="white-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-left match-height">
+                    {{ page.footer_social_bar }}
+                </div>
+
+                <div class="col-md-6 text-right match-height">
+                     {% if copyright_text %}
+                    <div class="vertical-center">
+                        {{ copyright_text|t }}    
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

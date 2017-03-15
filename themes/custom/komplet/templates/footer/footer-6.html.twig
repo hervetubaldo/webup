@@ -1,0 +1,17 @@
+<div id="footer-wrapper">
+
+    <footer class="white-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    {{ page.footer_social_bar }}
+                </div>
+                {% if copyright_text %}
+                <div class="col-md-12 text-center ptb">
+                    {{ copyright_text|t }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</div>

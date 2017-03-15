@@ -1,0 +1,10 @@
+<header {{ attributes.addClass('white-bg') }}>
+    <div class="pad-top-60 nopaddingbottom">
+        <div class="container">
+            {{ title_suffix }}
+            {% if content %}
+              {{ content }}
+            {% endif %}
+        </div>
+    </div>
+</header>

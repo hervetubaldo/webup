@@ -1,0 +1,62 @@
+<div class="preloader">
+    <div class="preloader-img">
+        <span class="loading-animation animate-flicker"><img src="{{ base_path }}{{ theme_path }}/assets/img/loading.GIF" alt="loading"/></span>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top fadeInDown" data-wow-delay="0.5s">
+    <div class="top-bar smoothie hidden-xs">
+        <div class="container">
+            <div class="clearfix">
+                {% if header_social_networks %}
+                <ul class="list-inline social-links wow pull-left">
+                    {{ header_social_networks|t }}
+                </ul>
+                {% endif %}
+
+                <div class="pull-right text-right">
+                    <ul class="list-inline">
+                        {% if header_email_contact %}
+                            <li>
+                                <div><i class="fa fa-envelope-o"></i> {{ header_email_contact|t }}</div>
+                            </li>
+                        {% endif %}
+                        {% if header_phone_contact %}
+                        <li>
+                            <div class="meta-item"><i class="fa fa-mobile"></i> {{ header_phone_contact|t }}</div>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {{ page.header }}
+            <a class="navbar-brand smoothie logo logo-dark" href="{{ path('<front>') }}"><img src="{{ logo_image_header_bg }}" alt="logo"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-navigation">
+            {{ page.main_menu }}
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div id="search-wrapper">
+    <button type="button" class="close">×</button>
+    <div class="vertical-center text-center">
+        {{ page.search }}
+    </div>
+</div>

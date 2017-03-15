@@ -1,0 +1,546 @@
+.komplet-share{
+	position: relative;
+    float: left;
+    margin: 0;
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    cursor: default;
+    opacity: 0;
+}
+ul.komplet-primary-tabs{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+ul.komplet-primary-tabs li{
+    list-style: none;
+    float: left;
+}
+ul.komplet-primary-tabs li a{
+    border-radius: 0;
+    padding: 5px 12px;
+    text-transform: uppercase;
+    margin: 0 5px 5px 0;
+    border: 1px solid;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+}
+ul.komplet-primary-tabs li a:hover{
+	background-color: #fff;
+    color: #444;
+    border-color: #fff;
+}
+ul.komplet-primary-tabs li a.is-active{
+    background-color: #fff;
+    color: #444;
+    border-color: #fff;
+}
+.comment-author-komplet img{
+	max-width: 80px;
+    margin-right: 15px;
+    height: auto;
+}
+.comment-author-komplet ul{
+	display: flex;
+    float: right;
+}
+.comment-author-komplet ul li{
+	list-style: none !important;
+    float: left;
+    margin-bottom: 0px;
+    width: 100%;
+}
+.comment-author-komplet ul li a{
+    margin: 0 10px  5px 0;
+    border-color: #333;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+    background-color: transparent;
+    padding: 15px 0px;
+    letter-spacing: 1px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    border: none;
+    border-bottom: 3px solid;
+    font-size: 13px;
+    display: inline-block;
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    float: right!important;
+}
+.comment-author-komplet ul li a:hover{
+	border-color: #888;
+    color: #888;
+    background-color: transparent!important
+
+}
+.komplet-button-share{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+    color: #444;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.komplet-facebook-button{
+    border: 1px solid #3b5998;
+    background-color: transparent;
+    color: #3b5998;
+}
+.komplet-tweet-button{
+    border: 1px solid #00aced;
+    background-color: transparent;
+    color: #00aced;
+}
+.komplet-google-button{
+    border: 1px solid #d34836;
+    background-color: transparent;
+    color: #d34836;
+}
+.komplet-container{
+    margin-left: 16.66666667%;
+}
+.komplet-tags a{
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background-image: none;
+}
+.komplet-tags a:focus{
+    background-color: #fff;
+    color: #444;
+    border-color: #fff;
+}
+.komplet-tags-footer a{
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background-image: none;
+}
+.komplet-tags-footer a:focus{
+    background-color: #fff;
+    color: #444;
+    border-color: #fff;
+}
+.komplet-tags-footer a:hover{
+    transition: all .5s ease-in-out;
+}
+.komplet-page-comment form.comment-comment-delete-form input[type=submit]{
+    border-color: #333;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+    background-color: transparent;
+    padding: 15px 0px;
+    letter-spacing: 1px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    border: none;
+    border-bottom: 3px solid;
+    font-size: 13px;
+    display: inline-block;
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.komplet-page-comment form.comment-comment-delete-form input[type=submit]:focus{
+    border-color: #888;
+    color: #888;
+    background-color: transparent!important
+}
+.komplet-page-comment form.comment-comment-delete-form input[type=submit]:hover{
+    border-color: #888;
+    color: #888;
+    background-color: transparent!important
+}
+.komplet-page-comment form input[type=text]{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 30px 30px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #222;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-bottom: 3px solid #222;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.komplet-page-comment form input[type=text]:focus{
+    border-bottom: 3px solid #222;
+    box-shadow: none;
+    outline: 0 none;
+}
+.komplet-page-comment form input[type=time]{
+    margin-top: 10px;
+}
+.komplet-page-comment form input[type=url]{
+    padding-left: 10px;
+}
+.komplet-page-comment form input[type=url]:focus{
+    box-shadow: none;
+    outline: 0 none;
+    
+}
+.komplet-pager{
+    width: 100%;
+    display: inline-block;
+}
+.komplet-pager ul li a{
+    border-color: #333;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+    background-color: transparent;
+    letter-spacing: 1px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    border: none;
+    border-bottom: 3px solid;
+    font-size: 13px;
+    display: inline-block;
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.komplet-pager ul li a:hover{
+    border-color: #888;
+    color: #888;
+    background-color: transparent!important
+}
+.komplet-pager ul li.is-active a{
+    border-color: #888;
+    color: #888;
+    background-color: transparent!important
+}
+.komplet-pager ul li a:focus{
+    border-color: #888;
+    color: #888;
+    background-color: transparent!important
+}
+.komplet-full-bar{
+    padding: 10px 0;
+}
+.komplet-page-contact form textarea{
+    height: 250px;
+}
+.page-product-single form.uc-product-add-to-cart-form{
+    display: inline-flex;
+}
+.page-product-single form.uc-product-add-to-cart-form label{
+    display: none;
+
+}
+.page-product-single form.uc-product-add-to-cart-form input[type=number]{
+    padding: 13px 5px;
+    position: relative;
+    top: 1px;
+    width: 60px;
+    background-color: transparent;
+    border: 1px solid;
+}
+.page-product-single form.uc-product-add-to-cart-form input[type=submit]{
+    border-color: #333;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+    background-color: transparent;
+    padding: 16px 0px;
+    letter-spacing: 1px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    border: none;
+    border-bottom: 3px solid;
+    font-size: 13px;
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    margin-left: 5px;
+}
+.page-product-single form.uc-product-add-to-cart-form input[type=submit]:hover{
+    border-color: #888;
+    color: #888;
+    background-color: transparent!important;
+}
+.page-product-single form.uc-product-add-to-cart-form input[type=submit]:focus{
+    box-shadow: none;
+    outline: 0 none;
+}
+.komplet-form-contact form textarea{
+    height: 250px;
+}
+.page-cart-komplet form table thead tr{
+    font-family: 'Montserrat', sans-serif;
+}
+.page-cart-komplet form table thead tr th{
+    font-weight: normal;
+    padding: 13px 20px;
+    text-transform: uppercase;
+    color: #000000;
+}
+.page-cart-komplet form table tbody tr td{
+    padding: 40px 20px;
+    vertical-align: top;
+    border-top: 1px solid #cccccc;
+}
+.page-cart-komplet form table tbody tr td > a{
+    color: #000;
+    font-size: 16px;
+}
+.page-cart-komplet form table tbody tr td input[type=number]{
+    padding: 13px 5px;
+    position: relative;
+    top: 1px;
+    width: 60px;
+    background-color: transparent;
+    border: 1px solid;
+}
+.page-cart-komplet form table tbody tr td span{
+    color: #000;
+    font-size: 16px;
+}
+.page-cart-komplet form table tbody tr td input[type=submit]{
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.page-cart-komplet form div.form-actions input[type=submit]{
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.page-cart-komplet form table tbody tr td a > img{
+    max-width: none;
+}
+.page-cart-komplet form div.form-actions a{
+    display: none;
+}
+.checkout-page-komplet form details{
+    padding: 30px;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 0;
+    box-shadow: none;
+}
+.checkout-page-komplet form details summary{
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    padding-bottom: 20px;
+}
+.checkout-page-komplet table thead tr{
+    font-family: 'Montserrat', sans-serif;
+}
+.checkout-page-komplet table thead tr th{
+    font-weight: normal;
+    padding: 13px 20px;
+    text-transform: uppercase;
+    color: #000000;
+}
+.checkout-page-komplet table thead tr th.products{
+    text-align: center;
+}
+.checkout-page-komplet table tbody tr td{
+    padding: 40px 20px;
+    vertical-align: top;
+    border-top: 1px solid #cccccc;
+}
+.checkout-page-komplet table tbody tr td{
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+}
+.checkout-page-komplet table tbody tr td span{
+    color: #000;
+    font-size: 16px;
+}
+.checkout-page-komplet table tfoot td{
+    color: #000;
+    font-size: 16px;
+}
+.checkout-page-komplet .uc-store-address-field .form-item label{
+    text-align: left;
+    width: 100%;
+    padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.checkout-page-komplet form details textarea{
+    width: 100%;
+}
+.checkout-page-komplet form details label{
+    text-align: left;
+    width: 100%;
+    padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.checkout-page-komplet form input[type=email]{
+    width: 100%;
+}
+.checkout-page-komplet form div.form-actions{
+    padding: 30px;
+}
+.checkout-page-komplet form div.form-actions input[type=submit]{
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.komplet-search-page form summary{
+    text-transform: uppercase;
+}
+.komplet-search-page label{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 13px;
+    color: #444;
+}
+.komplet-search-page form legend span.fieldset-legend{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000;
+}
+.komplet-search-page fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+.komplet-search-page fieldset legend{
+    text-transform: uppercase;
+    width: auto;
+    border-bottom: 0px;
+}
+.komplet-search-page ol > li {
+    border-bottom: 1px solid #cccccc;
+}
+.komplet-user-page form input[type=submit]{
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.komplet-food-drink h1{
+    font-size: 28px;
+}
+.indented{
+    margin-left: 100px;
+}

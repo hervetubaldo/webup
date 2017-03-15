@@ -1,0 +1,18 @@
+{% set classes = ['tab-pane','fade','in', 'active', 'komplet-form-contact'] %}
+<div {{ attributes.addClass(classes) }} id="contact1">
+    <div id="contact-inner" class="nopadding-lr">
+        <div class="contact-section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div id="message"></div>
+                        {{ title_suffix }}
+                        {% if content %}
+					      {{ content }}
+					    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

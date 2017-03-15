@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html {{ html_attributes }}>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+    {% if general_setting_tracking_code != '' %}
+      {{ general_setting_tracking_code|t }}
+    {% endif %}
+    {% if custom_css != '' %}
+       <style type="text/css" media="all">
+         {{ custom_css|t }}
+       </style>
+    {% endif %}
+</head>
+
+<body{{ attributes.addClass('index') }} id="page-top">
+<div id="komplet-theme-path" class="hidden" data-komplet-theme-path="{{ theme_path }}"></div>
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+
+    <!--Scripts-->
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+</body>
+
+</html>
