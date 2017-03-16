@@ -19,11 +19,21 @@ class MigrateNodeTest extends MigrateNodeTestBase {
   /**
    * {@inheritdoc}
    */
+  public static $modules = ['language', 'content_translation'];
+
+  /**
+   * {@inheritdoc}
+   */
   protected function setUp() {
     parent::setUp();
     $this->setUpMigratedFiles();
     $this->installSchema('file', ['file_usage']);
-    $this->executeMigrations(['d6_node']);
+    $this->executeMigrations([
+      'language',
+      'd6_language_content_settings',
+      'd6_node',
+      'd6_node_translation',
+    ]);
   }
 
   /**
@@ -46,7 +56,7 @@ class MigrateNodeTest extends MigrateNodeTestBase {
     /** @var \Drupal\node\NodeInterface $node_revision */
     $node_revision = \Drupal::entityManager()->getStorage('node')->loadRevision(1);
     $this->assertIdentical('Test title', $node_revision->getTitle());
-    $this->assertIdentical('1', $node_revision->getRevisionAuthor()->id(), 'Node revision has the correct user');
+    $this->assertIdentical('1', $node_revision->getRevisionUser()->id(), 'Node revision has the correct user');
     // This is empty on the first revision.
     $this->assertIdentical(NULL, $node_revision->revision_log->value);
     $this->assertIdentical('This is a shared text field', $node->field_test->value);
@@ -84,6 +94,23 @@ class MigrateNodeTest extends MigrateNodeTestBase {
     $this->assertSame('internal:/node/10', $node->field_test_link->uri);
     $this->assertSame('Buy it now', $node->field_test_link->title);
     $this->assertSame(['attributes' => ['target' => '_blank']], $node->field_test_link->options);
+
+    // Test that translations are working.
+    $node = Node::load(10);
+    $this->assertIdentical('en', $node->langcode->value);
+    $this->assertIdentical('The Real McCoy', $node->title->value);
+    $this->assertTrue($node->hasTranslation('fr'), "Node 10 has french translation");
+
+    // Test that content_translation_source is set.
+    $manager = $this->container->get('content_translation.manager');
+    $this->assertIdentical('en', $manager->getTranslationMetadata($node->getTranslation('fr'))->getSource());
+
+    // Test that content_translation_source for a source other than English.
+    $node = Node::load(12);
+    $this->assertIdentical('zu', $manager->getTranslationMetadata($node->getTranslation('en'))->getSource());
+
+    // Node 11 is a translation of node 10, and should not be imported separately.
+    $this->assertNull(Node::load(11), "Node 11 doesn't exist in D8, it was a translation");
 
     // Rerun migration with two source database changes.
     // 1. Add an invalid link attributes and a different URL and
