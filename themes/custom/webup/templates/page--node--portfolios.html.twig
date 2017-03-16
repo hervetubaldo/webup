@@ -152,10 +152,10 @@
             </div>
         </section>
     {% else %}
-        <header id="headerwrap" class="backstretched fullheight no-overlay komplet-section-portfolio-single">
+        <header id="headerwrap" class="backstretched fullheight no-overlay webup-section-portfolio-single">
             {% for img in node.field_portfolio_header_bg %}
             {% set image_url = file_url(img.entity.uri.value) %}
-                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+                <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
             {% endfor %}
             <div class="container vertical-center text-center">
                 <div class="mt30 wow">

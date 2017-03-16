@@ -480,14 +480,14 @@ fieldset[disabled] .btn-primary.active {
 
 .navbar-default .navbar-brand {
     color: #333;
-    margin-top: 10px;
+    margin-top: 2px;
     letter-spacing: 7px;
     font-size: 24px;
     font-weight: 700;
 }
 
 .navbar-brand.logo img {
-    max-height: 20px;
+    max-height: 70px;
     top: -3px;
     position: relative;
 }
@@ -495,6 +495,10 @@ fieldset[disabled] .btn-primary.active {
 .navbar-brand.logo-dark {
     display: none;
     opacity: 0;
+}
+
+.navbar-brand.logo-dark img {
+    max-height: 40px;
 }
 
 .navbar-shrink .navbar-brand.logo-light {
@@ -1999,7 +2003,7 @@ footer.white-wrapper .social-links li a {
     }
     .intro-sub-heading {
         font-size: 34px;
-        text-transform: lowercase;
+        text-transform: inherit;
         letter-spacing: 2px;
         font-weight: 300;
     }

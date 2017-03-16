@@ -1,4 +1,4 @@
-.komplet-share{
+.webup-share{
 	position: relative;
     float: left;
     margin: 0;
@@ -8,16 +8,16 @@
     cursor: default;
     opacity: 0;
 }
-ul.komplet-primary-tabs{
+ul.webup-primary-tabs{
     display: inline-block;
     margin: 0;
     padding: 0;
 }
-ul.komplet-primary-tabs li{
+ul.webup-primary-tabs li{
     list-style: none;
     float: left;
 }
-ul.komplet-primary-tabs li a{
+ul.webup-primary-tabs li a{
     border-radius: 0;
     padding: 5px 12px;
     text-transform: uppercase;
@@ -28,32 +28,32 @@ ul.komplet-primary-tabs li a{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
 }
-ul.komplet-primary-tabs li a:hover{
+ul.webup-primary-tabs li a:hover{
 	background-color: #fff;
     color: #444;
     border-color: #fff;
 }
-ul.komplet-primary-tabs li a.is-active{
+ul.webup-primary-tabs li a.is-active{
     background-color: #fff;
     color: #444;
     border-color: #fff;
 }
-.comment-author-komplet img{
+.comment-author-webup img{
 	max-width: 80px;
     margin-right: 15px;
     height: auto;
 }
-.comment-author-komplet ul{
+.comment-author-webup ul{
 	display: flex;
     float: right;
 }
-.comment-author-komplet ul li{
+.comment-author-webup ul li{
 	list-style: none !important;
     float: left;
     margin-bottom: 0px;
     width: 100%;
 }
-.comment-author-komplet ul li a{
+.comment-author-webup ul li a{
     margin: 0 10px  5px 0;
     border-color: #333;
     border-radius: 0;
@@ -75,13 +75,13 @@ ul.komplet-primary-tabs li a.is-active{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     float: right!important;
 }
-.comment-author-komplet ul li a:hover{
+.comment-author-webup ul li a:hover{
 	border-color: #888;
     color: #888;
     background-color: transparent!important
 
 }
-.komplet-button-share{
+.webup-button-share{
     display: block;
     float: left;
     margin: 0;
@@ -97,25 +97,25 @@ ul.komplet-primary-tabs li a.is-active{
     font-weight: 300;
     cursor: pointer;
 }
-.komplet-facebook-button{
+.webup-facebook-button{
     border: 1px solid #3b5998;
     background-color: transparent;
     color: #3b5998;
 }
-.komplet-tweet-button{
+.webup-tweet-button{
     border: 1px solid #00aced;
     background-color: transparent;
     color: #00aced;
 }
-.komplet-google-button{
+.webup-google-button{
     border: 1px solid #d34836;
     background-color: transparent;
     color: #d34836;
 }
-.komplet-container{
+.webup-container{
     margin-left: 16.66666667%;
 }
-.komplet-tags a{
+.webup-tags a{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 1.5;
@@ -130,12 +130,12 @@ ul.komplet-primary-tabs li a.is-active{
     -ms-user-select: none;
     background-image: none;
 }
-.komplet-tags a:focus{
+.webup-tags a:focus{
     background-color: #fff;
     color: #444;
     border-color: #fff;
 }
-.komplet-tags-footer a{
+.webup-tags-footer a{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 1.5;
@@ -150,15 +150,15 @@ ul.komplet-primary-tabs li a.is-active{
     -ms-user-select: none;
     background-image: none;
 }
-.komplet-tags-footer a:focus{
+.webup-tags-footer a:focus{
     background-color: #fff;
     color: #444;
     border-color: #fff;
 }
-.komplet-tags-footer a:hover{
+.webup-tags-footer a:hover{
     transition: all .5s ease-in-out;
 }
-.komplet-page-comment form.comment-comment-delete-form input[type=submit]{
+.webup-page-comment form.comment-comment-delete-form input[type=submit]{
     border-color: #333;
     border-radius: 0;
     text-transform: uppercase;
@@ -178,17 +178,17 @@ ul.komplet-primary-tabs li a.is-active{
     display: inline-block;
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.komplet-page-comment form.comment-comment-delete-form input[type=submit]:focus{
+.webup-page-comment form.comment-comment-delete-form input[type=submit]:focus{
     border-color: #888;
     color: #888;
     background-color: transparent!important
 }
-.komplet-page-comment form.comment-comment-delete-form input[type=submit]:hover{
+.webup-page-comment form.comment-comment-delete-form input[type=submit]:hover{
     border-color: #888;
     color: #888;
     background-color: transparent!important
 }
-.komplet-page-comment form input[type=text]{
+.webup-page-comment form input[type=text]{
     display: block;
     width: 100%;
     height: 40px;
@@ -204,27 +204,27 @@ ul.komplet-primary-tabs li a.is-active{
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.komplet-page-comment form input[type=text]:focus{
+.webup-page-comment form input[type=text]:focus{
     border-bottom: 3px solid #222;
     box-shadow: none;
     outline: 0 none;
 }
-.komplet-page-comment form input[type=time]{
+.webup-page-comment form input[type=time]{
     margin-top: 10px;
 }
-.komplet-page-comment form input[type=url]{
+.webup-page-comment form input[type=url]{
     padding-left: 10px;
 }
-.komplet-page-comment form input[type=url]:focus{
+.webup-page-comment form input[type=url]:focus{
     box-shadow: none;
     outline: 0 none;
     
 }
-.komplet-pager{
+.webup-pager{
     width: 100%;
     display: inline-block;
 }
-.komplet-pager ul li a{
+.webup-pager ul li a{
     border-color: #333;
     border-radius: 0;
     text-transform: uppercase;
@@ -243,25 +243,25 @@ ul.komplet-primary-tabs li a.is-active{
     display: inline-block;
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.komplet-pager ul li a:hover{
+.webup-pager ul li a:hover{
     border-color: #888;
     color: #888;
     background-color: transparent!important
 }
-.komplet-pager ul li.is-active a{
+.webup-pager ul li.is-active a{
     border-color: #888;
     color: #888;
     background-color: transparent!important
 }
-.komplet-pager ul li a:focus{
+.webup-pager ul li a:focus{
     border-color: #888;
     color: #888;
     background-color: transparent!important
 }
-.komplet-full-bar{
+.webup-full-bar{
     padding: 10px 0;
 }
-.komplet-page-contact form textarea{
+.webup-page-contact form textarea{
     height: 250px;
 }
 .page-product-single form.uc-product-add-to-cart-form{
@@ -317,28 +317,28 @@ ul.komplet-primary-tabs li a.is-active{
     box-shadow: none;
     outline: 0 none;
 }
-.komplet-form-contact form textarea{
+.webup-form-contact form textarea{
     height: 250px;
 }
-.page-cart-komplet form table thead tr{
+.page-cart-webup form table thead tr{
     font-family: 'Montserrat', sans-serif;
 }
-.page-cart-komplet form table thead tr th{
+.page-cart-webup form table thead tr th{
     font-weight: normal;
     padding: 13px 20px;
     text-transform: uppercase;
     color: #000000;
 }
-.page-cart-komplet form table tbody tr td{
+.page-cart-webup form table tbody tr td{
     padding: 40px 20px;
     vertical-align: top;
     border-top: 1px solid #cccccc;
 }
-.page-cart-komplet form table tbody tr td > a{
+.page-cart-webup form table tbody tr td > a{
     color: #000;
     font-size: 16px;
 }
-.page-cart-komplet form table tbody tr td input[type=number]{
+.page-cart-webup form table tbody tr td input[type=number]{
     padding: 13px 5px;
     position: relative;
     top: 1px;
@@ -346,11 +346,11 @@ ul.komplet-primary-tabs li a.is-active{
     background-color: transparent;
     border: 1px solid;
 }
-.page-cart-komplet form table tbody tr td span{
+.page-cart-webup form table tbody tr td span{
     color: #000;
     font-size: 16px;
 }
-.page-cart-komplet form table tbody tr td input[type=submit]{
+.page-cart-webup form table tbody tr td input[type=submit]{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
     padding: 6px 12px;
@@ -370,7 +370,7 @@ ul.komplet-primary-tabs li a.is-active{
     border: 1px solid transparent;
     border-radius: 4px;
 }
-.page-cart-komplet form div.form-actions input[type=submit]{
+.page-cart-webup form div.form-actions input[type=submit]{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
     padding: 6px 12px;
@@ -390,19 +390,19 @@ ul.komplet-primary-tabs li a.is-active{
     border: 1px solid transparent;
     border-radius: 4px;
 }
-.page-cart-komplet form table tbody tr td a > img{
+.page-cart-webup form table tbody tr td a > img{
     max-width: none;
 }
-.page-cart-komplet form div.form-actions a{
+.page-cart-webup form div.form-actions a{
     display: none;
 }
-.checkout-page-komplet form details{
+.checkout-page-webup form details{
     padding: 30px;
     border-bottom: 1px solid #e5e5e5;
     border-radius: 0;
     box-shadow: none;
 }
-.checkout-page-komplet form details summary{
+.checkout-page-webup form details summary{
     color: #000;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -411,37 +411,37 @@ ul.komplet-primary-tabs li a.is-active{
     font-family: 'Oswald', sans-serif;
     padding-bottom: 20px;
 }
-.checkout-page-komplet table thead tr{
+.checkout-page-webup table thead tr{
     font-family: 'Montserrat', sans-serif;
 }
-.checkout-page-komplet table thead tr th{
+.checkout-page-webup table thead tr th{
     font-weight: normal;
     padding: 13px 20px;
     text-transform: uppercase;
     color: #000000;
 }
-.checkout-page-komplet table thead tr th.products{
+.checkout-page-webup table thead tr th.products{
     text-align: center;
 }
-.checkout-page-komplet table tbody tr td{
+.checkout-page-webup table tbody tr td{
     padding: 40px 20px;
     vertical-align: top;
     border-top: 1px solid #cccccc;
 }
-.checkout-page-komplet table tbody tr td{
+.checkout-page-webup table tbody tr td{
     text-align: center;
     color: #000;
     font-size: 16px;
 }
-.checkout-page-komplet table tbody tr td span{
+.checkout-page-webup table tbody tr td span{
     color: #000;
     font-size: 16px;
 }
-.checkout-page-komplet table tfoot td{
+.checkout-page-webup table tfoot td{
     color: #000;
     font-size: 16px;
 }
-.checkout-page-komplet .uc-store-address-field .form-item label{
+.checkout-page-webup .uc-store-address-field .form-item label{
     text-align: left;
     width: 100%;
     padding-bottom: 5px;
@@ -451,10 +451,10 @@ ul.komplet-primary-tabs li a.is-active{
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.checkout-page-komplet form details textarea{
+.checkout-page-webup form details textarea{
     width: 100%;
 }
-.checkout-page-komplet form details label{
+.checkout-page-webup form details label{
     text-align: left;
     width: 100%;
     padding-bottom: 5px;
@@ -464,13 +464,13 @@ ul.komplet-primary-tabs li a.is-active{
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.checkout-page-komplet form input[type=email]{
+.checkout-page-webup form input[type=email]{
     width: 100%;
 }
-.checkout-page-komplet form div.form-actions{
+.checkout-page-webup form div.form-actions{
     padding: 30px;
 }
-.checkout-page-komplet form div.form-actions input[type=submit]{
+.checkout-page-webup form div.form-actions input[type=submit]{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
     padding: 6px 12px;
@@ -490,35 +490,35 @@ ul.komplet-primary-tabs li a.is-active{
     border: 1px solid transparent;
     border-radius: 4px;
 }
-.komplet-search-page form summary{
+.webup-search-page form summary{
     text-transform: uppercase;
 }
-.komplet-search-page label{
+.webup-search-page label{
     text-transform: uppercase;
     font-weight: normal;
     font-size: 13px;
     color: #444;
 }
-.komplet-search-page form legend span.fieldset-legend{
+.webup-search-page form legend span.fieldset-legend{
     text-transform: uppercase;
     font-weight: normal;
     font-size: 16px;
     color: #000;
 }
-.komplet-search-page fieldset {
+.webup-search-page fieldset {
     border: 1px solid #c0c0c0;
     margin: 0 2px;
     padding: 0.35em 0.625em 0.75em;
 }
-.komplet-search-page fieldset legend{
+.webup-search-page fieldset legend{
     text-transform: uppercase;
     width: auto;
     border-bottom: 0px;
 }
-.komplet-search-page ol > li {
+.webup-search-page ol > li {
     border-bottom: 1px solid #cccccc;
 }
-.komplet-user-page form input[type=submit]{
+.webup-user-page form input[type=submit]{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
     padding: 6px 12px;
@@ -538,7 +538,7 @@ ul.komplet-primary-tabs li a.is-active{
     border: 1px solid transparent;
     border-radius: 4px;
 }
-.komplet-food-drink h1{
+.webup-food-drink h1{
     font-size: 28px;
 }
 .indented{

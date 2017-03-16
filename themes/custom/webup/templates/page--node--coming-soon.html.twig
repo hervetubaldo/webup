@@ -14,10 +14,10 @@
       {% include theme_path ~ "/templates/header/header-1.html.twig" %}
     {% endif %} 
     <!-- Header -->
-    <header id="headerwrap" class="backstretched fullheight komplet-section-portfolio-single">
+    <header id="headerwrap" class="backstretched fullheight webup-section-portfolio-single">
         {% for img in node.field_portfolio_header_bg %}
         {% set image_url = file_url(img.entity.uri.value) %}
-            <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+            <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
         {% endfor %}
         <div class="container vertical-center">
             <div class="intro-text vertical-center text-left smoothie">

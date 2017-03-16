@@ -1,0 +1,783 @@
+<?php
+global $base_url;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\UrlHelper;
+function webup_css_alter(&$css) {
+	$theme_path = drupal_get_path('theme', 'webup');
+	// Add googlefonts.
+	$googlefonts = 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic';
+
+	/*$css1 = base_path().$theme_path.'/css/bootstrap.css';
+	$css2 = base_path().$theme_path.'/css/fonts/awesome-fonts/css/font-awesome.min.css';
+	$css3 = base_path().$theme_path.'/css/fa-snapcwebup.css';
+	$css4 = base_path().$theme_path.'/css/flexslider.css';
+	$css5 = base_path().$theme_path.'/css/styles.css';
+	$css6 = base_path().$theme_path.'/css/responsive.css';
+	$css7 = base_path().$theme_path.'/css/jquery.fs.tipper.css';
+	$css8 = base_path().$theme_path.'/css/magnific-popup.css';
+	$css9 = base_path().$theme_path.'/css/main.css';
+	*/
+	//google font
+	$css[$googlefonts] = array(
+	'data' => $googlefonts,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => -1,
+	);
+	//css
+	/*$css[$css1] = array(
+	'data' => $css1,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'id' => 'bk-bootstrap-css-css',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 1,
+	);
+	$css[$css2] = array(
+	'data' => $css2,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 2,
+	);
+	$css[$css3] = array(
+	'data' => $css3,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 3,
+	);
+	$css[$css4] = array(
+	'data' => $css4,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 4,
+	);
+	$css[$css5] = array(
+	'data' => $css5,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 5,
+	);
+	$css[$css6] = array(
+	'data' => $css6,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 6,
+	);
+	$css[$css7] = array(
+	'data' => $css7,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 7,
+	);
+	$css[$css8] = array(
+	'data' => $css8,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'all',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 8,
+	);
+	$css[$css9] = array(
+	'data' => $css9,
+	'type' => 'external',
+	'every_page' => TRUE,
+	'media' => 'screen',
+	'preprocess' => FALSE,
+	'group' => CSS_AGGREGATE_THEME,
+	'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+	'weight' => 9,
+	);*/
+}
+
+function webup_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+	if ($node = \Drupal::routeMatch()->getParameter('node')) {
+		$suggestions[] = 'page__node__' . $node->getType();
+	}
+}
+function webup_preprocess_block(&$variables) {
+	$blocks_name = \Drupal::entityManager()->getStorage('block')->loadByProperties(['region' => 'contact_form', 'theme' => \Drupal::theme()->getActiveTheme()->getName()]); 
+	$arr_block = array();
+	foreach($blocks_name as $k => $v){
+		$block = \Drupal\block\Entity\Block::load($k);
+		$arr_block[$k] = (\Drupal::entityManager()->getViewBuilder('block')->view($block));
+	}
+	if(isset($arr_block) && !empty($arr_block)){
+		$variables['region_contact_form'] = $arr_block;
+	}	
+
+	//get region in block.html.twig
+	//if config as block base
+	//kint($variables['elements']['#id'])
+	global $base_url;
+	switch ($variables['base_plugin_id']) {
+	    case 'system_branding_block':
+	      $variables['site_logo'] = '';
+	      if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+	        $variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+	      }
+	    break;
+
+  	}
+	
+	if(isset($variables['elements']['#id']) && !empty($variables['elements']['#id'])){
+		$block_id = $variables['elements']['#id'];
+	  	$block = \Drupal\block\Entity\Block::load($block_id);
+	  	if($block->getRegion()){
+	  		$region = $block->getRegion();
+	  		$variables['region'] = $region;
+	  	}
+	//config as context module
+	}else{
+		$variables['region'] = $variables['elements']['#configuration']['region'];
+	}
+	//region search
+	$blocks_name = \Drupal::entityManager()->getStorage('block')->loadByProperties(['region' => 'search', 'theme' => \Drupal::theme()->getActiveTheme()->getName()]); 
+	$arr_block = array();
+	foreach($blocks_name as $k => $v){
+		$block = \Drupal\block\Entity\Block::load($k);
+		$arr_block[$k] = (\Drupal::entityManager()->getViewBuilder('block')->view($block));
+	}
+	if(isset($arr_block) && !empty($arr_block)){
+		$variables['region_search'] = $arr_block;
+	}
+	//region header cart
+	$blocks_name = \Drupal::entityManager()->getStorage('block')->loadByProperties(['region' => 'header_cart', 'theme' => \Drupal::theme()->getActiveTheme()->getName()]); 
+	$arr_block1 = array();
+	foreach($blocks_name as $k => $v){
+		$block1 = \Drupal\block\Entity\Block::load($k);
+		$arr_block1[$k] = (\Drupal::entityManager()->getViewBuilder('block')->view($block1));
+	}
+	if(isset($arr_block1) && !empty($arr_block1)){
+		$variables['region_header_cart'] = $arr_block1;
+	}
+	$setting_page_title = theme_get_setting('page_title_style', 'webup');
+	if(isset($setting_page_title) && !empty($setting_page_title)){
+		$variables['setting_page_title'] = $setting_page_title;
+	}else{
+		$variables['setting_page_title'] = 'style1';
+	}
+}
+function webup_preprocess(&$variables){
+
+
+	if (\Drupal::routeMatch()->getParameter('node')) {
+		$node = \Drupal::routeMatch()->getParameter('node');
+		if($node->type->target_id == 'blog_post'){
+
+			$variables['node'] = $node;
+			$n = 0;
+			$term_path = array();
+			$count_cate = count($node->field_categories);
+			foreach ($node->field_categories as $k => $v) {
+				$path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/taxonomy/term/'.$v->entity->tid->value);
+				$path_alias_cs = ltrim($path_alias,'/');
+				$n++;
+				if($n < $count_cate){
+		 			$term_path[$k] = $v->entity->name->value;
+		 		}else{
+		 			$term_path[$k] = $v->entity->name->value;
+		 		}
+			}
+			$variables['link_categories'] = $term_path;
+			//tag
+			$n = 0;
+			$term_path_tag = array();
+			$count_tag = count($node->field_blog_tags);
+			foreach ($node->field_blog_tags as $k => $v) {
+				$path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/taxonomy/term/'.$v->entity->tid->value);
+				$path_alias_cs = ltrim($path_alias,'/');
+				$n++;
+				if($n < $count_cate){
+		 			$term_path_tag[$k] = $v->entity->name->value;
+		 		}else{
+		 			$term_path_tag[$k] = $v->entity->name->value;
+		 		}
+			}
+			$variables['link_tags'] = $term_path_tag;
+			//end tag
+		}else{
+			$variables['node'] = $node;
+		}
+		//view total
+		//statistics_get($nid);
+		$variables['totalcount'] = statistics_get($node->nid->getValue()[0]['value'])['totalcount'];
+		
+
+	}
+	if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+	  	$term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+	  	$term = taxonomy_term_load($term_id);
+	  	//$term_name = $term_object->get('name')->value;
+	  	$vname = $term->vid->getValue()[0]['target_id'];
+	  	if($vname == 'blog_categories'){
+	  		$variables['vcname'] = $vname;
+		}	  	
+
+		$variables['current_term'] = $term;
+		
+	}
+	if(\Drupal::routeMatch()->getParameter('node')){
+ 		$node = \Drupal::routeMatch()->getParameter('node');
+ 		
+ 		//kint($node->changed->value);
+ 		//$vars['totalcount'] = statistics_get($node->nid->getValue()[0]['value'])['totalcount'];
+		$ntype = $node->getType();
+		/********************blog post**********************/
+	  	if($ntype == 'blog_post'){
+			
+		}
+		//get related product
+		if($ntype == 'product'){
+	  		$pd_fid = $node->uc_product_image->getValue()[0]['target_id'];
+			$imgone_uri = file_load($pd_fid)->uri->value;
+			$imgone_url = file_create_url($imgone_uri);
+			$variables['imgone_url'] = $imgone_url;
+			//kint($node->field_product_category->getValue());
+			$tids = array();
+			foreach($node->field_product_category->getValue() as $k => $tarr){
+				$tids[$k] = $tarr['target_id'];
+			}
+			$storage = \Drupal::entityManager()->getStorage('node');
+		    $nids = $storage->getQuery()
+		        ->condition('type', 'product')
+		        ->condition('status', 1)
+		        ->condition('nid',$node->nid->value , '!=')
+		        ->condition('field_product_category.entity.tid', $tids, 'IN')
+		        ->range(0,3)
+		        ->execute();
+		        //print_r($nids);
+				$random_pds = $nids;
+			//print_r($nids);
+		    //$vars['related_products'] = $storage->loadMultiple($random_pds);
+		    $arr_products = array();
+		    if(count($random_pds)){
+			    $config = \Drupal::config('uc_store.settings');
+			    $sign_currency = $config->get('currency.symbol');
+			    $posi = $config->get('currency.symbol_after');
+			    foreach(entity_load_multiple('node',$random_pds) as $k => $v){
+			    	if($posi == 1){
+			    		//$uc_price = $v->price->getValue()[0]['value'].$sign_currency;
+			    		$uc_price = (float)$v->price->getValue()[0]['value'];
+			    		$uc_price_fm = number_format($uc_price,2).$sign_currency;
+			    	}else{
+			    		$uc_price = (float)$v->price->getValue()[0]['value'];
+			    		$uc_price_fm = $sign_currency.number_format($uc_price,2);
+			    	}
+			    	//kint($v->price);
+			    	$fid = $v->uc_product_image->getValue()[0]['target_id'];
+			    	//print(file_create_url(file_load($aaa)->uri->value));
+			    	/////////////////////////////////////////////////////////
+			    	$path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$v->nid->getValue()[0]['value']);
+					$node_url = ltrim($path_alias,'/');
+					//$node_url = url('node/'.$v->nid->getValue()[0]['value']);
+					//print $node_url;
+					$uri = file_load($fid)->uri->value;
+					$url = file_create_url($uri);
+					//print($url);
+					$arr_products[$k] = '<li class="nopadding-lr">
+										    <div class="hover-item mb30">
+										        <img src="'.$url.'" class="img-responsive smoothie" alt="'.$v->getTitle().'">
+										        <div class="overlay-item-caption smoothie"></div>
+										        <div class="hover-item-caption smoothie">
+										            <div class="vertical-center smoothie">
+										                <a href="'.$node_url.'" class="smoothie btn btn-primary">View</a>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="item-excerpt">
+										        <h4 class="pull-right">'.$uc_price_fm.'</h4>
+										        <h4><a href="'.$node_url.'">'.$v->getTitle().'</a></h4>
+										    </div>
+										</li>';		
+				}
+			}
+			if(count($random_pds)){
+				$variables['is_related_pd'] = 1;
+
+			}else{
+				$variables['is_related_pd'] = 0;
+			}
+			$variables['related_products'] = $arr_products;
+		}
+		//nav portfolio
+
+
+
+		if($ntype == 'portfolios'){
+			
+		}
+	}
+	$blog_layout = theme_get_setting('blog_layout', 'webup');
+	if(isset($blog_layout) && !empty($blog_layout)){
+		$variables['blog_layout'] = $blog_layout;
+	}else{
+		$variables['blog_layout'] = 'traditional';
+	}
+	$listing_sidebar = theme_get_setting('blog_sidebar', 'webup');
+	if(isset($listing_sidebar) && !empty($listing_sidebar)){
+		$variables['listing_sidebar'] = $listing_sidebar;
+	}else{
+		$variables['listing_sidebar'] = 'left';
+	}
+
+		
+}
+function webup_preprocess_node(&$vars) {
+	global $base_url;
+	$vars['theme_path'] = drupal_get_path('theme', 'webup');
+	$site_name = \Drupal::config('system.site')->get('name');
+	$vars['site_name'] = $site_name;	
+	$request = \Drupal::request();
+	if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+		$vars['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+	}
+	$pageURL = 'http';	
+ 	if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'){
+ 		$pageURL .= "s";
+ 	}
+	$pageURL .= '://';
+ 	if($_SERVER['SERVER_PORT'] != '80'){
+  	$pageURL .= $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+ 	}else{
+  		$pageURL .= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+ 	}
+ 	$vars['pageURL'] = $pageURL;
+
+ 	//get current term (tid)
+	/*if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+	  	$term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+	  	$term = taxonomy_term_load($term_id);
+	  	//$term_name = $term_object->get('name')->value;
+		$vars['current_term'] = $term;
+	}*/
+
+
+
+	//kint($variables['blocks_output']);*/
+	$blog_layout = theme_get_setting('blog_layout', 'webup');
+	if(isset($blog_layout) && !empty($blog_layout)){
+		$vars['blog_listing_layout'] = $blog_layout;
+	}else{
+		$vars['blog_listing_layout'] = 'traditional';
+	}
+	$shop_sidebar = theme_get_setting('shop_sidebar', 'webup');
+	if(isset($shop_sidebar) && !empty($shop_sidebar)){
+		$vars['shop_sidebar'] = $shop_sidebar;
+	}else{
+		$vars['shop_sidebar'] = 'right';
+	}
+}
+function webup_preprocess_html(&$variables){
+	global $base_url;
+  	$theme = \Drupal::theme()->getActiveTheme()->getName();
+  	$variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
+  	$variables['custom_css'] = theme_get_setting('custom_css', $theme);
+	$variables['theme_path'] = drupal_get_path('theme', $theme);
+	$site_name = \Drupal::config('system.site')->get('name');
+	$variables['site_name'] = $site_name;	
+	$variables['header_social_networks'] = theme_get_setting('header_social_networks', $theme);
+	$variables['copyright_text'] = theme_get_setting('copyright_text', $theme);
+	$googlemaps = theme_get_setting('googlemaps', 'webup');
+	if(isset($googlemaps) && !empty($googlemaps)){
+		$variables['googlemaps'] = $googlemaps;
+	}
+
+  	$variables['#attached']['library'][] = 'webup/webup-lib';
+  	//kint($variables['#attached']);
+}
+function webup_preprocess_field(&$variables){
+	/*if ($node = \Drupal::routeMatch()->getParameter('node')) {
+		$ntype = $node->getType();
+  		if($ntype == 'article'){
+  			$format = $node->field_blog_format[0]->value;
+  			$variables['article_format'] = $format;
+
+  		}
+	}*/
+}
+/**
+ * Implements template_preprocess_page().
+ */
+function webup_preprocess_page(&$variables) {
+
+	/*if (isset($variables['page']['content']['system_main']['default_message'])) {
+  		unset($variables['page']['content']['system_main']['default_message']);
+ 	} */
+	global $base_url;
+	$variables['theme_path'] = drupal_get_path('theme', 'webup');
+	$pageURL = 'http';	
+ 	if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'){
+ 		$pageURL .= "s";
+ 	}
+	$pageURL .= '://';
+ 	if($_SERVER['SERVER_PORT'] != '80'){
+  	$pageURL .= $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+ 	}else{
+  		$pageURL .= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+ 	}
+ 	$variables['pageURL'] = $pageURL;
+
+	$theme = \Drupal::theme()->getActiveTheme()->getName();
+	$variables['theme_path'] = drupal_get_path('theme', $theme);
+	$variables['header_social_networks'] = theme_get_setting('header_social_networks', $theme);
+	$variables['copyright_text'] = theme_get_setting('copyright_text', $theme);
+	//$variables['header_bg'] = theme_get_setting('header_bg', $theme);
+	//print '<script type="text/javascript">jQuery.extend(Drupal.settings, { "pathToTheme": "' .base_path() .drupal_get_path('theme', $theme). '" });</script>';
+	//get site name & slogan
+	$config = \Drupal::config('system.site');
+  	$variables['site_name'] = $config->get('name');
+	$request = \Drupal::request();
+	if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+		$variables['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+	}
+	//create link taxonomy term starts
+	//use custom code
+	/*if (\Drupal::routeMatch()->getParameter('node')) {
+		$node = \Drupal::routeMatch()->getParameter('node');
+		$variables['node'] = $node;
+		if($node->type->target_id == 'coming_soon'){
+			$str_date = $node->field_date_time->getValue()[0]['value'];
+			$arr_dt = explode('T', $str_date);
+			$date_cs = explode('-', $arr_dt[0]);
+
+			$yyyy = $date_cs[0];
+			$mm = $date_cs[1];
+			$dd = $date_cs[2];
+
+			$time_cs = $arr_dt[1];
+			$variables['cm_yyyy'] = $yyyy;
+			$variables['cm_mm'] = $mm;
+			$variables['cm_dd'] = $dd;
+			$variables['cm_time'] = $time_cs;
+		}
+	
+
+	}*/
+	if(!empty(theme_get_setting('blog_page_header_bg', 'webup'))){
+		$variables['blog_page_header_bg'] = $base_url.theme_get_setting('blog_page_header_bg', 'webup');
+	}else{
+		$variables['blog_page_header_bg'] = '';
+	}
+	//blog_tags
+	if(!empty(theme_get_setting('blog_tags_page_header_bg', 'webup'))){
+		$variables['blog_tags_page_header_bg'] = $base_url.theme_get_setting('blog_tags_page_header_bg', 'webup');
+	}else{
+		$variables['blog_tags_page_header_bg'] = '';
+	}
+	//cart page
+	if(!empty(theme_get_setting('cart_page_header_bg', 'webup'))){
+		$variables['cart_page_header_bg'] = $base_url.theme_get_setting('cart_page_header_bg', 'webup');
+	}else{
+		$variables['cart_page_header_bg'] = '';
+	}
+	//checkout page
+	if(!empty(theme_get_setting('checkout_page_header_bg', 'webup'))){
+		$variables['checkout_page_header_bg'] = $base_url.theme_get_setting('checkout_page_header_bg', 'webup');
+	}else{
+		$variables['checkout_page_header_bg'] = '';
+	}
+	//review page
+	if(!empty(theme_get_setting('review_page_header_bg', 'webup'))){
+		$variables['review_page_header_bg'] = $base_url.theme_get_setting('review_page_header_bg', 'webup');
+	}else{
+		$variables['review_page_header_bg'] = '';
+	}
+	//complete page
+	if(!empty(theme_get_setting('complete_page_header_bg', 'webup'))){
+		$variables['complete_page_header_bg'] = $base_url.theme_get_setting('complete_page_header_bg', 'webup');
+	}else{
+		$variables['complete_page_header_bg'] = '';
+	}
+	//setting_header
+	$setting_header = theme_get_setting('header_style', 'webup');
+	if(isset($setting_header) && !empty($setting_header)){
+		$variables['setting_header'] = $setting_header;
+	}else{
+		$variables['setting_header'] = 'style1';
+	}
+	//logo_image
+	if(!empty(theme_get_setting('logo_image_header_bg', 'webup'))){
+		$variables['logo_image_header_bg'] = $base_url.theme_get_setting('logo_image_header_bg', 'webup');
+	}else{
+		$variables['logo_image_header_bg'] = '';
+	}
+	//page_image
+	if(!empty(theme_get_setting('page_image_header_bg', 'webup'))){
+		$variables['page_image_header_bg'] = $base_url.theme_get_setting('page_image_header_bg', 'webup');
+	}else{
+		$variables['page_image_header_bg'] = '';
+	}
+	//setting_footer
+	$setting_footer = theme_get_setting('footer_style', 'webup');
+	if(isset($setting_footer) && !empty($setting_footer)){
+		$variables['setting_footer'] = $setting_footer;
+	}else{
+		$variables['setting_footer'] = 'style1';
+	}
+	//footer_image
+	if(!empty(theme_get_setting('footer_image_bg', 'webup'))){
+		$variables['footer_image_bg'] = $base_url.theme_get_setting('footer_image_bg', 'webup');
+	}else{
+		$variables['footer_image_bg'] = '';
+	}
+	if(!empty(theme_get_setting('footer_image_bg_2', 'webup'))){
+		$variables['footer_image_bg_2'] = $base_url.theme_get_setting('footer_image_bg_2', 'webup');
+	}else{
+		$variables['footer_image_bg_2'] = '';
+	}
+	//header_social_networks
+	$header_social_networks = theme_get_setting('header_social_networks', 'webup');
+	if(isset($header_social_networks) && !empty($header_social_networks)){
+		$variables['header_social_networks'] = $header_social_networks;
+	}
+	//header_phone_contact
+	$header_phone_contact = theme_get_setting('header_phone_contact', 'webup');
+	if(isset($header_phone_contact) && !empty($header_phone_contact)){
+		$variables['header_phone_contact'] = $header_phone_contact;
+	}
+	//header_email_contact
+	$header_email_contact = theme_get_setting('header_email_contact', 'webup');
+	if(isset($header_email_contact) && !empty($header_email_contact)){
+		$variables['header_email_contact'] = $header_email_contact;
+	}
+	//copyright_text
+	$copyright_text = theme_get_setting('copyright_text', 'webup');
+	if(isset($copyright_text) && !empty($copyright_text)){
+		$variables['copyright_text'] = $copyright_text;
+	}
+	//contact
+	$contact_style = theme_get_setting('contact_style', 'webup');
+	if(isset($contact_style) && !empty($contact_style)){
+		$variables['contact_style'] = $contact_style;
+	}else{
+		$variables['contact_style'] = 'style1';
+	}
+	$contact_content = theme_get_setting('contact_content', 'webup');
+	if(isset($contact_content) && !empty($contact_content)){
+		$variables['contact_content'] = $contact_content;
+	}
+	if(!empty(theme_get_setting('contact_page_header_bg', 'webup'))){
+		$variables['contact_page_header_bg'] = $base_url.theme_get_setting('contact_page_header_bg', 'webup');
+	}else{
+		$variables['contact_page_header_bg'] = '';
+	}
+	if(!empty(theme_get_setting('other_page_header_bg', 'webup'))){
+		$variables['other_page_header_bg'] = $base_url.theme_get_setting('other_page_header_bg', 'webup');
+	}else{
+		$variables['other_page_header_bg'] = '';
+	}
+	
+}
+	
+
+function webup_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  	if($form_id == 'search_block_form'){
+	  	//unset($form['search_block_form']['#title']); // remove label form
+	    //kint($form['#attributes']);
+	    $form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-primary', 'btn-white');
+	    $form['actions']['submit']['#value'] = t('Search'); // Change the text on the submit button
+	    $form['keys']['#attributes']['placeholder'] = 'Enter Search Term';
+	    //print_r($form);
+    }elseif(preg_match("/simplenews_subscriptions_block/", $form_id)){
+    	//kint($form['actions']['unsubscribe']);
+	    $form['#attributes']['class'] = array('mailchimp');
+	   	$form['actions']['subscribe']['#attributes']['class'] = array('btn', 'text-capitalize');
+	   	$form['actions']['unsubscribe']['#attributes']['class'] = array('btn', 'text-capitalize');
+	   	$form['actions']['update']['#attributes']['class'] = array('btn', 'text-capitalize');
+	   	$form['mail']['widget'][0]['value']['#placeholder'] = t('Type Your Email Account');
+	   	$form['mail']['widget'][0]['value']['#attributes']['placeholder'] = t('Type Your Email Account');
+	   	$form['mail']['widget'][0]['value']['#attributes']['class'] = array('form-control');
+	   	unset($form['mail']['widget'][0]['value']['#description']);
+	   	unset($form['mail']['widget'][0]['value']['#title']);
+    }
+}
+function webup_preprocess_container(&$variables){
+	$variables['container_type'] = $variables['element']['#type'];
+}
+function webup_preprocess_views_view(&$variables){
+	/*$theme = \Drupal::theme()->getActiveTheme()->getName();
+	if(!empty(theme_get_setting('shop_page_style', 're'))){
+		$variables['shop_page_style'] = theme_get_setting('shop_page_style', 're');
+	}else{
+		$variables['shop_page_style'] = '3cols';
+	}*/
+
+  	//$variables['blog_sidebar'] = theme_get_setting('sidebar', $theme);
+  	//$variables['blog_layout'] = theme_get_setting('layout', $theme);
+}
+function webup_breadcrumb($variables){
+	$request = \Drupal::request();
+	if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+		$current_title = \Drupal::service('title_resolver')->getTitle($request, $route);
+	}
+	$breadcrumb = $variables['breadcrumb'];
+
+  	$output = '';
+  	if (!empty($breadcrumb)) {
+    	foreach ($breadcrumb as $crumb) {
+    		if($crumb['url']){
+    			$output .= '<li><a href="'.$crumb['url'].'">'.$crumb['text'].'</a></li>';
+			
+			}else{
+				$output .= '<li>'.$crumb['text'].'</li>';
+			}
+    		
+    	}
+    	$output .= '<li class="active">'.render($current_title).'</li>';
+  	}
+  return $output;
+}
+/*function webup_form_uc_cart_view_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+	//kint($form);
+	foreach($form['items'] as $k => $v){
+		if(is_numeric($k)){
+			$form['items'][$k]['remove']['#attributes']['class'] = array('btn', 'btn-secondary','btn-remove-small');
+		}	
+	}
+	//$form['actions']['checkout']['#attributes']['class'] = array('');
+	//unset($form['items']['#footer']);
+	unset($form['actions']['continue_shopping']);
+	$form['actions']['update']['#attributes']['class'] = array('btn', 'btn-secondary', 'btn-filled');
+	$form['actions']['checkout']['checkout']['#attributes']['class'] = array('btn', 'btn-primary');
+	//$form['actions']['checkout']['checkout']['#attributes']['id'] = t('cart-checkout-comets');
+}
+/*function webup_form_uc_cart_checkout_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+	$form['#attributes']['id'] = t('page-checkout-comets');
+	$form['actions']['continue']['#attributes']['class'] =  array('btn', 'btn-primary');
+	$form['actions']['cancel']['#attributes']['class'] = array('btn', 'btn-secondary', 'btn-filled');
+}
+function webup_preprocess_views_view_field(&$variables){
+	//$variables['theme_path'] = base_path().drupal_get_path('theme', 're');
+	//kint($variables);
+}
+/*function webup_form_uc_product_add_to_cart_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+	//kint($form);
+	//$form['#attributes']['class'] = array('inline-form');
+	//$form['qty']['#attributes']['class'] = array('form-control');
+	$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-primary');
+	//unset($form['qty']['#title']);
+}
+/*function webup_preprocess_uc_cart_block(&$vars){
+	global $base_url;
+
+	$arr_image = array();
+	foreach($vars['items'] as $k => $v){
+		$node = node_load($v['nid']);
+    	$fid = $node->uc_product_image->getValue()[0]['target_id'];
+		$uri = file_load($fid)->uri->value;
+		$url = file_create_url($uri);
+		$arr_image[$k] = $url;
+	}
+	
+	if(isset($arr_image) && !empty($arr_image)){
+		$vars['arr_image'] = $arr_image;
+	}else{
+		$vars['arr_image'] = '';
+	}
+	$vars['summary_links']['#links']['view-cart']['attributes']['class'] = array('btn', 'btn-primary');
+	$vars['summary_links']['#links']['checkout']['attributes']['class'] = array('btn', 'btn-secondary', 'pull-right');
+	$str = render($vars['summary_links'])->__toString();
+	$vars['summary_links_cs'] = strip_tags($str,'<a>');
+	
+}
+*/
+function webup_form_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+	if($form['#theme'][0] != 'comment_form__node__product__field_product_comment'){
+		//$form['#attributes']['class'] = array('comment-form');
+		$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-control');
+		$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Subject');
+		$form['author']['name']['#attributes']['class'] = array('form-control');
+		$form['author']['name']['#attributes']['placeholder'] = t('Your Name');
+		$form['field_email_comment']['widget'][0]['value']['#placeholder']= t('Your Email');
+		$form['field_email_comment']['widget'][0]['value']['#attributes']['class']= array('form-control');
+		$form['comment_body']['widget'][0]['#attributes']['class'] = array('form-control');
+		$form['comment_body']['widget'][0]['#attributes']['placeholder'] = t('Your Message');
+		unset($form['subject']['widget'][0]['value']['#title']);
+		unset($form['author']['name']['#title']);
+		unset($form['author']['name']['#title']);
+		unset($form['field_email_comment']['widget'][0]['value']['#title']);
+		unset($form['comment_body']['widget'][0]['#title']);
+		unset($form['comment_body']['widget'][0]['#format']);
+
+		$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-primary', 'pull-right');
+		$form['actions']['submit']['#attributes']['value'] = t('Reply');
+
+		unset($form['actions']['preview']);
+		
+	}else{
+		//$form['#attributes']['class'] = array('comment-form');
+		$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-control');
+		$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Subject');
+		$form['author']['name']['#attributes']['class'] = array('form-control');
+		$form['field_email_comment']['widget'][0]['value']['#placeholder']= t('Email');
+		$form['field_email_comment']['widget'][0]['value']['#attributes']['class']= array('form-control');
+		$form['author']['name']['#attributes']['placeholder'] = t('Name');
+		$form['comment_body']['widget'][0]['#attributes']['class'] = array('form-control', 'form-group');
+		$form['comment_body']['widget'][0]['#attributes']['placeholder'] = t('Comment');
+		unset($form['subject']['widget'][0]['value']['#title']);
+		unset($form['author']['name']['#title']);
+		unset($form['field_email_comment']['widget'][0]['value']['#title']);
+		unset($form['comment_body']['widget'][0]['#title']);
+		unset($form['comment_body']['widget'][0]['#format']);
+		$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-theme');
+		$form['actions']['submit']['#attributes']['value'] = t('Submit Comment');
+		unset($form['actions']['preview']);
+	}
+}
+function webup_form_contact_message_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+	$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-control', 'col-md-4');
+	unset($form['subject']['widget'][0]['value']['#title']);
+	$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Subject');
+	$form['message']['widget'][0]['value']['#attributes']['class'] = array('form-control');
+	unset($form['message']['widget'][0]['value']['#title']);
+	$form['message']['widget'][0]['value']['#attributes']['placeholder'] = t('Your Message');
+	$form['message']['widget'][0]['value']['#attributes']['rows'] = t('2');
+	$form['mail']['#attributes']['class'] = array('form-control', 'col-md-4');
+	$form['mail']['#attributes']['placeholder'] = t('Your Email');
+	unset($form['mail']['#title']);
+	$form['name']['#attributes']['class'] = array('form-control','col-md-4');
+	$form['name']['#attributes']['placeholder'] = t('Your Name');
+	unset($form['name']['#title']);
+	$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-primary', 'mt30', 'btn-white', 'pull-right');
+	$form['actions']['submit']['#attributes']['value'] = t('Submit');
+	unset($form['actions']['preview']);
+}
+function webup_page_attachments_alter(&$page) {
+  //$page['#attached']['library'][] = 'webup/webup/webup-lib';
+
+}

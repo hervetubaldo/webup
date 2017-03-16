@@ -5,7 +5,7 @@ use Drupal\system\Form\ThemeSettingsForm;
 use Drupal\file\Entity\File;
 use Drupal\Core\Url;
 
-function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state) {
+function webup_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state) {
   //header  
     $form['settings'] = array(
         '#type' => 'details',
@@ -31,12 +31,12 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
         ),
       '#required' => FALSE,
       '#title' => t('Header style'),
-      '#default_value' => theme_get_setting('header_style', 'komplet'),
+      '#default_value' => theme_get_setting('header_style', 'webup'),
     );
     $form['settings']['header']['logo_image'] = array(
         '#type' => 'details',
         '#title' => t('Logo'),
-        '#default_value' => theme_get_setting('logo_image', 'komplet'),
+        '#default_value' => theme_get_setting('logo_image', 'webup'),
     );
     $form['settings']['header']['logo_image']['logo_image_header_bg'] = array(
       '#type' => 'textfield',
@@ -59,17 +59,17 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
     $form['settings']['header']['header_social_networks'] = array(
       '#type' => 'textarea',
       '#title' => t('Social networks'),
-      '#default_value' => theme_get_setting('header_social_networks', 'komplet'),
+      '#default_value' => theme_get_setting('header_social_networks', 'webup'),
     );
     $form['settings']['header']['header_phone_contact'] = array(
       '#type' => 'textfield',
       '#title' => t('Phone contact'),
-      '#default_value' => theme_get_setting('header_phone_contact', 'komplet'),
+      '#default_value' => theme_get_setting('header_phone_contact', 'webup'),
     );
     $form['settings']['header']['header_email_contact'] = array(
       '#type' => 'textfield',
       '#title' => t('Email contact'),
-      '#default_value' => theme_get_setting('header_email_contact', 'komplet'),
+      '#default_value' => theme_get_setting('header_email_contact', 'webup'),
     );
     //print_r($form['settings']['header']['second_logo']);
     $form['settings']['general_setting'] = array(
@@ -81,7 +81,7 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
     $form['settings']['general_setting']['general_setting_tracking_code'] = array(
         '#type' => 'textarea',
         '#title' => t('Tracking Code'),
-        '#default_value' => theme_get_setting('general_setting_tracking_code', 'komplet'),
+        '#default_value' => theme_get_setting('general_setting_tracking_code', 'webup'),
     );
    
   // Blog settings
@@ -103,7 +103,7 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
           'grid_3_column' => t('Grid 3 columns'),
           'traditional' => t('Traditional')
       ),
-      '#default_value' => theme_get_setting('blog_layout', 'komplet'),
+      '#default_value' => theme_get_setting('blog_layout', 'webup'),
     );
     $form['settings']['blog']['blog_listing']['blog_sidebar'] = array(
       '#type' => 'select',
@@ -113,7 +113,7 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
           'left' => t('Left'),
           'right' => t('Right'),
         ),
-      '#default_value' => theme_get_setting('blog_sidebar', 'komplet'),
+      '#default_value' => theme_get_setting('blog_sidebar', 'webup'),
     );
     $form['settings']['blog']['blog_listing']['bg_wp'] = array(
       '#type' => 'details',
@@ -276,12 +276,12 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
         ),
       '#required' => FALSE,
       '#title' => t('Contact style'),
-      '#default_value' => theme_get_setting('contact_style', 'komplet'),
+      '#default_value' => theme_get_setting('contact_style', 'webup'),
     );
     $form['settings']['contact_page']['contact_content'] = array(
       '#type' => 'textarea',
       '#title' => t('Body'),
-      '#default_value' => theme_get_setting('contact_content', 'komplet'),
+      '#default_value' => theme_get_setting('contact_content', 'webup'),
     );
     $form['settings']['contact_page']['contact_page_header_bg'] = array(
       '#type' => 'textfield',
@@ -334,7 +334,7 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
     $form['settings']['custom_css']['custom_css'] = array(
       '#type' => 'textarea',
       '#title' => t('Custom CSS'),
-      '#default_value' => theme_get_setting('custom_css', 'komplet'),
+      '#default_value' => theme_get_setting('custom_css', 'webup'),
       '#description'  => t('<strong>Example:</strong><br/>h1 { font-family: \'Metrophobic\', Arial, serif; font-weight: 400; }')
     );
   //footer settings
@@ -355,7 +355,7 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
         ),
       '#required' => FALSE,
       '#title' => t('Footer style'),
-      '#default_value' => theme_get_setting('footer_style', 'komplet'),
+      '#default_value' => theme_get_setting('footer_style', 'webup'),
     );
     $form['settings']['footer']['footer_image'] = array(
       '#type' => 'details',
@@ -404,7 +404,7 @@ function komplet_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
     $form['settings']['footer']['copyright_text'] = array(
       '#type' => 'textarea',
       '#title' => t('Copyright text'),
-      '#default_value' => theme_get_setting('copyright_text', 'komplet'),
+      '#default_value' => theme_get_setting('copyright_text', 'webup'),
     );
   //page setting     
     $form['settings']['page'] = array(

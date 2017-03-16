@@ -1,0 +1,6 @@
+name: Naviteam komplet
+description: Import libraries
+core: 8.x
+package: NaviSystem
+type: module
+datestamp: 9460579341

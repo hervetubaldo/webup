@@ -31,7 +31,7 @@
 		        <div class="backstretch-overlay"></div>
 		        <div class="container vertical-center">
 		            <div class="intro-text vertical-center text-left smoothie">
-		                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+		                <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</h1>
 		                <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span></div>
 		                {% if node.field_button_video.0.value %}
 			            {{ node.field_button_video.0.value|t }}
@@ -40,14 +40,14 @@
 		        </div>
 		    </header>
 		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched fullheight agency-slider backstretch-overlay-alt komplet-section-portfolio-single">
+			<header id="headerwrap" class="backstretched fullheight agency-slider backstretch-overlay-alt webup-section-portfolio-single">
 				{% for img in node.field_header_background_homepage %}
 	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+	                <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
 	            {% endfor %}
 			    <div class="container vertical-center">
 			        <div class="intro-text vertical-center text-left smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+			            <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 			            {% if node.field_button.0.value %}
 			            {{ node.field_button.0.value|t }}
@@ -65,7 +65,7 @@
 		        <div class="backstretch-overlay"></div>
 		        <div class="container vertical-center">
 			        <div class="intro-text vertical-center text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+			            <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</h1>
 			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate"{{ node.field_text_rotate_video.0.value }}</span></div>
 			            {% if node.field_button_video.0.value %}
 			            {{ node.field_button_video.0.value|t }}
@@ -74,14 +74,14 @@
 			    </div>
 		    </header>
 		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched special-max-height no-overlay komplet-section-portfolio-single">
+			<header id="headerwrap" class="backstretched special-max-height no-overlay webup-section-portfolio-single">
 				{% for img in node.field_header_background_homepage %}
 	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+	                <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
 	            {% endfor %}
 			    <div class="container vertical-center">
 			        <div class="intro-text vertical-center text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+			            <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 			            {% if node.field_button.0.value %}
 			            {{ node.field_button.0.value|t }}
@@ -100,7 +100,7 @@
 		        <div class="container">
 			        <div class="intro-text vertical-center text-right smoothie">
 			            <div class="col-sm-6">
-			                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+			                <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</h1>
 			                <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span></div>
 			                {% if node.field_button_video.0.value %}
 				            {{ node.field_button_video.0.value|t }}
@@ -110,15 +110,15 @@
 			    </div>
 		    </header>
 		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched no-overlay fullheight komplet-section-portfolio-single">
+			<header id="headerwrap" class="backstretched no-overlay fullheight webup-section-portfolio-single">
 				{% for img in node.field_header_background_homepage %}
 	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+	                <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
 	            {% endfor %}
 			    <div class="container">
 			        <div class="intro-text vertical-center text-right smoothie">
 			            <div class="col-sm-6">
-			                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+			                <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 			                <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 			                {% if node.field_button.0.value %}
 				            {{ node.field_button.0.value|t }}
@@ -137,7 +137,7 @@
 		        <div class="backstretch-overlay"></div>
 		        <div class="container vertical-center">
 			        <div class="intro-text text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+			            <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</h1>
 			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span></div>
 			            {% if node.field_button_video.0.value %}
 			            {{ node.field_button_video.0.value|t }}
@@ -146,14 +146,14 @@
 			    </div>
 		    </header>
 		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched no-overlay fullheight komplet-section-portfolio-single">
+			<header id="headerwrap" class="backstretched no-overlay fullheight webup-section-portfolio-single">
 				{% for img in node.field_header_background_homepage %}
 	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+	                <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
 	            {% endfor %}
 			    <div class="container vertical-center">
 			        <div class="intro-text text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+			            <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 			            {% if node.field_button.0.value %}
 			            {{ node.field_button.0.value|t }}
@@ -171,7 +171,7 @@
 		        <div class="backstretch-overlay"></div>
 		        <div class="container vertical-center">
 				    <div class="intro-text vertical-center text-left smoothie">
-				        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+				        <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 				        <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 				        {% if node.field_button.0.value %}
 			            {{ node.field_button.0.value|t }}
@@ -180,14 +180,14 @@
 				</div>
 		    </header>
 		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched fullheight komplet-section-portfolio-single">
+			<header id="headerwrap" class="backstretched fullheight webup-section-portfolio-single">
 				{% for img in node.field_header_background_homepage %}
 	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+	                <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
 	            {% endfor %}
 				<div class="container vertical-center">
 				    <div class="intro-text vertical-center text-left smoothie">
-				        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+				        <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 				        <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 				        {% if node.field_button.0.value %}
 			            {{ node.field_button.0.value|t }}
@@ -205,7 +205,7 @@
 		        <div class="backstretch-overlay"></div>
 		        <div class="container vertical-center">
 				    <div class="intro-text vertical-center text-left smoothie">
-				        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+				        <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 				        <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 				        {% if node.field_button.0.value %}
 			            {{ node.field_button.0.value|t }}
@@ -214,14 +214,14 @@
 				</div>
 		    </header>
 		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched fullheight no-overlay komplet-section-portfolio-single">
+			<header id="headerwrap" class="backstretched fullheight no-overlay webup-section-portfolio-single">
 				{% for img in node.field_header_background_homepage %}
 	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
+	                <div class="hidden webup-bg-get-src" data-bg-src="{{ image_url }}"></div>
 	            {% endfor %}
 	            <div class="container vertical-center">
 	                <div class="intro-text vertical-center text-left smoothie">
-	                    <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+	                    <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</h1>
 	                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
 	                    {% if node.field_button.0.value %}
 			            {{ node.field_button.0.value|t }}

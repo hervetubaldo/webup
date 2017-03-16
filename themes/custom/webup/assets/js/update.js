@@ -3,12 +3,12 @@ jQuery(document).ready(function($) {
     'use strict';
     var arr_src = new Array();
     var i = 0;
-    $('.komplet-section-portfolio-single > .komplet-bg-get-src').each(function() {
+    $('.webup-section-portfolio-single > .webup-bg-get-src').each(function() {
         arr_src[i] = $(this).attr('data-bg-src');
         i++;
 
     });
-    if($('.komplet-section-portfolio-single > .komplet-bg-get-src').length){
+    if($('.webup-section-portfolio-single > .webup-bg-get-src').length){
         $('#headerwrap').backstretch(arr_src, {
             duration: 8000,
             fade: 500
@@ -53,7 +53,7 @@ jQuery(document).ready(function() {
         }, 1000);
     }
     var j = 0;
-    jQuery('#menu-tabs > .komplet-tab-item').each(function() {
+    jQuery('#menu-tabs > .webup-tab-item').each(function() {
 
         
         tab_item[j] = $(this).attr('data-id');
@@ -63,20 +63,20 @@ jQuery(document).ready(function() {
     });
     for(var i = 0; i < tab_item.length; i++){
 
-        jQuery('#komplet-content-av-wrapper .tab-content').append('<div class="tab-pane fade in" id="'+tab_item[i]+'" role="tabpanel"><div class="tab-inner"><div class="row"></div></div></div>');
+        jQuery('#webup-content-av-wrapper .tab-content').append('<div class="tab-pane fade in" id="'+tab_item[i]+'" role="tabpanel"><div class="tab-inner"><div class="row"></div></div></div>');
     }
     
     for(var i = 0; i < tab_item.length; i++){
-        jQuery('#komplet-content-av > .'+tab_item[i]).each(function() {
+        jQuery('#webup-content-av > .'+tab_item[i]).each(function() {
             var _content = jQuery(this).html();
-            jQuery('#komplet-content-av-wrapper > .tab-content #'+tab_item[i]+' .tab-inner > .row').append(_content);
+            jQuery('#webup-content-av-wrapper > .tab-content #'+tab_item[i]+' .tab-inner > .row').append(_content);
         });
 
     }
 
-    jQuery('#menu-tabs > .komplet-tab-item').first().addClass('active');
-    jQuery('#komplet-content-av-wrapper > #tabs-collapse > .tab-pane').first().addClass('active');
-    jQuery('#komplet-content-av').remove();
+    jQuery('#menu-tabs > .webup-tab-item').first().addClass('active');
+    jQuery('#webup-content-av-wrapper > #tabs-collapse > .tab-pane').first().addClass('active');
+    jQuery('#webup-content-av').remove();
 
     jQuery("ul.dropdown-menu").find('> li.dropdown-submenu').click(
         function(e) { 

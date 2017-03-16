@@ -5,7 +5,7 @@
 jQuery(document).ready(function($){
 
     'use strict';
-    var komplet_theme_path = $('#komplet-theme-path').attr('data-komplet-theme-path');
+    var webup_theme_path = $('#webup-theme-path').attr('data-webup-theme-path');
     // SLIDERS
     /*jQuery('#headerwrap.agency-slider').backstretch([
         "assets/img/agency/hero1.jpg",
@@ -126,12 +126,12 @@ jQuery(document).ready(function($){
             markers: [{     
                 latitude:40.7566,
                 longitude: -73.9863,
-            icon: { image: komplet_theme_path+"/assets/img/marker.png",
+            icon: { image: webup_theme_path+"/assets/img/marker.png",
                 iconsize: [44,44],
                 iconanchor: [12,46],
                 infowindowanchor: [12, 0] } }],
             icon: { 
-                image: komplet_theme_path+"/assets/img/marker.png", 
+                image: webup_theme_path+"/assets/img/marker.png", 
                 iconsize: [26, 46],
                 iconanchor: [12, 46],
                 infowindowanchor: [12, 0] },
@@ -252,12 +252,12 @@ jQuery(document).ready(function($){
         markers: [{     
             latitude:40.7566,
             longitude: -73.9863,
-        icon: { image: komplet_theme_path+"/assets/img/marker.png",
+        icon: { image: webup_theme_path+"/assets/img/marker.png",
             iconsize: [44,44],
             iconanchor: [12,46],
             infowindowanchor: [12, 0] } }],
         icon: { 
-            image: komplet_theme_path+"/assets/img/marker.png", 
+            image: webup_theme_path+"/assets/img/marker.png", 
             iconsize: [26, 46],
             iconanchor: [12, 46],
             infowindowanchor: [12, 0] },

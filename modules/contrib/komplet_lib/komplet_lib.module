@@ -1,0 +1,5 @@
+<?php
+function komplet_lib_preprocess_html(&$variables){
+  	//$variables['#attached']['library'][] = 'komplet_lib/komplet-lib';
+  	//kint($variables['#attached']);
+}
