@@ -2406,3 +2406,18 @@ footer.white-wrapper .social-links li a {
 .demo-selector .masonry-portfolio-item {
     margin-bottom: 30px;
 }
+
+
+/**  FRONT PAGE  **/
+.path-frontpage h3 {
+    margin: 50px 0 0;
+}
+
+section#welcome .wrapper-img {
+    text-align: right;
+}
+
+section#welcome .wrapper-img img {
+    width: auto;
+    display: inline;
+}

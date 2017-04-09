@@ -58,7 +58,11 @@
 	</ul>
 {% elseif region == 'section' %}
 	<section{{ attributes }}>
-	    {{ title_suffix }}
+        {{ title_prefix }}
+        {% if label %}
+			<h3 class="widget-title text-center">{{ label }}</h3>
+        {% endif %}
+        {{ title_suffix }}
 	    {% if content %}
 	      {{ content }}
 	    {% endif %}

@@ -1,5 +1,6 @@
 <?php
 global $base_url;
+use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -404,9 +405,9 @@ function webup_preprocess_node(&$vars) {
 }
 function webup_preprocess_html(&$variables){
 	global $base_url;
-  	$theme = \Drupal::theme()->getActiveTheme()->getName();
-  	$variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
-  	$variables['custom_css'] = theme_get_setting('custom_css', $theme);
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
+  $variables['custom_css'] = theme_get_setting('custom_css', $theme);
 	$variables['theme_path'] = drupal_get_path('theme', $theme);
 	$site_name = \Drupal::config('system.site')->get('name');
 	$variables['site_name'] = $site_name;	
@@ -417,8 +418,13 @@ function webup_preprocess_html(&$variables){
 		$variables['googlemaps'] = $googlemaps;
 	}
 
-  	$variables['#attached']['library'][] = 'webup/webup-lib';
-  	//kint($variables['#attached']);
+  $variables['#attached']['library'][] = 'webup/webup-lib';
+  //kint($variables['#attached']);
+
+  $path_class = !$variables['root_path'] ? 'path-frontpage' : 'path-' . Html::getClass($variables['root_path']);
+  if (isset($path_class)) {
+    $variables['attributes']['class'][] = $path_class;
+  }
 }
 function webup_preprocess_field(&$variables){
 	/*if ($node = \Drupal::routeMatch()->getParameter('node')) {
