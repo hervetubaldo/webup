@@ -8,10 +8,10 @@
 	        {{ content.body }}
 	    </div>
 	    <div class="col-sm-3">
-	        <p><strong>DATE:</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	        <p><strong>CLIENT:</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	        <p><strong>TAGS:</strong> {{ content.field_tags_portfolio }}</p>
-	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll">Visit Project</a></p>
+	        <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
+	        <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
+	        <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
+	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
 	    </div>
 	</div>
 {% elseif portfolio_format == 'carousel' %}
@@ -20,10 +20,10 @@
 	        {{ content.body }}
 	    </div>
 	    <div class="col-sm-3">
-	        <p><strong>DATE:</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	        <p><strong>CLIENT:</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	        <p><strong>TAGS:</strong> {{ content.field_tags_portfolio }}</p>
-	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll">Visit Project</a></p>
+	        <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
+	        <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
+	        <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
+	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
 	    </div>
 	</div>
 {% elseif portfolio_format == 'video' %}
@@ -36,10 +36,10 @@
 	            {{ content.body }}
 	        </div>
 	        <div class="col-sm-3">
-	            <p><strong>DATE:</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	            <p><strong>CLIENT:</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	            <p><strong>TAGS:</strong> {{ content.field_tags_portfolio }}</p>
-	            <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll">Visit Project</a></p>
+	            <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
+	            <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
+	            <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
+	            <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
 	        </div>
 	    </div>
 	</div>
@@ -54,10 +54,10 @@
 	            {{ content.body }}
 	        </div>
 	        <div class="col-sm-3">
-	            <p><strong>DATE:</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	            <p><strong>CLIENT:</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	            <p><strong>TAGS:</strong> {{ content.field_tags_portfolio }}</p>
-	            <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll">Visit Project</a></p>
+	            <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
+	            <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
+	            <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
+	            <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
 	        </div>
 	    </div>
 	</div>
@@ -67,10 +67,10 @@
 	        {{ content.body }}
 	    </div>
 	    <div class="col-sm-3">
-	        <p><strong>DATE:</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	        <p><strong>CLIENT:</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	        <p><strong>TAGS:</strong> {{ content.field_tags_portfolio }}</p>
-	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll">Visit Project</a></p>
+	        <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
+	        <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
+	        <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
+	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
 	    </div>
 	</div>
 {% endif %}

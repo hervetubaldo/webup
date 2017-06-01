@@ -894,7 +894,9 @@ section {
 }
 
 #headerwrap.opaqued {
-    background-color: rgba(68, 34, 69, 0.9);
+    /*background-color: rgba(68, 34, 69, 0.9);*/
+    background-color: rgba(0, 0, 0, 0.9);
+    /*background-color: #86AD1A;*/
 }
 
 .remove-opacqued-bg .dark-opaqued {

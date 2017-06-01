@@ -316,7 +316,7 @@ function webup_preprocess(&$variables){
 										        <div class="overlay-item-caption smoothie"></div>
 										        <div class="hover-item-caption smoothie">
 										            <div class="vertical-center smoothie">
-										                <a href="'.$node_url.'" class="smoothie btn btn-primary">View</a>
+										                <a href="'.$node_url.'" class="smoothie btn btn-primary">' . t("Voir") . '</a>
 										            </div>
 										        </div>
 										    </div>
@@ -726,13 +726,13 @@ function webup_form_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterf
 	if($form['#theme'][0] != 'comment_form__node__product__field_product_comment'){
 		//$form['#attributes']['class'] = array('comment-form');
 		$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-control');
-		$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Subject');
+		$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Sujet');
 		$form['author']['name']['#attributes']['class'] = array('form-control');
-		$form['author']['name']['#attributes']['placeholder'] = t('Your Name');
-		$form['field_email_comment']['widget'][0]['value']['#placeholder']= t('Your Email');
+		$form['author']['name']['#attributes']['placeholder'] = t('Votre nom');
+		$form['field_email_comment']['widget'][0]['value']['#placeholder']= t('Votre e-mail');
 		$form['field_email_comment']['widget'][0]['value']['#attributes']['class']= array('form-control');
 		$form['comment_body']['widget'][0]['#attributes']['class'] = array('form-control');
-		$form['comment_body']['widget'][0]['#attributes']['placeholder'] = t('Your Message');
+		$form['comment_body']['widget'][0]['#attributes']['placeholder'] = t('Votre message');
 		unset($form['subject']['widget'][0]['value']['#title']);
 		unset($form['author']['name']['#title']);
 		unset($form['author']['name']['#title']);
@@ -741,46 +741,46 @@ function webup_form_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterf
 		unset($form['comment_body']['widget'][0]['#format']);
 
 		$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-primary', 'pull-right');
-		$form['actions']['submit']['#attributes']['value'] = t('Reply');
+		$form['actions']['submit']['#attributes']['value'] = t('Répondre');
 
 		unset($form['actions']['preview']);
 		
 	}else{
 		//$form['#attributes']['class'] = array('comment-form');
 		$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-control');
-		$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Subject');
+		$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Sujet');
 		$form['author']['name']['#attributes']['class'] = array('form-control');
-		$form['field_email_comment']['widget'][0]['value']['#placeholder']= t('Email');
+		$form['field_email_comment']['widget'][0]['value']['#placeholder']= t('E-mail');
 		$form['field_email_comment']['widget'][0]['value']['#attributes']['class']= array('form-control');
-		$form['author']['name']['#attributes']['placeholder'] = t('Name');
+		$form['author']['name']['#attributes']['placeholder'] = t('Nom');
 		$form['comment_body']['widget'][0]['#attributes']['class'] = array('form-control', 'form-group');
-		$form['comment_body']['widget'][0]['#attributes']['placeholder'] = t('Comment');
+		$form['comment_body']['widget'][0]['#attributes']['placeholder'] = t('Commentaire');
 		unset($form['subject']['widget'][0]['value']['#title']);
 		unset($form['author']['name']['#title']);
 		unset($form['field_email_comment']['widget'][0]['value']['#title']);
 		unset($form['comment_body']['widget'][0]['#title']);
 		unset($form['comment_body']['widget'][0]['#format']);
 		$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-theme');
-		$form['actions']['submit']['#attributes']['value'] = t('Submit Comment');
+		$form['actions']['submit']['#attributes']['value'] = t('Soumettre mon commentaire');
 		unset($form['actions']['preview']);
 	}
 }
 function webup_form_contact_message_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
 	$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-control', 'col-md-4');
 	unset($form['subject']['widget'][0]['value']['#title']);
-	$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Subject');
+	$form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t('Sujet');
 	$form['message']['widget'][0]['value']['#attributes']['class'] = array('form-control');
 	unset($form['message']['widget'][0]['value']['#title']);
-	$form['message']['widget'][0]['value']['#attributes']['placeholder'] = t('Your Message');
+	$form['message']['widget'][0]['value']['#attributes']['placeholder'] = t('Votre message');
 	$form['message']['widget'][0]['value']['#attributes']['rows'] = t('2');
 	$form['mail']['#attributes']['class'] = array('form-control', 'col-md-4');
-	$form['mail']['#attributes']['placeholder'] = t('Your Email');
+	$form['mail']['#attributes']['placeholder'] = t('Votre e-mail');
 	unset($form['mail']['#title']);
 	$form['name']['#attributes']['class'] = array('form-control','col-md-4');
-	$form['name']['#attributes']['placeholder'] = t('Your Name');
+	$form['name']['#attributes']['placeholder'] = t('Votre nom');
 	unset($form['name']['#title']);
 	$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-primary', 'mt30', 'btn-white', 'pull-right');
-	$form['actions']['submit']['#attributes']['value'] = t('Submit');
+	$form['actions']['submit']['#attributes']['value'] = t('Envoyer');
 	unset($form['actions']['preview']);
 }
 function webup_page_attachments_alter(&$page) {
