@@ -1,0 +1,185 @@
+{% set imageoneURL = file_url(node.field_blog_image.0.entity.uri.value) %}
+{% set user_name = node.getRevisionAuthor().name.value %}
+{% set full_name = node.getRevisionAuthor().field_full_name.value %}
+{% set single_sidebar = node.field_default_sidebar.0.value %}
+    {% if single_sidebar == '' %}
+        {% set single_sidebar = 'left' %}
+    {% endif %}
+{% set blog_format = node.field_blog_format.0.value %}
+    {% if blog_format == '' %}
+        {% set blog_format = 'fullwidth' %}
+    {% endif %}
+{% set comment_c = node.field_blog_comments.comment_count %}
+{% if page %}
+    {% if blog_format == 'thin' %}
+    	<div id="post-content" class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
+    	    <div class="row">
+    	        <div class="col-sm-12 single-post-content">
+    	            {{ content.body }}
+                    {{ content.field_attached_files }}<br /><br />
+
+    	            <div data-easyshare>
+
+                        <!-- Facebook -->
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-facebook-button">
+                            <span>{{ "Share"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-tweet-button">
+                            <span>{{ "Tweet"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <!-- {{ "Google+"|t }} -->
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="webup-button-share webup-google-button">
+                            <span>{{ "Google+"|t }}</span>
+                        </button>
+                    </div>
+    	        </div>
+    	    </div>
+    	</div>
+
+    	<div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
+    	    <div class="mt60 mb50 single-section-title">
+    	        <h3>{% if comment_count <= 1 %}{{ comment_c }} {{ "comment"|t }}{% else %}{{ comment_c }} {{ "comments"|t }}{% endif %}</h3>
+    	    </div>
+    	    {{ content.field_blog_comments }}
+    	</div>
+    {% elseif blog_format == 'fullwidth' %}
+    	<div id="post-content" class="col-sm-12 blog-item mb60 wow">
+    	    <div class="row">
+    	        <div class="col-sm-12 single-post-content">
+    	            {{ content.body }}
+                    {{ content.field_attached_files }}<br /><br />
+
+    	            <div data-easyshare>
+
+                        <!-- Facebook -->
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-facebook-button">
+                            <span>{{ "Share"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-tweet-button">
+                            <span>{{ "Tweet"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <!-- {{ "Google+"|t }} -->
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="webup-button-share webup-google-button">
+                            <span>{{ "Google+"|t }}</span>
+                        </button>
+                    </div>
+    	        </div>
+    	    </div>
+    	</div>
+
+    	<div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
+    	    <div class="mt60 mb50 single-section-title">
+    	        <h3>{% if comment_count <= 1 %}{{ comment_c }} {{ "comment"|t }}{% else %}{{ comment_c }} {{ "comments"|t }}{% endif %}</h3>
+    	    </div>
+    	    {{ content.field_blog_comments }}
+    	</div>
+    {% else %}
+    	{% if single_sidebar == 'left' %}
+            <div class="row">
+                <div class="col-sm-12 single-post-content">
+                    {{ content.body }}<br />
+                    {{ content.field_attached_files }}<br /><br />
+
+                    <div data-easyshare>
+
+                        <!-- Facebook -->
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-facebook-button">
+                            <span>{{ "Share"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-tweet-button">
+                            <span>{{ "Tweet"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <!-- {{ "Google+"|t }} -->
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="webup-button-share webup-google-button">
+                            <span>{{ "Google+"|t }}</span>
+                        </button>
+                    </div>
+                    <div id="comments-list" class="gap wow">
+                        <div class="mt60 mb50 single-section-title">
+                            <h3>{% if comment_count <= 1 %}{{ comment_c }} {{ "comment"|t }}{% else %}{{ comment_c }} {{ "comments"|t }}{% endif %}</h3>
+                        </div>
+                        {{ content.field_blog_comments }}
+                    </div>
+                </div>
+            </div>
+    	{% else %}
+            <div class="row">
+                <div class="col-sm-12 single-post-content">
+                    {{ content.body }}
+                    {{ content.field_attached_files }}<br /><br />
+
+                    <div data-easyshare>
+
+                        <!-- Facebook -->
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-facebook-button">
+                            <span>{{ "Share"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="webup-button-share webup-tweet-button">
+                            <span>{{ "Tweet"|t }}</span>
+                        </button>
+                        <span class="webup-share"></span>
+                        <!-- {{ "Google+"|t }} -->
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="webup-button-share webup-google-button">
+                            <span>{{ "Google+"|t }}</span>
+                        </button>
+                    </div>
+                    <div id="comments-list" class="gap wow">
+                        <div class="mt60 mb50 single-section-title">
+                            <h3>{% if comment_count <= 1 %}{{ comment_c }} {{ "comment"|t }}{% else %}{{ comment_c }} {{ "comments"|t }}{% endif %}</h3>
+                        </div>
+                        {{ content.field_blog_comments }}
+                    </div>
+                </div>
+            </div>
+    	{% endif %}
+    {% endif %}
+{% elseif vcname == 'blog_categories' %}
+    <div class="col-sm-6 blog-item mb100 wow match-height">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="hover-item mb30">
+                    <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+                    <div class="overlay-item-caption smoothie"></div>
+                    <div class="hover-item-caption smoothie">
+                        <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary page-scroll" title="view article"> {{ "View"|t }}</a></h3>
+                    </div>
+                </div>
+                <h2 class="post-title">{{ node.getTitle() }}</h2>
+                <div class="item-metas text-muted mb30">
+                    <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
+                    <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>
+                </div>
+                <p>{{ node.body.summary|length > 308 ? node.body.summary|slice(0,307) ~ '...' : node.body.summary }}</p>
+                <a class="btn btn-primary mt30" href="{{ url }}">{{ "Read More"|t }}</a>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="col-sm-6 blog-item mb100 wow match-height">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="hover-item mb30">
+                    <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+                    <div class="overlay-item-caption smoothie"></div>
+                    <div class="hover-item-caption smoothie">
+                        <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary page-scroll" title="view article"> {{ "View"|t }}</a></h3>
+                    </div>
+                </div>
+                <h2 class="post-title">{{ node.getTitle() }}</h2>
+                <div class="item-metas text-muted mb30">
+                    <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
+                    <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>
+                </div>
+                <p>{{ node.body.summary|length > 308 ? node.body.summary|slice(0,307) ~ '...' : node.body.summary }}</p>
+                <a class="btn btn-primary mt30" href="{{ url }}">{{ "Read More"|t }}</a>
+            </div>
+        </div>
+    </div>
+{% endif %}

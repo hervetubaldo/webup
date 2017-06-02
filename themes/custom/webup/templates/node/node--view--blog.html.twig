@@ -1,0 +1,92 @@
+
+{% set imageoneURL = file_url(node.field_blog_image.0.entity.uri.value) %}
+{% set user_name = node.getRevisionAuthor().name.value %}
+{% set full_name = node.getRevisionAuthor().field_full_name.value %}
+{% if blog_layout == 'grid_2_column' %}
+	<div class="col-sm-6 blog-item mb100 wow match-height">
+	    <div class="row">
+	        <div class="col-xs-12">
+	            <div class="hover-item mb30">
+	                <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+	                <div class="overlay-item-caption smoothie"></div>
+	                <div class="hover-item-caption smoothie">
+	                    <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary" title="{{ node.getTitle() }}"> {{ "View"|t }}</a></h3>
+	                </div>
+	            </div>
+	            <h2 class="post-title">{{ node.getTitle() }}</h2>
+	            <div class="item-metas text-muted mb30">
+	                <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
+	                <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>
+	            </div>
+	            <p>{{ node.body.summary|length > 308 ? node.body.summary|slice(0,307) ~ '...' : node.body.summary }}</p>
+	            <a class="btn btn-primary mt30" href="{{ url }}">{{ "Read More"|t }}</a>
+	        </div>
+	    </div>
+	</div>
+{% elseif blog_layout == 'grid_3_column' %}
+	<div class="col-sm-4 blog-item mb100 wow match-height">
+	    <div class="row">
+	        <div class="col-xs-12">
+	            <div class="hover-item mb30">
+	                <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+	                <div class="overlay-item-caption smoothie"></div>
+	                <div class="hover-item-caption smoothie">
+	                    <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary" title="{{ node.getTitle() }}"> {{ "View"|t }}</a></h3>
+	                </div>
+	            </div>
+	            <h2 class="post-title">{{ node.getTitle() }}</h2>
+	            <div class="item-metas text-muted mb30">
+	                <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
+	                <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>
+	            </div>
+	            <p>{{ node.body.summary|length > 308 ? node.body.summary|slice(0,307) ~ '...' : node.body.summary }}</p>
+	            <a class="btn btn-primary mt30" href="{{ url }}">{{ "Read More"|t }}</a>
+	        </div>
+	    </div>
+	</div>
+{% else %}
+	{% if listing_sidebar == 'right' %}
+		<div class="col-sm-12 blog-item mb100 wow match-height">
+		    <div class="row">
+		        <div class="col-xs-12">
+		            <div class="hover-item mb30">
+		                <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+		                <div class="overlay-item-caption smoothie"></div>
+		                <div class="hover-item-caption smoothie">
+		                    <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary" title="{{ node.getTitle() }}"> {{ "View"|t }}</a></h3>
+		                </div>
+		            </div>
+		            <h2 class="post-title">{{ node.getTitle() }}</h2>
+		            <div class="item-metas text-muted mb30">
+		                <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
+		                <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>
+		            </div>
+		            <p>{{ node.body.summary|length > 308 ? node.body.summary|slice(0,307) ~ '...' : node.body.summary }}</p>
+		            <a class="btn btn-primary mt30" href="{{ url }}">{{ "Read More"|t }}</a>
+		        </div>
+		    </div>
+		</div>
+	{% elseif listing_sidebar == 'left' %}
+	{% else %}
+		<div class="col-sm-10 col-sm-offset-1 blog-item mb100 wow match-height">
+		    <div class="row">
+		        <div class="col-xs-12">
+		            <div class="hover-item mb30">
+		                <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+		                <div class="overlay-item-caption smoothie"></div>
+		                <div class="hover-item-caption smoothie">
+		                    <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary" title="{{ node.getTitle() }}"> {{ "View"|t }}</a></h3>
+		                </div>
+		            </div>
+		            <h2 class="post-title">{{ node.getTitle() }}</h2>
+		            <div class="item-metas text-muted mb30">
+		                <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
+		                <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>
+		            </div>
+		            <p>{{ node.body.summary|length > 308 ? node.body.summary|slice(0,307) ~ '...' : node.body.summary }}</p>
+		            <a class="btn btn-primary mt30" href="{{ url }}">{{ "Read More"|t }}</a>
+		        </div>
+		    </div>
+		</div>
+	{% endif %}
+{% endif %}	

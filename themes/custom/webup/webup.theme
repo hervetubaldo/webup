@@ -617,7 +617,7 @@ function webup_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_sta
 	    //kint($form['#attributes']);
 	    $form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-primary', 'btn-white');
 	    $form['actions']['submit']['#value'] = t('Search'); // Change the text on the submit button
-	    $form['keys']['#attributes']['placeholder'] = 'Enter Search Term';
+	    $form['keys']['#attributes']['placeholder'] = t('Enter Search Term');
 	    //print_r($form);
     }elseif(preg_match("/simplenews_subscriptions_block/", $form_id)){
     	//kint($form['actions']['unsubscribe']);

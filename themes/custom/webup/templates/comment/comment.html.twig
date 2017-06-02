@@ -1,0 +1,14 @@
+<div class="media comment-author-webup">
+    <div class="pull-left">
+        {{ user_picture }}
+    </div>
+    <div class="media-body">
+        <div class="well">
+            <div class="media-heading">
+                <span class="heading-font">{{ author }}</span>&nbsp; <small>{{ new_indicator_timestamp|date('d/m/Y') }}</small>
+            </div>
+            <p>{{ content.comment_body }}</p>
+            {{ content.links }}
+        </div>
+    </div>
+</div>
