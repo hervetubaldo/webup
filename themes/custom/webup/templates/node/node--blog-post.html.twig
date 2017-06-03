@@ -151,7 +151,7 @@
                         <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary page-scroll" title="view article"> {{ "View"|t }}</a></h3>
                     </div>
                 </div>
-                <h2 class="post-title">{{ node.getTitle() }}</h2>
+                <h2 class="post-title"><a href="{{ url }}">{{ node.getTitle() }}</a></h2>
                 <div class="item-metas text-muted mb30">
                     <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
                     <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>
@@ -172,7 +172,7 @@
                         <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary page-scroll" title="view article"> {{ "View"|t }}</a></h3>
                     </div>
                 </div>
-                <h2 class="post-title">{{ node.getTitle() }}</h2>
+                <h2 class="post-title"><a href="{{ url }}">{{ node.getTitle() }}</a></h2>
                 <div class="item-metas text-muted mb30">
                     <span class="meta-item"><i class="pe-icon pe-7s-folder"></i> {{ "POSTED IN"|t }} <span>{{ content.field_categories }}</span></span>
                     <span class="meta-item"><i class="pe-icon pe-7s-user"></i> {{ "AUTHOR"|t }} <span>{% if full_name %}{{ full_name }}{% else %}{{ user_name }}{% endif %}</span></span>

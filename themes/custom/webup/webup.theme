@@ -1,6 +1,7 @@
 <?php
 global $base_url;
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -204,6 +205,7 @@ function webup_preprocess(&$variables){
 			$n = 0;
 			$term_path = array();
 			$count_cate = count($node->field_categories);
+
 			foreach ($node->field_categories as $k => $v) {
 				$path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/taxonomy/term/'.$v->entity->tid->value);
 				$path_alias_cs = ltrim($path_alias,'/');
@@ -786,4 +788,55 @@ function webup_form_contact_message_form_alter(&$form, \Drupal\Core\Form\FormSta
 function webup_page_attachments_alter(&$page) {
   //$page['#attached']['library'][] = 'webup/webup/webup-lib';
 
+}
+
+/**
+ * Prepares variables for individual search result templates.
+ *
+ * Default template: search-result.html.twig
+ *
+ * @param array $variables
+ *   An array with the following elements:
+ *   - result: Individual search result.
+ *   - plugin_id: Plugin the search results came from.
+ *   - title_prefix: Additional output populated by modules, intended to be
+ *     displayed in front of the main title tag that appears in the template.
+ *   - title_suffix: Additional output populated by modules, intended to be
+ *     displayed after the main title tag that appears in the template.
+ *   - title_attributes: HTML attributes for the title.
+ *   - content_attributes: HTML attributes for the content.
+ */
+function webup_preprocess_search_result(&$variables) {
+  $language_interface = \Drupal::languageManager()->getCurrentLanguage();
+
+  $result = $variables['result'];
+  $variables['url'] = UrlHelper::stripDangerousProtocols($result['link']);
+  $variables['title'] = $result['title'];
+  if (isset($result['language']) && $result['language'] != $language_interface->getId() && $result['language'] != LanguageInterface::LANGCODE_NOT_SPECIFIED) {
+    $variables['title_attributes']['lang'] = $result['language'];
+    $variables['content_attributes']['lang'] = $result['language'];
+  }
+
+  $info = array();
+  if (!empty($result['plugin_id'])) {
+    $info['plugin_id'] = $result['plugin_id'];
+  }
+  if (!empty($result['user'])) {
+    $info['user'] = $result['user'];
+  }
+  if (!empty($result['date'])) {
+    $info['date'] = format_date($result['date'], 'short');
+  }
+  if (isset($result['extra']) && is_array($result['extra'])) {
+    $info = array_merge($info, $result['extra']);
+  }
+  // Check for existence. User search does not include snippets.
+  $variables['snippet'] = isset($result['snippet']) ? $result['snippet'] : '';
+  // Provide separated and grouped meta information..
+  $variables['info_split'] = $info;
+  $variables['info'] = ''; /*array(
+    '#type' => 'inline_template',
+    '#template' => '{{ info|safe_join(" - ") }}',
+    '#context' => array('info' => $info),
+  );*/
 }

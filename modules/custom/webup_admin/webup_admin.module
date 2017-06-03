@@ -1,0 +1,11 @@
+<?php
+/**
+ * Created by Hervé Tubaldo <herve.tubaldo@webup.fr>
+ * Date: 02/06/2017
+ * Time: 16:57
+ */
+
+
+function webup_admin_form_search_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  unset($form['help_link']);
+}

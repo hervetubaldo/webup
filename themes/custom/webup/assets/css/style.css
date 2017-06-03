@@ -2453,10 +2453,24 @@ section#welcome .wrapper-img img {
     -o-filter: none;
 }
 
+
+
 .captcha summary {
     display: none;
 }
 
 .captcha {
     margin-top: 30px;
+}
+
+
+
+
+#sliding-popup .popup-content #popup-text h2,
+#sliding-popup .popup-content #popup-text p {
+    font-size: 12px;
+}
+
+#edit-comment-body-wrapper #edit-comment-body-0-format {
+    display: none;
 }
