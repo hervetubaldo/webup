@@ -15,7 +15,7 @@
     	<div id="post-content" class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
     	    <div class="row">
     	        <div class="col-sm-12 single-post-content">
-    	            {{ content.body }}
+    	            {{ content.field_contenu }}
                     {{ content.field_attached_files }}<br /><br />
 
     	            <div data-easyshare>
@@ -48,7 +48,7 @@
     	<div id="post-content" class="col-sm-12 blog-item mb60 wow">
     	    <div class="row">
     	        <div class="col-sm-12 single-post-content">
-    	            {{ content.body }}
+    	            {{ content.field_contenu }}
                     {{ content.field_attached_files }}<br /><br />
 
     	            <div data-easyshare>
@@ -81,7 +81,7 @@
     	{% if single_sidebar == 'left' %}
             <div class="row">
                 <div class="col-sm-12 single-post-content">
-                    {{ content.body }}<br />
+                    {{ content.field_contenu }}<br />
                     {{ content.field_attached_files }}<br /><br />
 
                     <div data-easyshare>
@@ -111,7 +111,7 @@
     	{% else %}
             <div class="row">
                 <div class="col-sm-12 single-post-content">
-                    {{ content.body }}
+                    {{ content.field_contenu }}
                     {{ content.field_attached_files }}<br /><br />
 
                     <div data-easyshare>

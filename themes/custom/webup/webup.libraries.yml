@@ -17,5 +17,8 @@ webup-lib:
     'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyADngpeLqyhsEwowaMQio9LbZ3jEK3qJnE': {}
     assets/js/init.js: {}
     assets/js/update.js: {}
+    assets/js/scrollreveal.min.js: {}
+    assets/js/global.js: {}
+    assets/js/global-scroll.js: {}
   dependencies:
     - core/jquery
