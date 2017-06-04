@@ -1,19 +1,20 @@
 <div class="master-wrapper">
 
     {% if setting_header == 'style2' %}
-      {% include theme_path ~ "/templates/header/header-2.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-2.html.twig" %}
     {% elseif setting_header == 'style3' %}
-      {% include theme_path ~ "/templates/header/header-3.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-3.html.twig" %}
     {% elseif setting_header == 'style4' %}
-      {% include theme_path ~ "/templates/header/header-4.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-4.html.twig" %}
     {% elseif setting_header == 'style5' %}
-      {% include theme_path ~ "/templates/header/header-5.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-5.html.twig" %}
     {% elseif setting_header == 'style6' %}
-      {% include theme_path ~ "/templates/header/header-6.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-6.html.twig" %}
     {% else %}
-      {% include theme_path ~ "/templates/header/header-1.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-1.html.twig" %}
     {% endif %}
-    <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ other_page_header_bg }}" data-speed="0.7">
+    <section class="dark-wrapper opaqued parallax" data-parallax="scroll"
+             data-image-src="{{ other_page_header_bg }}" data-speed="0.7">
         <div class="section-inner pad-top-200">
             <div class="container">
                 <div class="row">
@@ -25,34 +26,35 @@
         </div>
     </section>
     <section>
-      <div class="section-inner webup-user-page webup-search-page">
-          <div class="container">
-              <div class="row">
-                  <div id="post-content" class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
-                      <div class="row">
-                          <div class="col-sm-12 single-post-content">
-                            {{ page.content_full_bar }}
-                            {{ page.content }}
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+        <div class="section-inner webup-user-page webup-search-page">
+            <div class="container">
+                <div class="row">
+                    <div id="post-content"
+                         class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
+                        <div class="row">
+                            <div class="col-sm-12 single-post-content">
+                                {{ page.content_full_bar }}
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     {% if setting_footer == 'style2' %}
-      {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
     {% elseif setting_footer == 'style3' %}
-      {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
     {% elseif setting_footer == 'style4' %}
-      {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
     {% elseif setting_footer == 'style5' %}
-      {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
     {% elseif setting_footer == 'style6' %}
-      {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
     {% else %}
-      {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
     {% endif %}
 
 </div>

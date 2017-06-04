@@ -12,71 +12,78 @@
 {% set comment_c = node.field_blog_comments.comment_count %}
 {% if page %}
     {% if blog_format == 'thin' %}
-    	<div id="post-content" class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
-    	    <div class="row">
-    	        <div class="col-sm-12 single-post-content">
-    	            {{ content.body }}
+        <div id="post-content"
+             class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
+            <div class="row">
+                <div class="col-sm-12 single-post-content">
+                    {{ content.body }}
 
-    	            <div data-easyshare>
+                    <div data-easyshare>
 
                         <!-- Facebook -->
-                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-facebook-button">
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-facebook-button">
                             <span>Share</span>
                         </button>
                         <span class="komplet-share"></span>
-                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-tweet-button">
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-tweet-button">
                             <span>Tweet</span>
                         </button>
                         <span class="komplet-share"></span>
                         <!-- Google+ -->
-                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="komplet-button-share komplet-google-button">
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;"
+                                class="komplet-button-share komplet-google-button">
                             <span>Google+</span>
                         </button>
                     </div>
-    	        </div>
-    	    </div>
-    	</div>
+                </div>
+            </div>
+        </div>
 
-    	<div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
-    	    <div class="mt60 mb50 single-section-title">
-    	        <h3>{% if comment_count == 1 %}{{ comment_c }} comment{% else %}{{ comment_c }} comments{% endif %}</h3>
-    	    </div>
-    	    {{ content.field_blog_comments }}
-    	</div>
+        <div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
+            <div class="mt60 mb50 single-section-title">
+                <h3>{% if comment_count == 1 %}{{ comment_c }} comment{% else %}{{ comment_c }} comments{% endif %}</h3>
+            </div>
+            {{ content.field_blog_comments }}
+        </div>
     {% elseif blog_format == 'fullwidth' %}
-    	<div id="post-content" class="col-sm-12 blog-item mb60 wow">
-    	    <div class="row">
-    	        <div class="col-sm-12 single-post-content">
-    	            {{ content.body }}
+        <div id="post-content" class="col-sm-12 blog-item mb60 wow">
+            <div class="row">
+                <div class="col-sm-12 single-post-content">
+                    {{ content.body }}
 
-    	            <div data-easyshare>
+                    <div data-easyshare>
 
                         <!-- Facebook -->
-                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-facebook-button">
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-facebook-button">
                             <span>Share</span>
                         </button>
                         <span class="komplet-share"></span>
-                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-tweet-button">
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-tweet-button">
                             <span>Tweet</span>
                         </button>
                         <span class="komplet-share"></span>
                         <!-- Google+ -->
-                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="komplet-button-share komplet-google-button">
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;"
+                                class="komplet-button-share komplet-google-button">
                             <span>Google+</span>
                         </button>
                     </div>
-    	        </div>
-    	    </div>
-    	</div>
+                </div>
+            </div>
+        </div>
 
-    	<div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
-    	    <div class="mt60 mb50 single-section-title">
-    	        <h3>{% if comment_count == 1 %}{{ comment_c }} comment{% else %}{{ comment_c }} comments{% endif %}</h3>
-    	    </div>
-    	    {{ content.field_blog_comments }}
-    	</div>
+        <div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
+            <div class="mt60 mb50 single-section-title">
+                <h3>{% if comment_count == 1 %}{{ comment_c }} comment{% else %}{{ comment_c }} comments{% endif %}</h3>
+            </div>
+            {{ content.field_blog_comments }}
+        </div>
     {% else %}
-    	{% if single_sidebar == 'left' %}
+        {% if single_sidebar == 'left' %}
             <div class="row">
                 <div class="col-sm-12 single-post-content">
                     {{ content.body }}
@@ -84,16 +91,19 @@
                     <div data-easyshare>
 
                         <!-- Facebook -->
-                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-facebook-button">
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-facebook-button">
                             <span>Share</span>
                         </button>
                         <span class="komplet-share"></span>
-                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-tweet-button">
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-tweet-button">
                             <span>Tweet</span>
                         </button>
                         <span class="komplet-share"></span>
                         <!-- Google+ -->
-                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="komplet-button-share komplet-google-button">
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;"
+                                class="komplet-button-share komplet-google-button">
                             <span>Google+</span>
                         </button>
                     </div>
@@ -105,7 +115,7 @@
                     </div>
                 </div>
             </div>
-    	{% else %}
+        {% else %}
             <div class="row">
                 <div class="col-sm-12 single-post-content">
                     {{ content.body }}
@@ -113,16 +123,19 @@
                     <div data-easyshare>
 
                         <!-- Facebook -->
-                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-facebook-button">
+                        <button onClick="window.open('http://www.facebook.com/sharer.php?u={{ pageURL }}','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-facebook-button">
                             <span>Share</span>
                         </button>
                         <span class="komplet-share"></span>
-                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="komplet-button-share komplet-tweet-button">
+                        <button onClick="window.open('http://twitter.com/share?url={{ pageURL }}&amp;text={{ title }}','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;"
+                                class="komplet-button-share komplet-tweet-button">
                             <span>Tweet</span>
                         </button>
                         <span class="komplet-share"></span>
                         <!-- Google+ -->
-                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" class="komplet-button-share komplet-google-button">
+                        <button onClick="window.open('https://plus.google.com/share?url={{ pageURL }}','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;"
+                                class="komplet-button-share komplet-google-button">
                             <span>Google+</span>
                         </button>
                     </div>
@@ -134,17 +147,21 @@
                     </div>
                 </div>
             </div>
-    	{% endif %}
+        {% endif %}
     {% endif %}
 {% elseif vcname == 'blog_categories' %}
     <div class="col-sm-6 blog-item mb100 wow match-height">
         <div class="row">
             <div class="col-xs-12">
                 <div class="hover-item mb30">
-                    <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+                    <img src="{{ imageoneURL }}" class="img-responsive smoothie"
+                         alt="{{ node.getTitle() }}">
                     <div class="overlay-item-caption smoothie"></div>
                     <div class="hover-item-caption smoothie">
-                        <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary page-scroll" title="view article">View</a></h3>
+                        <h3 class="vertical-center smoothie"><a href="{{ url }}"
+                                                                class="smoothie btn btn-primary page-scroll"
+                                                                title="view article">View</a>
+                        </h3>
                     </div>
                 </div>
                 <h2 class="post-title">{{ node.getTitle() }}</h2>
@@ -162,10 +179,14 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="hover-item mb30">
-                    <img src="{{ imageoneURL }}" class="img-responsive smoothie" alt="{{ node.getTitle() }}">
+                    <img src="{{ imageoneURL }}" class="img-responsive smoothie"
+                         alt="{{ node.getTitle() }}">
                     <div class="overlay-item-caption smoothie"></div>
                     <div class="hover-item-caption smoothie">
-                        <h3 class="vertical-center smoothie"><a href="{{ url }}" class="smoothie btn btn-primary page-scroll" title="view article">View</a></h3>
+                        <h3 class="vertical-center smoothie"><a href="{{ url }}"
+                                                                class="smoothie btn btn-primary page-scroll"
+                                                                title="view article">View</a>
+                        </h3>
                     </div>
                 </div>
                 <h2 class="post-title">{{ node.getTitle() }}</h2>

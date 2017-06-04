@@ -6,8 +6,8 @@
 /////             /////    /////
 /////    /////    /////    /////
 /////    /////    /////    /////
-         /////    /////
-         /////    /////
+/////    /////
+/////    /////
 /////    /////    /////    /////
 /////    /////    /////    /////
 /////    /////    /////    /////
@@ -28,7 +28,7 @@
   var sr
   var _requestAnimationFrame
 
-  function ScrollReveal (config) {
+  function ScrollReveal(config) {
     // Support instantiation without the `new` keyword.
     if (typeof this === 'undefined' || Object.getPrototypeOf(this) !== ScrollReveal.prototype) {
       return new ScrollReveal(config)
@@ -79,7 +79,7 @@
     delay: 0,
 
     // Starting angles in degrees, will transition from these values to 0 in all axes.
-    rotate: { x: 0, y: 0, z: 0 },
+    rotate: {x: 0, y: 0, z: 0},
 
     // Starting opacity value, before transitioning to the computed opacity.
     opacity: 0,
@@ -115,15 +115,19 @@
     // e.g. Set `{ top: 48 }`, if you have a 48px tall fixed toolbar.
     // --
     // Visual Aid: https://scrollrevealjs.org/assets/viewoffset.png
-    viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
+    viewOffset: {top: 0, right: 0, bottom: 0, left: 0},
 
     // Callbacks that fire for each triggered element reveal, and reset.
-    beforeReveal: function (domEl) {},
-    beforeReset: function (domEl) {},
+    beforeReveal: function (domEl) {
+    },
+    beforeReset: function (domEl) {
+    },
 
     // Callbacks that fire for each completed element reveal, and reset.
-    afterReveal: function (domEl) {},
-    afterReset: function (domEl) {}
+    afterReveal: function (domEl) {
+    },
+    afterReset: function (domEl) {
+    }
   }
 
   /**
@@ -278,7 +282,7 @@
    * ---------------
    */
 
-  function _resolveContainer (config) {
+  function _resolveContainer(config) {
     if (config && config.container) {
       if (typeof config.container === 'string') {
         return window.document.documentElement.querySelector(config.container)
@@ -301,7 +305,7 @@
    *
    * @return {array} elements to be revealed.
    */
-  function _getRevealElements (target, container) {
+  function _getRevealElements(target, container) {
     if (typeof target === 'string') {
       return Array.prototype.slice.call(container.querySelectorAll(target))
     } else if (sr.tools.isNode(target)) {
@@ -316,11 +320,11 @@
    * A consistent way of creating unique IDs.
    * @returns {number}
    */
-  function _nextUid () {
+  function _nextUid() {
     return ++sr.uid
   }
 
-  function _configure (elem, config, container) {
+  function _configure(elem, config, container) {
     // If a container was passed as a part of the config object,
     // let’s overwrite it with the resolved container passed in.
     if (config.container) config.container = container
@@ -342,7 +346,7 @@
     }
   }
 
-  function _style (elem) {
+  function _style(elem) {
     var computed = window.getComputedStyle(elem.domEl)
 
     if (!elem.styles) {
@@ -385,7 +389,7 @@
     _generateTransform(elem)
   }
 
-  function _generateTransition (elem, delay) {
+  function _generateTransition(elem, delay) {
     var config = elem.config
 
     return '-webkit-transition: ' + elem.styles.computed.transition +
@@ -405,7 +409,7 @@
       delay / 1000 + 's; '
   }
 
-  function _generateTransform (elem) {
+  function _generateTransform(elem) {
     var config = elem.config
     var cssDistance
     var transform = elem.styles.transform
@@ -444,7 +448,7 @@
     transform.target += '; opacity: ' + elem.styles.computed.opacity + ';'
   }
 
-  function _updateStore (elem) {
+  function _updateStore(elem) {
     var container = elem.config.container
 
     // If this element’s container isn’t already in the store, let’s add it.
@@ -456,7 +460,7 @@
     sr.store.elements[elem.id] = elem
   }
 
-  function _record (target, config, interval) {
+  function _record(target, config, interval) {
     // Save the `reveal()` arguments that triggered this `_record()` call, so we
     // can re-trace our steps when calling the `sync()` method.
     var record = {
@@ -467,7 +471,7 @@
     sr.history.push(record)
   }
 
-  function _init () {
+  function _init() {
     if (sr.isSupported()) {
       // Initial animate call triggers valid reveal animations on first load.
       // Subsequent animate calls are made inside the event handler.
@@ -490,11 +494,11 @@
     return sr
   }
 
-  function _handler () {
+  function _handler() {
     _requestAnimationFrame(_animate)
   }
 
-  function _setActiveSequences () {
+  function _setActiveSequences() {
     var active
     var elem
     var elemId
@@ -519,7 +523,7 @@
     })
   }
 
-  function _animate () {
+  function _animate() {
     var delayed
     var elem
 
@@ -574,7 +578,7 @@
     })
   }
 
-  function _queueNextInSequence (elem, delayed) {
+  function _queueNextInSequence(elem, delayed) {
     var elapsed = 0
     var delay = 0
     var sequence = sr.sequences[elem.sequence.id]
@@ -595,7 +599,7 @@
     }
 
     // Start a new timer.
-    elem.sequence.timer = { started: new Date() }
+    elem.sequence.timer = {started: new Date()}
     elem.sequence.timer.clock = window.setTimeout(function () {
       // Sequence interval has passed, so unblock the sequence and re-run the handler.
       sequence.blocked = false
@@ -604,7 +608,7 @@
     }, Math.abs(sequence.interval) + delay - elapsed)
   }
 
-  function _queueCallback (type, elem, delayed) {
+  function _queueCallback(type, elem, delayed) {
     var elapsed = 0
     var duration = 0
     var callback = 'after'
@@ -632,7 +636,7 @@
     }
 
     // Start a new timer.
-    elem.timer = { started: new Date() }
+    elem.timer = {started: new Date()}
     elem.timer.clock = window.setTimeout(function () {
       // The timer completed, so let’s fire the callback and null the timer.
       elem.config[callback](elem.domEl)
@@ -640,48 +644,41 @@
     }, duration - elapsed)
   }
 
-  function _shouldReveal (elem) {
+  function _shouldReveal(elem) {
     if (elem.sequence) {
       var sequence = sr.sequences[elem.sequence.id]
-      return sequence.active &&
-        !sequence.blocked &&
-        !elem.revealing &&
-        !elem.disabled
+      return sequence.active && !sequence.blocked && !elem.revealing && !elem.disabled
     }
-    return _isElemVisible(elem) &&
-      !elem.revealing &&
-      !elem.disabled
+    return _isElemVisible(elem) && !elem.revealing && !elem.disabled
   }
 
-  function _shouldUseDelay (elem) {
+  function _shouldUseDelay(elem) {
     var config = elem.config.useDelay
     return config === 'always' ||
       (config === 'onload' && !sr.initialized) ||
       (config === 'once' && !elem.seen)
   }
 
-  function _shouldReset (elem) {
+  function _shouldReset(elem) {
     if (elem.sequence) {
       var sequence = sr.sequences[elem.sequence.id]
       return !sequence.active &&
         elem.config.reset &&
-        elem.revealing &&
-        !elem.disabled
+        elem.revealing && !elem.disabled
     }
     return !_isElemVisible(elem) &&
       elem.config.reset &&
-      elem.revealing &&
-      !elem.disabled
+      elem.revealing && !elem.disabled
   }
 
-  function _getContainer (container) {
+  function _getContainer(container) {
     return {
       width: container.clientWidth,
       height: container.clientHeight
     }
   }
 
-  function _getScrolled (container) {
+  function _getScrolled(container) {
     // Return the container scroll values, plus the its offset.
     if (container && container !== window.document.documentElement) {
       var offset = _getOffset(container)
@@ -698,11 +695,11 @@
     }
   }
 
-  function _getOffset (domEl) {
+  function _getOffset(domEl) {
     var offsetTop = 0
     var offsetLeft = 0
 
-      // Grab the element’s dimensions.
+    // Grab the element’s dimensions.
     var offsetHeight = domEl.offsetHeight
     var offsetWidth = domEl.offsetWidth
 
@@ -727,13 +724,13 @@
     }
   }
 
-  function _isElemVisible (elem) {
+  function _isElemVisible(elem) {
     var offset = _getOffset(elem.domEl)
     var container = _getContainer(elem.config.container)
     var scrolled = _getScrolled(elem.config.container)
     var vF = elem.config.viewFactor
 
-      // Define the element geometry.
+    // Define the element geometry.
     var elemHeight = offset.height
     var elemWidth = offset.width
     var elemTop = offset.top
@@ -743,7 +740,7 @@
 
     return confirmBounds() || isPositionFixed()
 
-    function confirmBounds () {
+    function confirmBounds() {
       // Define the element’s functional boundaries using its view factor.
       var top = elemTop + elemHeight * vF
       var left = elemLeft + elemWidth * vF
@@ -762,7 +759,7 @@
         right < viewRight
     }
 
-    function isPositionFixed () {
+    function isPositionFixed() {
       return (window.getComputedStyle(elem.domEl).position === 'fixed')
     }
   }
@@ -772,7 +769,8 @@
    * ---------
    */
 
-  function Tools () {}
+  function Tools() {
+  }
 
   Tools.prototype.isObject = function (object) {
     return object !== null && typeof object === 'object' && object.constructor === Object
@@ -782,8 +780,8 @@
     return typeof window.Node === 'object'
       ? object instanceof window.Node
       : object && typeof object === 'object' &&
-        typeof object.nodeType === 'number' &&
-        typeof object.nodeName === 'string'
+      typeof object.nodeType === 'number' &&
+      typeof object.nodeName === 'string'
   }
 
   Tools.prototype.isNodeList = function (object) {
@@ -793,9 +791,9 @@
     return typeof window.NodeList === 'object'
       ? object instanceof window.NodeList
       : object && typeof object === 'object' &&
-        regex.test(prototypeToString) &&
-        typeof object.length === 'number' &&
-        (object.length === 0 || this.isNode(object[0]))
+      regex.test(prototypeToString) &&
+      typeof object.length === 'number' &&
+      (object.length === 0 || this.isNode(object[0]))
   }
 
   Tools.prototype.forOwn = function (object, callback) {

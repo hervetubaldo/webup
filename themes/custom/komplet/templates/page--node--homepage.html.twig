@@ -1,238 +1,304 @@
 {% set slider_type = node.field_slider_type.0.value %}
 {% if slider_type == '' %}
-	{% set slider_type = 'style1' %}
+    {% set slider_type = 'style1' %}
 {% endif %}
 {% set slider_format = node.field_slider_format.0.value %}
 {% if slider_format == '' %}
-	{% set slider_format = 'slider_image' %}
+    {% set slider_format = 'slider_image' %}
 {% endif %}
 <div class="master-wrapper">
-	{% set header_style = node.field_header_style.0.value %}
-	{% if header_style == '' %}
-		{% set header_style = 'style1' %}
-	{% endif %}
+    {% set header_style = node.field_header_style.0.value %}
+    {% if header_style == '' %}
+        {% set header_style = 'style1' %}
+    {% endif %}
     {% if header_style == 'style2' %}
-		{% include theme_path ~ "/templates/header/header-2.html.twig" %}
-	{% elseif header_style == 'style3' %}
-		{% include theme_path ~ "/templates/header/header-3.html.twig" %}
-	{% elseif header_style == 'style4' %}
-		{% include theme_path ~ "/templates/header/header-4.html.twig" %}
-	{% elseif header_style == 'style5' %}
-		{% include theme_path ~ "/templates/header/header-5.html.twig" %}
-	{% elseif header_style == 'style6' %}
-		{% include theme_path ~ "/templates/header/header-6.html.twig" %}
-	{% else %}
-		{% include theme_path ~ "/templates/header/header-1.html.twig" %}
-	{% endif %}
-	{% if slider_type == 'style1' %}
-		{% if slider_format == 'slider_video' %}
-		    <header id="headerwrap" class="fullheight background--dark">
-		        <div id="BigVideo" class="player" data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
-		        <div class="backstretch-overlay"></div>
-		        <div class="container vertical-center">
-		            <div class="intro-text vertical-center text-left smoothie">
-		                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
-		                <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span></div>
-		                {% if node.field_button_video.0.value %}
-			            {{ node.field_button_video.0.value|t }}
-			            {% endif %}
-		            </div>
-		        </div>
-		    </header>
-		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched fullheight agency-slider backstretch-overlay-alt komplet-section-portfolio-single">
-				{% for img in node.field_header_background_homepage %}
-	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
-	            {% endfor %}
-			    <div class="container vertical-center">
-			        <div class="intro-text vertical-center text-left smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-			            {% if node.field_button.0.value %}
-			            {{ node.field_button.0.value|t }}
-			            {% endif %}
-			        </div>
-			    </div>
-			</header>
-		{% else %}
-			{{ page.slider }}
-		{% endif %}
-	{% elseif slider_type == 'style2' %}
-		{% if slider_format == 'slider_video' %}
-			<header id="headerwrap" class="fullheight background--dark">
-		        <div id="BigVideo" class="player" data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
-		        <div class="backstretch-overlay"></div>
-		        <div class="container vertical-center">
-			        <div class="intro-text vertical-center text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
-			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate"{{ node.field_text_rotate_video.0.value }}</span></div>
-			            {% if node.field_button_video.0.value %}
-			            {{ node.field_button_video.0.value|t }}
-			            {% endif %}
-			        </div>
-			    </div>
-		    </header>
-		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched special-max-height no-overlay komplet-section-portfolio-single">
-				{% for img in node.field_header_background_homepage %}
-	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
-	            {% endfor %}
-			    <div class="container vertical-center">
-			        <div class="intro-text vertical-center text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-			            {% if node.field_button.0.value %}
-			            {{ node.field_button.0.value|t }}
-			            {% endif %}
-			        </div>
-			    </div>
-			</header>
-		{% else %}
-			{{ page.slider }}
-		{% endif %}
-	{% elseif slider_type == 'style3' %}
-		{% if slider_format == 'slider_video' %}
-			<header id="headerwrap" class="fullheight background--dark">
-		        <div id="BigVideo" class="player" data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
-		        <div class="backstretch-overlay"></div>
-		        <div class="container">
-			        <div class="intro-text vertical-center text-right smoothie">
-			            <div class="col-sm-6">
-			                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
-			                <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span></div>
-			                {% if node.field_button_video.0.value %}
-				            {{ node.field_button_video.0.value|t }}
-				            {% endif %}
-			            </div>
-			        </div>
-			    </div>
-		    </header>
-		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched no-overlay fullheight komplet-section-portfolio-single">
-				{% for img in node.field_header_background_homepage %}
-	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
-	            {% endfor %}
-			    <div class="container">
-			        <div class="intro-text vertical-center text-right smoothie">
-			            <div class="col-sm-6">
-			                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-			                <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-			                {% if node.field_button.0.value %}
-				            {{ node.field_button.0.value|t }}
-				            {% endif %}
-			            </div>
-			        </div>
-			    </div>
-			</header>
-		{% else %}
-			{{ page.slider }}
-		{% endif %}
-	{% elseif slider_type == 'style4'%}
-		{% if slider_format == 'slider_video' %}
-			<header id="headerwrap" class="fullheight background--dark">
-		        <div id="BigVideo" class="player" data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
-		        <div class="backstretch-overlay"></div>
-		        <div class="container vertical-center">
-			        <div class="intro-text text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
-			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }} <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span></div>
-			            {% if node.field_button_video.0.value %}
-			            {{ node.field_button_video.0.value|t }}
-			            {% endif %}
-			        </div>
-			    </div>
-		    </header>
-		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched no-overlay fullheight komplet-section-portfolio-single">
-				{% for img in node.field_header_background_homepage %}
-	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
-	            {% endfor %}
-			    <div class="container vertical-center">
-			        <div class="intro-text text-center smoothie">
-			            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-			            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-			            {% if node.field_button.0.value %}
-			            {{ node.field_button.0.value|t }}
-			            {% endif %}
-			        </div>
-			    </div>
-			</header>
-		{% else %}
-			{{ page.slider }}
-		{% endif %}
-	{% elseif slider_type == 'style5' %}
-		{% if slider_format == 'slider_video' %}
-			<header id="headerwrap" class="fullheight background--dark">
-		        <div id="BigVideo" class="player" data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
-		        <div class="backstretch-overlay"></div>
-		        <div class="container vertical-center">
-				    <div class="intro-text vertical-center text-left smoothie">
-				        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-				        <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-				        {% if node.field_button.0.value %}
-			            {{ node.field_button.0.value|t }}
-			            {% endif %}
-				    </div>
-				</div>
-		    </header>
-		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched fullheight komplet-section-portfolio-single">
-				{% for img in node.field_header_background_homepage %}
-	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
-	            {% endfor %}
-				<div class="container vertical-center">
-				    <div class="intro-text vertical-center text-left smoothie">
-				        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-				        <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-				        {% if node.field_button.0.value %}
-			            {{ node.field_button.0.value|t }}
-			            {% endif %}
-				    </div>
-				</div>
-				</header>
-		{% else %}
-			{{ page.slider }}
-		{% endif %}
-	{% else %}
-		{% if slider_format == 'slider_video' %}
-			<header id="headerwrap" class="fullheight background--dark">
-		        <div id="BigVideo" class="player" data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
-		        <div class="backstretch-overlay"></div>
-		        <div class="container vertical-center">
-				    <div class="intro-text vertical-center text-left smoothie">
-				        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-				        <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-				        {% if node.field_button.0.value %}
-			            {{ node.field_button.0.value|t }}
-			            {% endif %}
-				    </div>
-				</div>
-		    </header>
-		{% elseif slider_format == 'slider_image'%}
-			<header id="headerwrap" class="backstretched fullheight no-overlay komplet-section-portfolio-single">
-				{% for img in node.field_header_background_homepage %}
-	            {% set image_url = file_url(img.entity.uri.value) %}
-	                <div class="hidden komplet-bg-get-src" data-bg-src="{{ image_url }}"></div>
-	            {% endfor %}
-	            <div class="container vertical-center">
-	                <div class="intro-text vertical-center text-left smoothie">
-	                    <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
-	                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }} <span class="rotate">{{ node.field_text_rotate.0.value }}</span></div>
-	                    {% if node.field_button.0.value %}
-			            {{ node.field_button.0.value|t }}
-			            {% endif %}
-	                </div>
-	            </div>
-	        </header>
-		{% else %}
-			{{ page.slider }}
-		{% endif %}
-	{% endif %}
+        {% include theme_path ~ "/templates/header/header-2.html.twig" %}
+    {% elseif header_style == 'style3' %}
+        {% include theme_path ~ "/templates/header/header-3.html.twig" %}
+    {% elseif header_style == 'style4' %}
+        {% include theme_path ~ "/templates/header/header-4.html.twig" %}
+    {% elseif header_style == 'style5' %}
+        {% include theme_path ~ "/templates/header/header-5.html.twig" %}
+    {% elseif header_style == 'style6' %}
+        {% include theme_path ~ "/templates/header/header-6.html.twig" %}
+    {% else %}
+        {% include theme_path ~ "/templates/header/header-1.html.twig" %}
+    {% endif %}
+    {% if slider_type == 'style1' %}
+        {% if slider_format == 'slider_video' %}
+            <header id="headerwrap" class="fullheight background--dark">
+                <div id="BigVideo" class="player"
+                     data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
+                <div class="backstretch-overlay"></div>
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-left smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span>
+                        </div>
+                        {% if node.field_button_video.0.value %}
+                            {{ node.field_button_video.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% elseif slider_format == 'slider_image' %}
+            <header id="headerwrap"
+                    class="backstretched fullheight agency-slider backstretch-overlay-alt komplet-section-portfolio-single">
+                {% for img in node.field_header_background_homepage %}
+                    {% set image_url = file_url(img.entity.uri.value) %}
+                    <div class="hidden komplet-bg-get-src"
+                         data-bg-src="{{ image_url }}"></div>
+                {% endfor %}
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-left smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                        </div>
+                        {% if node.field_button.0.value %}
+                            {{ node.field_button.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% else %}
+            {{ page.slider }}
+        {% endif %}
+    {% elseif slider_type == 'style2' %}
+        {% if slider_format == 'slider_video' %}
+            <header id="headerwrap" class="fullheight background--dark">
+                <div id="BigVideo" class="player"
+                     data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
+                <div class="backstretch-overlay"></div>
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-center smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }}
+                            <span class="rotate"{{ node.field_text_rotate_video.0.value }}</span>
+                        </div>
+                        {% if node.field_button_video.0.value %}
+                            {{ node.field_button_video.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% elseif slider_format == 'slider_image' %}
+            <header id="headerwrap"
+                    class="backstretched special-max-height no-overlay komplet-section-portfolio-single">
+                {% for img in node.field_header_background_homepage %}
+                    {% set image_url = file_url(img.entity.uri.value) %}
+                    <div class="hidden komplet-bg-get-src"
+                         data-bg-src="{{ image_url }}"></div>
+                {% endfor %}
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-center smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                        </div>
+                        {% if node.field_button.0.value %}
+                            {{ node.field_button.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% else %}
+            {{ page.slider }}
+        {% endif %}
+    {% elseif slider_type == 'style3' %}
+        {% if slider_format == 'slider_video' %}
+            <header id="headerwrap" class="fullheight background--dark">
+                <div id="BigVideo" class="player"
+                     data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
+                <div class="backstretch-overlay"></div>
+                <div class="container">
+                    <div class="intro-text vertical-center text-right smoothie">
+                        <div class="col-sm-6">
+                            <div class="intro-heading wow fadeIn heading-font"
+                                 data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+                            <div class="intro-sub-heading wow fadeIn secondary-font"
+                                 data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }}
+                                <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span>
+                            </div>
+                            {% if node.field_button_video.0.value %}
+                                {{ node.field_button_video.0.value|t }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </header>
+        {% elseif slider_format == 'slider_image' %}
+            <header id="headerwrap"
+                    class="backstretched no-overlay fullheight komplet-section-portfolio-single">
+                {% for img in node.field_header_background_homepage %}
+                    {% set image_url = file_url(img.entity.uri.value) %}
+                    <div class="hidden komplet-bg-get-src"
+                         data-bg-src="{{ image_url }}"></div>
+                {% endfor %}
+                <div class="container">
+                    <div class="intro-text vertical-center text-right smoothie">
+                        <div class="col-sm-6">
+                            <div class="intro-heading wow fadeIn heading-font"
+                                 data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                            <div class="intro-sub-heading wow fadeIn secondary-font"
+                                 data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                                <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                            </div>
+                            {% if node.field_button.0.value %}
+                                {{ node.field_button.0.value|t }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </header>
+        {% else %}
+            {{ page.slider }}
+        {% endif %}
+    {% elseif slider_type == 'style4' %}
+        {% if slider_format == 'slider_video' %}
+            <header id="headerwrap" class="fullheight background--dark">
+                <div id="BigVideo" class="player"
+                     data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
+                <div class="backstretch-overlay"></div>
+                <div class="container vertical-center">
+                    <div class="intro-text text-center smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider_video.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static_video.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate_video.0.value }}</span>
+                        </div>
+                        {% if node.field_button_video.0.value %}
+                            {{ node.field_button_video.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% elseif slider_format == 'slider_image' %}
+            <header id="headerwrap"
+                    class="backstretched no-overlay fullheight komplet-section-portfolio-single">
+                {% for img in node.field_header_background_homepage %}
+                    {% set image_url = file_url(img.entity.uri.value) %}
+                    <div class="hidden komplet-bg-get-src"
+                         data-bg-src="{{ image_url }}"></div>
+                {% endfor %}
+                <div class="container vertical-center">
+                    <div class="intro-text text-center smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                        </div>
+                        {% if node.field_button.0.value %}
+                            {{ node.field_button.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% else %}
+            {{ page.slider }}
+        {% endif %}
+    {% elseif slider_type == 'style5' %}
+        {% if slider_format == 'slider_video' %}
+            <header id="headerwrap" class="fullheight background--dark">
+                <div id="BigVideo" class="player"
+                     data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
+                <div class="backstretch-overlay"></div>
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-left smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                        </div>
+                        {% if node.field_button.0.value %}
+                            {{ node.field_button.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% elseif slider_format == 'slider_image' %}
+            <header id="headerwrap"
+                    class="backstretched fullheight komplet-section-portfolio-single">
+                {% for img in node.field_header_background_homepage %}
+                    {% set image_url = file_url(img.entity.uri.value) %}
+                    <div class="hidden komplet-bg-get-src"
+                         data-bg-src="{{ image_url }}"></div>
+                {% endfor %}
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-left smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                        </div>
+                        {% if node.field_button.0.value %}
+                            {{ node.field_button.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% else %}
+            {{ page.slider }}
+        {% endif %}
+    {% else %}
+        {% if slider_format == 'slider_video' %}
+            <header id="headerwrap" class="fullheight background--dark">
+                <div id="BigVideo" class="player"
+                     data-property="{videoURL:'{{ node.field_video_embed.getValue()[0]['value'] }}', containment:'#headerwrap', autoPlay:true, mute:true, opacity:1, showControls : false}"></div>
+                <div class="backstretch-overlay"></div>
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-left smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                        </div>
+                        {% if node.field_button.0.value %}
+                            {{ node.field_button.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% elseif slider_format == 'slider_image' %}
+            <header id="headerwrap"
+                    class="backstretched fullheight no-overlay komplet-section-portfolio-single">
+                {% for img in node.field_header_background_homepage %}
+                    {% set image_url = file_url(img.entity.uri.value) %}
+                    <div class="hidden komplet-bg-get-src"
+                         data-bg-src="{{ image_url }}"></div>
+                {% endfor %}
+                <div class="container vertical-center">
+                    <div class="intro-text vertical-center text-left smoothie">
+                        <div class="intro-heading wow fadeIn heading-font"
+                             data-wow-delay="0.2s">{{ node.field_title_slider.0.value }}</div>
+                        <div class="intro-sub-heading wow fadeIn secondary-font"
+                             data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                            <span class="rotate">{{ node.field_text_rotate.0.value }}</span>
+                        </div>
+                        {% if node.field_button.0.value %}
+                            {{ node.field_button.0.value|t }}
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+        {% else %}
+            {{ page.slider }}
+        {% endif %}
+    {% endif %}
     {{ page.content_full_bar }}
     {{ page.content }}
     {{ page.section }}
@@ -240,7 +306,7 @@
         <div id="contact-tabs" role="tabpanel">
 
             <!-- Nav tabs -->
-            	{{ page.section_3 }}
+            {{ page.section_3 }}
 
             <!-- Tab panes -->
             <div class="tab-content">
@@ -251,22 +317,22 @@
 
 
     {% set footer_style = node.field_footer_style.0.value %}
-	{% if footer_style == '' %}
-		{% set footer_style = 'style1' %}
-	{% endif %}
-	{% if footer_style == 'style2' %}
-		{% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
-	{% elseif footer_style == 'style3' %}
-		{% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
-	{% elseif footer_style == 'style4' %}
-		{% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
-	{% elseif footer_style == 'style5' %}
-		{% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
-	{% elseif footer_style == 'style6' %}
-		{% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
-	{% else %}
-		{% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
-	{% endif %}
+    {% if footer_style == '' %}
+        {% set footer_style = 'style1' %}
+    {% endif %}
+    {% if footer_style == 'style2' %}
+        {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
+    {% elseif footer_style == 'style3' %}
+        {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
+    {% elseif footer_style == 'style4' %}
+        {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
+    {% elseif footer_style == 'style5' %}
+        {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
+    {% elseif footer_style == 'style6' %}
+        {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
+    {% else %}
+        {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
+    {% endif %}
 
 
 </div>

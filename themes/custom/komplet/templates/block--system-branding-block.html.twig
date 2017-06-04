@@ -14,9 +14,10 @@
 #}
 
 {% block content %}
-	{% set classes = ['navbar-brand', 'smoothie', 'logo', 'logo-light'] %}
-	<a {{ attributes.addClass(classes) }} href="{{ path('<front>') }}"><img src="{{ site_logo }}" alt="{{ site_name }}">
-		{{ title_suffix }}
-	  	{{ title_prefix }}
-	</a>
+    {% set classes = ['navbar-brand', 'smoothie', 'logo', 'logo-light'] %}
+    <a {{ attributes.addClass(classes) }} href="{{ path('<front>') }}"><img
+                src="{{ site_logo }}" alt="{{ site_name }}">
+        {{ title_suffix }}
+        {{ title_prefix }}
+    </a>
 {% endblock %}

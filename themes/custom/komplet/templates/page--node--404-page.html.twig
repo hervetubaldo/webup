@@ -2,41 +2,47 @@
 <div class="master-wrapper">
 
     {% if setting_header == 'style2' %}
-      {% include theme_path ~ "/templates/header/header-2.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-2.html.twig" %}
     {% elseif setting_header == 'style3' %}
-      {% include theme_path ~ "/templates/header/header-3.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-3.html.twig" %}
     {% elseif setting_header == 'style4' %}
-      {% include theme_path ~ "/templates/header/header-4.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-4.html.twig" %}
     {% elseif setting_header == 'style5' %}
-      {% include theme_path ~ "/templates/header/header-5.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-5.html.twig" %}
     {% elseif setting_header == 'style6' %}
-      {% include theme_path ~ "/templates/header/header-6.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-6.html.twig" %}
     {% else %}
-      {% include theme_path ~ "/templates/header/header-1.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-1.html.twig" %}
     {% endif %}
 
-	<header id="headerwrap" class="fullheight dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ bg_img_url }}" data-speed="0.7">
-	    <div class="container vertical-center">
-	        <div class="intro-text vertical-center text-left smoothie">
-	        	  {{ page.content_full_bar }}
-	            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ title }}</div>
-	            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">{{ node.field_text_static.0.value }}<span class="rotate"> {{ node.field_text_rotate.0.value }}</span></div>
-	        </div>
-	    </div>
-	</header>
-	{{ page.content }}
-	{% if setting_footer == 'style2' %}
-      {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
+    <header id="headerwrap" class="fullheight dark-wrapper opaqued parallax"
+            data-parallax="scroll" data-image-src="{{ bg_img_url }}"
+            data-speed="0.7">
+        <div class="container vertical-center">
+            <div class="intro-text vertical-center text-left smoothie">
+                {{ page.content_full_bar }}
+                <div class="intro-heading wow fadeIn heading-font"
+                     data-wow-delay="0.2s">{{ title }}</div>
+                <div class="intro-sub-heading wow fadeIn secondary-font"
+                     data-wow-delay="0.4s">{{ node.field_text_static.0.value }}
+                    <span class="rotate"> {{ node.field_text_rotate.0.value }}</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    {{ page.content }}
+    {% if setting_footer == 'style2' %}
+        {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
     {% elseif setting_footer == 'style3' %}
-      {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
     {% elseif setting_footer == 'style4' %}
-      {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
     {% elseif setting_footer == 'style5' %}
-      {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
     {% elseif setting_footer == 'style6' %}
-      {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
     {% else %}
-      {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
+        {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
     {% endif %}
 
 </div>

@@ -3,74 +3,119 @@
     {% set portfolio_format = 'slider' %}
 {% endif %}
 {% if portfolio_format == 'fullscreen_video' %}
-	<div class="row project-item">
-	    <div class="col-sm-9">
-	        {{ content.body }}
-	    </div>
-	    <div class="col-sm-3">
-	        <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	        <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	        <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
-	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
-	    </div>
-	</div>
+    <div class="row project-item">
+        <div class="col-sm-9">
+            {{ content.body }}
+        </div>
+        <div class="col-sm-3">
+            <p>
+                <strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}
+            </p>
+            <p>
+                <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
+            </p>
+            <p>
+                <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+            </p>
+            <p class="mt30"><a
+                        href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                        class="btn btn-primary btn-theme page-scroll"
+                        target="_blank">{{ "Visiter le site"|t }}</a></p>
+        </div>
+    </div>
 {% elseif portfolio_format == 'carousel' %}
-	<div class="row project-item wow">
-	    <div class="col-sm-9">
-	        {{ content.body }}
-	    </div>
-	    <div class="col-sm-3">
-	        <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	        <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	        <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
-	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
-	    </div>
-	</div>
+    <div class="row project-item wow">
+        <div class="col-sm-9">
+            {{ content.body }}
+        </div>
+        <div class="col-sm-3">
+            <p>
+                <strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}
+            </p>
+            <p>
+                <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
+            </p>
+            <p>
+                <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+            </p>
+            <p class="mt30"><a
+                        href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                        class="btn btn-primary btn-theme page-scroll"
+                        target="_blank">{{ "Visiter le site"|t }}</a></p>
+        </div>
+    </div>
 {% elseif portfolio_format == 'video' %}
-	<div class="row mb100">
+    <div class="row mb100">
         {{ content.field_video_embed }}
     </div>
-	<div class="row project-item">
-	    <div class="row project-item wow">
-	        <div class="col-sm-9">
-	            {{ content.body }}
-	        </div>
-	        <div class="col-sm-3">
-	            <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	            <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	            <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
-	            <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
-	        </div>
-	    </div>
-	</div>
+    <div class="row project-item">
+        <div class="row project-item wow">
+            <div class="col-sm-9">
+                {{ content.body }}
+            </div>
+            <div class="col-sm-3">
+                <p>
+                    <strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}
+                </p>
+                <p>
+                    <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
+                </p>
+                <p>
+                    <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+                </p>
+                <p class="mt30"><a
+                            href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                            class="btn btn-primary btn-theme page-scroll"
+                            target="_blank">{{ "Visiter le site"|t }}</a></p>
+            </div>
+        </div>
+    </div>
 {% elseif portfolio_format == 'image_list' %}
-	<div class="col-sm-3">
-	    {{ content.body }}
-	</div>
+    <div class="col-sm-3">
+        {{ content.body }}
+    </div>
 {% elseif portfolio_format == 'slider' %}
-	<div class="row project-item">
-	    <div class="row project-item wow">
-	        <div class="col-sm-9">
-	            {{ content.body }}
-	        </div>
-	        <div class="col-sm-3">
-	            <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	            <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	            <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
-	            <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
-	        </div>
-	    </div>
-	</div>
+    <div class="row project-item">
+        <div class="row project-item wow">
+            <div class="col-sm-9">
+                {{ content.body }}
+            </div>
+            <div class="col-sm-3">
+                <p>
+                    <strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}
+                </p>
+                <p>
+                    <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
+                </p>
+                <p>
+                    <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+                </p>
+                <p class="mt30"><a
+                            href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                            class="btn btn-primary btn-theme page-scroll"
+                            target="_blank">{{ "Visiter le site"|t }}</a></p>
+            </div>
+        </div>
+    </div>
 {% else %}
-	<div class="row project-item wow">
-	    <div class="col-sm-9">
-	        {{ content.body }}
-	    </div>
-	    <div class="col-sm-3">
-	        <p><strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}</p>
-	        <p><strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}</p>
-	        <p><strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}</p>
-	        <p class="mt30"><a href="{{ node.field_project_link.getValue()[0]['value'] }}" class="btn btn-primary btn-theme page-scroll" target="_blank">{{ "Visiter le site"|t }}</a></p>
-	    </div>
-	</div>
+    <div class="row project-item wow">
+        <div class="col-sm-9">
+            {{ content.body }}
+        </div>
+        <div class="col-sm-3">
+            <p>
+                <strong>{{ "DATE :"|t }}</strong> {{ node.created.value|date('d/m/Y') }}
+            </p>
+            <p>
+                <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
+            </p>
+            <p>
+                <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+            </p>
+            <p class="mt30"><a
+                        href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                        class="btn btn-primary btn-theme page-scroll"
+                        target="_blank">{{ "Visiter le site"|t }}</a></p>
+        </div>
+    </div>
 {% endif %}

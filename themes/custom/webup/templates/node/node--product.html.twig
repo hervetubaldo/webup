@@ -1,24 +1,27 @@
-       
 <div class="row">
     <div class="col-xs-12 col-sm-6 mb50">
         <div class="images">
             {% set image_product_url = getUrlByImageStyle(node.uc_product_image.0.entity.uri.value, 'image_600x600') %}
             {% set image_product_original = file_url(node.uc_product_image.0.entity.uri.value) %}
-            <a class="lb-link" data-rel="product-gallery" href="{{ image_product_original }}" title="{{ title }}">
-                <img alt="{{ title }}" class="img-responsive" src="{{ image_product_url }}" title="{{ title }}">
+            <a class="lb-link" data-rel="product-gallery"
+               href="{{ image_product_original }}" title="{{ title }}">
+                <img alt="{{ title }}" class="img-responsive"
+                     src="{{ image_product_url }}" title="{{ title }}">
             </a>
 
             <div class="thumbnails mt">
                 {% for k, item in node.uc_product_image %}
                     {% if k > 0 %}
                         {% set image_original = file_url(item.entity.uri.value) %}
-                        <a class="lb-link" data-rel="product-gallery" href="{{ image_original }}" title="{{ title }}">
-                        <img alt="image title" height="100" width="100" src="{{ image_original }}">
-                     </a>
+                        <a class="lb-link" data-rel="product-gallery"
+                           href="{{ image_original }}" title="{{ title }}">
+                            <img alt="image title" height="100" width="100"
+                                 src="{{ image_original }}">
+                        </a>
                     {% endif %}
                 {% endfor %}
 
-               
+
             </div>
         </div>
     </div>
@@ -43,20 +46,21 @@
     <div class="col-xs-12 product-tabs mt">
         <ul class="nav nav-tabs">
             {% if content.field_description %}
-            <li class="active">
-                <a data-toggle="tab" href="#tab-description">Description</a>
-            </li>
+                <li class="active">
+                    <a data-toggle="tab" href="#tab-description">Description</a>
+                </li>
             {% endif %}
             <li class="reviews_tab">
-                <a data-toggle="tab" href="#tab-reviews">Reviews ({{ node.field_product_comment.comment_count }})</a>
+                <a data-toggle="tab" href="#tab-reviews">Reviews
+                    ({{ node.field_product_comment.comment_count }})</a>
             </li>
         </ul>
 
         <div class="tab-content mb">
             {% if content.field_description %}
-            <div class="tab-pane active" id="tab-description">
-                {{ content.field_description }}
-            </div>
+                <div class="tab-pane active" id="tab-description">
+                    {{ content.field_description }}
+                </div>
             {% endif %}
 
             <div class="tab-pane fade" id="tab-reviews">

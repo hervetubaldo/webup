@@ -24,30 +24,30 @@
 #}
 
 <div class="sitemap container">
-  {% if message %}
-    <div class="sitemap-message">
-      {{ message }}
-    </div>
-  {% endif %}
-
-  {% if sitemap_items %}
-    {% for item in sitemap_items %}
-      {% if item.content is not empty %}
-      <div{{ item.attributes.addClass('sitemap-box') }}>
-        {% if item.options.show_titles %}
-          <h2>{{ item.title }}</h2>
-        {% endif %}
-        <div class="content">
-          {{ item.content }}
+    {% if message %}
+        <div class="sitemap-message">
+            {{ message }}
         </div>
-      </div>
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+    {% endif %}
 
-  {% if additional %}
-    <div class="sitemap-additional">
-      {{ additional }}
-    </div>
-  {% endif %}
+    {% if sitemap_items %}
+        {% for item in sitemap_items %}
+            {% if item.content is not empty %}
+                <div{{ item.attributes.addClass('sitemap-box') }}>
+                    {% if item.options.show_titles %}
+                        <h2>{{ item.title }}</h2>
+                    {% endif %}
+                    <div class="content">
+                        {{ item.content }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if additional %}
+        <div class="sitemap-additional">
+            {{ additional }}
+        </div>
+    {% endif %}
 </div>

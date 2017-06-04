@@ -1,93 +1,93 @@
 {% if region == 'search' %}
-	<div {{ attributes }}>
-	  {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
-	</div>
+    <div {{ attributes }}>
+        {{ title_suffix }}
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </div>
 {% elseif region == 'footer_column_1' or region == 'footer_column_2' or region == 'footer_column_3' %}
-	<div class="col-md-4">
-		<div {{ attributes.addClass('widget') }}>
-	 		{{ title_prefix }}
-	 		 {% if label %}
-            <h4 class="widget-title">{{ label }}</h4>
+    <div class="col-md-4">
+        <div {{ attributes.addClass('widget') }}>
+            {{ title_prefix }}
+            {% if label %}
+                <h4 class="widget-title">{{ label }}</h4>
             {% endif %}
-		    {{ title_suffix }}
-		    {% if content %}
-		      {{ content }}
-		    {% endif %}
-		</div>
-	</div>
+            {{ title_suffix }}
+            {% if content %}
+                {{ content }}
+            {% endif %}
+        </div>
+    </div>
 {% elseif region == 'sidebar' %}
-	{% set classes = ['widget','mb50'] %}
-	<div {{ attributes.addClass(classes) }}>
-		{{ title_prefix }}
-	 	{% if label %}
-        	<h4 class="widget-title">{{ label }}</h4>
+    {% set classes = ['widget','mb50'] %}
+    <div {{ attributes.addClass(classes) }}>
+        {{ title_prefix }}
+        {% if label %}
+            <h4 class="widget-title">{{ label }}</h4>
         {% endif %}
         {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
+        {% if content %}
+            {{ content }}
+        {% endif %}
     </div>
 {% elseif region == 'slid_bar' %}
-	{% set classes = ['widget','mb50'] %}
-	<div {{ attributes.addClass(classes) }}>
-		{{ title_prefix }}
-	 	{% if label %}
-        	<h4 class="widget-title">{{ label }}</h4>
+    {% set classes = ['widget','mb50'] %}
+    <div {{ attributes.addClass(classes) }}>
+        {{ title_prefix }}
+        {% if label %}
+            <h4 class="widget-title">{{ label }}</h4>
         {% endif %}
         {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
+        {% if content %}
+            {{ content }}
+        {% endif %}
     </div>
 {% elseif region == 'slider' %}
-	<header {{ attributes }}>
-	    {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
-	</header>
+    <header {{ attributes }}>
+        {{ title_suffix }}
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </header>
 {% elseif region == 'footer_social_bar' %}
-	<ul{{ attributes }}>
-	    {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
-	</ul>
+    <ul{{ attributes }}>
+        {{ title_suffix }}
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </ul>
 {% elseif region == 'section' %}
-	<section{{ attributes }}>
-	    {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
-	</section>
+    <section{{ attributes }}>
+        {{ title_suffix }}
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </section>
 {% elseif region == 'section_2' %}
-	<div {{ attributes }}>
-	    {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
-	</div>
+    <div {{ attributes }}>
+        {{ title_suffix }}
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </div>
 {% elseif region == 'section_3' %}
-	<ul {{ attributes }}>
-	    {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
-	</ul>
+    <ul {{ attributes }}>
+        {{ title_suffix }}
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </ul>
 {% elseif region == 'shop_sidebar' %}
-	<div {{ attributes }}>
-	    {{ title_suffix }}
-	    {% if content %}
-	      {{ content }}
-	    {% endif %}
-	</div>
+    <div {{ attributes }}>
+        {{ title_suffix }}
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </div>
 {% else %}
-  <div {{ attributes }}>
-    {% if content %}
-      {{ content }}
-    {% endif %}
-  </div>
+    <div {{ attributes }}>
+        {% if content %}
+            {{ content }}
+        {% endif %}
+    </div>
 {% endif %}

@@ -1,85 +1,86 @@
 <div class="master-wrapper webup-page-contact">
 
     {% if setting_header == 'style2' %}
-      {% include theme_path ~ "/templates/header/header-2.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-2.html.twig" %}
     {% elseif setting_header == 'style3' %}
-      {% include theme_path ~ "/templates/header/header-3.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-3.html.twig" %}
     {% elseif setting_header == 'style4' %}
-      {% include theme_path ~ "/templates/header/header-4.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-4.html.twig" %}
     {% elseif setting_header == 'style5' %}
-      {% include theme_path ~ "/templates/header/header-5.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-5.html.twig" %}
     {% elseif setting_header == 'style6' %}
-      {% include theme_path ~ "/templates/header/header-6.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-6.html.twig" %}
     {% else %}
-      {% include theme_path ~ "/templates/header/header-1.html.twig" %}
+        {% include theme_path ~ "/templates/header/header-1.html.twig" %}
     {% endif %}
-    
-      <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ contact_page_header_bg }}" data-speed="0.7">
-          <div class="section-inner pad-top-200">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-lg-12 mt30 wow text-center">
-                          <h2 class="section-heading">{{ title }}</h2>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      {% if contact_style == 'style2' %}
-      <div id="mapwrapper" class="alt-map"></div>
 
-      <section id="welcome">
-        <div class="section-inner nopaddingbottom">
-
+    <section class="dark-wrapper opaqued parallax" data-parallax="scroll"
+             data-image-src="{{ contact_page_header_bg }}" data-speed="0.7">
+        <div class="section-inner pad-top-200">
             <div class="container">
                 <div class="row">
-                    {% if contact_content %}
-                    <div class="col-md-8 col-md-offset-2 mb100">
-                        {{ contact_content|t }}
-                    </div>
-                    {% endif %}
-                    <div class="col-md-8 col-md-offset-2">
-                        <div id="message"></div>
-                        {{ page.content }}
+                    <div class="col-lg-12 mt30 wow text-center">
+                        <h2 class="section-heading">{{ title }}</h2>
                     </div>
                 </div>
             </div>
-
         </div>
-      </section>
-      {% else %}
-      <section id="welcome">
-        <div class="section-inner nopaddingbottom">
+    </section>
+    {% if contact_style == 'style2' %}
+        <div id="mapwrapper" class="alt-map"></div>
 
-            <div class="container">
-                <div class="row">
-                    {% if contact_content %}
-                    <div class="col-md-6">
-                        {{ contact_content|t }}
-                    </div>
-                    {% endif %}
-                    <div class="col-md-6">
-                        <div id="message"></div>
-                        {{ page.content }}
+        <section id="welcome">
+            <div class="section-inner nopaddingbottom">
+
+                <div class="container">
+                    <div class="row">
+                        {% if contact_content %}
+                            <div class="col-md-8 col-md-offset-2 mb100">
+                                {{ contact_content|t }}
+                            </div>
+                        {% endif %}
+                        <div class="col-md-8 col-md-offset-2">
+                            <div id="message"></div>
+                            {{ page.content }}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-      </section>
-      {% endif %}
-    {% if setting_footer == 'style2' %}
-      {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
-    {% elseif setting_footer == 'style3' %}
-      {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
-    {% elseif setting_footer == 'style4' %}
-      {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
-    {% elseif setting_footer == 'style5' %}
-      {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
-    {% elseif setting_footer == 'style6' %}
-      {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
+            </div>
+        </section>
     {% else %}
-      {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
+        <section id="welcome">
+            <div class="section-inner nopaddingbottom">
+
+                <div class="container">
+                    <div class="row">
+                        {% if contact_content %}
+                            <div class="col-md-6">
+                                {{ contact_content|t }}
+                            </div>
+                        {% endif %}
+                        <div class="col-md-6">
+                            <div id="message"></div>
+                            {{ page.content }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    {% endif %}
+    {% if setting_footer == 'style2' %}
+        {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}
+    {% elseif setting_footer == 'style3' %}
+        {% include theme_path ~ "/templates/footer/footer-3.html.twig" %}
+    {% elseif setting_footer == 'style4' %}
+        {% include theme_path ~ "/templates/footer/footer-4.html.twig" %}
+    {% elseif setting_footer == 'style5' %}
+        {% include theme_path ~ "/templates/footer/footer-5.html.twig" %}
+    {% elseif setting_footer == 'style6' %}
+        {% include theme_path ~ "/templates/footer/footer-6.html.twig" %}
+    {% else %}
+        {% include theme_path ~ "/templates/footer/footer-1.html.twig" %}
     {% endif %}
 
 </div>

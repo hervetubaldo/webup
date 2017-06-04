@@ -1,511 +1,541 @@
 {% if id == '_komplet_sidebar_widgets' %}
-	{% if display_id == 'block_on_sidebar_latest_articles' %}
-	    <div>
-		    {{ rows }}
-		</div>
-	{% elseif display_id == 'block_on_sidebar_latest_products' %}
-	    <div class="widget">
-	        {{ header }}
-	        <div>
-	            {{ rows }}
-	        </div>
-	    </div>
-	{% else %}
-		{{ header }}
-		{{ rows }}
-		{{ attachment_after }}
-		{{ empty }}
-		{{ footer }}
-		{{ pager }}
-	{% endif %}
+    {% if display_id == 'block_on_sidebar_latest_articles' %}
+        <div>
+            {{ rows }}
+        </div>
+    {% elseif display_id == 'block_on_sidebar_latest_products' %}
+        <div class="widget">
+            {{ header }}
+            <div>
+                {{ rows }}
+            </div>
+        </div>
+    {% else %}
+        {{ header }}
+        {{ rows }}
+        {{ attachment_after }}
+        {{ empty }}
+        {{ footer }}
+        {{ pager }}
+    {% endif %}
 {% elseif id == '_komplet_taxonomy_terms' %}
-	{% if display_id == 'block_on_sidebar_latest_tags' %}
-	    <div class="tagcloud komplet-tags">
-		 	{{ rows }}
-		</div>
-	{% elseif display_id == 'block_footer_column_3_latest_tags' %}
-	    <div class="tagcloud komplet-tags-footer">
-		 	{{ rows }}
-		</div>
-	{% elseif display_id == 'block_portfolio_categories_1' %}
-		<ul class="portfolio-filter mb30 list-inline wow">
-			{{ header }}
-		    {{ rows }}
-		</ul>
-	{% elseif display_id == 'block_portfolio_categories_2' %}
-		<ul class="masonry-portfolio-filters mb30 list-inline wow">
-		   {{ header }}
-		   {{ rows }}
-		</ul>
-	{% elseif display_id == 'block_portfolio_categories_3' %}
-		<ul class="portfolio-filter mb30 list-inline wow">
-		   {{ header }}
-		   {{ rows }}
-		</ul>
-	{% elseif display_id == 'block_taxonomy_term_food_and_drink_categories' %}
-		<ul class="nav nav-justified" id="menu-tabs" role="tablist">
-		    {{ rows }}
-		</ul>
-
-	{% endif %}
-	
-{% elseif id == '_komplet_section_content' %}
-	{% if display_id == 'block_footer_column_2_latest_articles' %}
-	    <div>
-		    {{ rows }}
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_full_grid_2_columns' %}
-	    <div class="section-inner nopaddingbottom">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-md-12 text-center mb50">
-	                    {{ header }}
-	                </div>
-	            </div>
-	        </div>
-	        <div>
-	            <div>
-	                <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-	                    {{ rows }}
-	                </ul>
-	            </div>
-	        </div>
-	    </div>
-	{% elseif display_id == 'block_section_content_portfolio_full_grid_3_columns' %}
-	    <div class="section-inner nopaddingbottom">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-md-12 text-center mb50">
-	                    {{ header }}
-	                </div>
-	            </div>
-	        </div>
-	        <div>
-	            <div>
-	                <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-	                    {{ rows }}
-	                </ul>
-	            </div>
-	        </div>
-	    </div>
-	{% elseif display_id == 'block_section_content_portfolio_full_grid_4_columns' %}
-		<div class="section-inner nopaddingbottom">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div>
-		        <div>
-		            <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_boxed_grid_2_columns' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div class="container">
-		        <div>
-		            <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-		              	{{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_boxed_grid_3_columns' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div class="container">
-		        <div>
-		            <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_boxed_grid_4_columns' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div>
-		        <div>
-		            <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_full_masonry_2_columns' %}
-		<div class="section-inner nopaddingbottom masonry-portfolio" data-masonry-cols="2">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div>
-		        <div>
-		            <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>	
-	{% elseif display_id == 'block_section_content_portfolio_full_masonry_3_columns' %}
-		<div class="section-inner nopaddingbottom masonry-portfolio" data-masonry-cols="3">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div>
-		        <div>
-		            <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_full_masonry_4_columns' %}
-		<div class="section-inner nopaddingbottom masonry-portfolio" data-masonry-cols="4">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div>
-		        <div>
-		            <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_boxed_masonry_2_columns' %}
-		<div class="section-inner masonry-portfolio container" data-masonry-cols="2">
-		    <div>
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		        <div>
-		            <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_boxed_masonry_3_columns' %}
-		<div class="section-inner masonry-portfolio container" data-masonry-cols="3">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div>
-		        <div>
-		            <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_portfolio_boxed_masonry_4_columns' %}
-		<div class="section-inner masonry-portfolio container" data-masonry-cols="4">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-12 text-center mb50">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div>
-		        <div>
-		            <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_the_team' %}
-		<div class="section-inner nopadding-bottom">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-sm-9 match-height">
-		                <div class="row">
-		                    <div class="col-xs-12">
-		                        <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="3" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
-		                            {{ rows }}
-		                        </ul>
-		                    </div>
-		                </div>
-		            </div>
-		            <div class="col-sm-3 match-height">
-		                <div class="vertical-center">
-		                    {{ footer }}
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_related_items' %}
-		<div class="mb50">
-		    {{ header }}
-		</div>
-
-		<div class="row">
-		    <ul class="owl-carousel-paged wow fadeIn list-unstyled" data-items="2" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
-		        {{ rows }}
-		    </ul>
-		</div>
-	{% elseif display_id == 'block_sectiong_content_listing_products_grid' %}
-		<div class="section-inner">
-		    <div class="container">
-		    	{% set temp = 1 %}
-			    {% for i, row in rows.0['#rows'] %}
-			    	{% if temp == 1 %}
-				    	<div class="row mb50">
-				        	{{ row }}
-				        {% set temp = temp + 1 %}
-				    {% elseif temp == 2 %}
-				    	{{ row }}
-				    	{% set temp = temp + 1 %}
-				    {% elseif temp == 3 or i == (rows.0['#rows']|length - 1) %}
-				    		{{ row }}
-				    	</div>
-				    	{% set temp = 1 %}
-				    {% endif %}
-			    {% endfor %}
-			    {{ pager }}
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_recent_works' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-md-6 mb100 wow">
-		                {{ footer }}
-		            </div>
-		            <div class="col-md-6 text-right">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div class="container">
-		        <div class="col-md-12">
-		            <ul class="portfolio-items nopadding-lr isotope list-unstyled">
-		                {{ rows }}
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_partners' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-sm-8 col-sm-offset-2">
-		                <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">
-		                    {{ rows }}
-		                </ul>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_the_team_2' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-
-		            <div class="col-sm-3 match-height">
-		                <div class="vertical-center">
-		                    {{ footer }}
-		                </div>
-		            </div>
-		            <div class="col-sm-9 match-height">
-		                <div class="row">
-		                    <div class="col-xs-12">
-		                        <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="3" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
-		                            {{ rows }}
-		                        </ul>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_apps' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <ul class="owl-carousel-paged wow fadeIn list-unstyled" data-items="5" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
-		            {{ rows }}
-		        </ul>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_food_and_drink' %}
-		<div class="section-inner komplet-food-drink">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-lg-12 mb100 wow text-center">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-xs-12" role="tabpanel">
-		                <div class="row ptb">
-		                    <div class="col-sm-8 col-sm-offset-2">
-		                        <!-- Nav tabs -->
-		                        {{ footer }}
-		                    </div>
-		                </div>
-		                <div class="row">
-		                    <div id="komplet-content-av-wrapper" class="col-sm-8 col-sm-offset-2">
-		                    	<div id="komplet-content-av" class="hidden">
-		                    		{{ rows }}
-		                    	</div>
-		                            <!-- Tab panes -->
-							    <div class="tab-content pt60" id="tabs-collapse">
-							        
-							    </div>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	{% else %}
-		{{ header }}
-		{{ rows }}
-		{{ attachment_after }}
-		{{ empty }}
-		{{ footer }}
-		{{ pager }}
-	{% endif %}
-{% elseif id == '_komplet_section_content_2' %}
-	{% if display_id == 'block_section_content_blog_grid_3_column' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-		        	{{ rows }}
-
-		        </div>
-
-		        <div class="row paging text-center">
-		            {{ pager }}
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_blog_grid_4_column' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-
-		            {{ rows }}
-
-		        </div>
-
-		        <div class="row paging text-center">
-		            {{ pager }}
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_slider_blog_slider_1' %}
-        <ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+    {% if display_id == 'block_on_sidebar_latest_tags' %}
+        <div class="tagcloud komplet-tags">
+            {{ rows }}
+        </div>
+    {% elseif display_id == 'block_footer_column_3_latest_tags' %}
+        <div class="tagcloud komplet-tags-footer">
+            {{ rows }}
+        </div>
+    {% elseif display_id == 'block_portfolio_categories_1' %}
+        <ul class="portfolio-filter mb30 list-inline wow">
+            {{ header }}
             {{ rows }}
         </ul>
-	{% elseif display_id == 'block_slider_blog_slider_2' %}
-		<ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider" data-items="3" data-items-desktop="[1200,3]" data-items-desktop-small="[980,3]" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
-		    {{ rows }}
-		</ul>
-	{% elseif display_id == 'block_section_content_our_team_cooking' %}
-		<div class="section-inner nopaddingbottom">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-lg-12 mb100 wow text-center">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-sm-10 col-sm-offset-1">
-		                <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="3" data-items-desktop="[1200,3]" data-items-desktop-small="[980,3]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">
-		                    {{ rows }}
-		                </ul>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_services_type_1' %}
-	    <div class="section-inner">
-	        <div class="container">
-	            <div class="row">
-	                {{ rows }}
-	            </div>
-	        </div>
-	    </div>
-	{% elseif display_id == 'block_section_content_services_type_2' %}
-		<div class="section-inner">
-		    <div class="container">
-		        <div class="row">
-		            {{ rows }}
-		        </div>
-		    </div>
-		</div>
-	{% elseif display_id == 'block_section_content_services_type_1_title' %}
-		<div class="section-inner">
+    {% elseif display_id == 'block_portfolio_categories_2' %}
+        <ul class="masonry-portfolio-filters mb30 list-inline wow">
+            {{ header }}
+            {{ rows }}
+        </ul>
+    {% elseif display_id == 'block_portfolio_categories_3' %}
+        <ul class="portfolio-filter mb30 list-inline wow">
+            {{ header }}
+            {{ rows }}
+        </ul>
+    {% elseif display_id == 'block_taxonomy_term_food_and_drink_categories' %}
+        <ul class="nav nav-justified" id="menu-tabs" role="tablist">
+            {{ rows }}
+        </ul>
 
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-lg-12 mb100 wow">
-		                {{ header }}
-		            </div>
-		        </div>
-		    </div>
+    {% endif %}
 
-		    <div class="container">
-		        <div class="row">
-		            {{ rows }}
-		        </div>
-		    </div>
+{% elseif id == '_komplet_section_content' %}
+    {% if display_id == 'block_footer_column_2_latest_articles' %}
+        <div>
+            {{ rows }}
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_full_grid_2_columns' %}
+        <div class="section-inner nopaddingbottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_full_grid_3_columns' %}
+        <div class="section-inner nopaddingbottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_full_grid_4_columns' %}
+        <div class="section-inner nopaddingbottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_boxed_grid_2_columns' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div>
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_boxed_grid_3_columns' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div>
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_boxed_grid_4_columns' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_full_masonry_2_columns' %}
+        <div class="section-inner nopaddingbottom masonry-portfolio"
+             data-masonry-cols="2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_full_masonry_3_columns' %}
+        <div class="section-inner nopaddingbottom masonry-portfolio"
+             data-masonry-cols="3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_full_masonry_4_columns' %}
+        <div class="section-inner nopaddingbottom masonry-portfolio"
+             data-masonry-cols="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_boxed_masonry_2_columns' %}
+        <div class="section-inner masonry-portfolio container"
+             data-masonry-cols="2">
+            <div>
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+                <div>
+                    <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_boxed_masonry_3_columns' %}
+        <div class="section-inner masonry-portfolio container"
+             data-masonry-cols="3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_portfolio_boxed_masonry_4_columns' %}
+        <div class="section-inner masonry-portfolio container"
+             data-masonry-cols="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul class="masonry-portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_the_team' %}
+        <div class="section-inner nopadding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9 match-height">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled"
+                                    data-items="3" data-items-tablet="[768,2]"
+                                    data-items-mobile="[479,1]">
+                                    {{ rows }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 match-height">
+                        <div class="vertical-center">
+                            {{ footer }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_related_items' %}
+        <div class="mb50">
+            {{ header }}
+        </div>
 
-		</div>
-	{% endif %}
+        <div class="row">
+            <ul class="owl-carousel-paged wow fadeIn list-unstyled"
+                data-items="2" data-items-tablet="[768,2]"
+                data-items-mobile="[479,1]">
+                {{ rows }}
+            </ul>
+        </div>
+    {% elseif display_id == 'block_sectiong_content_listing_products_grid' %}
+        <div class="section-inner">
+            <div class="container">
+                {% set temp = 1 %}
+                {% for i, row in rows.0['#rows'] %}
+                    {% if temp == 1 %}
+                        <div class="row mb50">
+                        {{ row }}
+                        {% set temp = temp + 1 %}
+                    {% elseif temp == 2 %}
+                        {{ row }}
+                        {% set temp = temp + 1 %}
+                    {% elseif temp == 3 or i == (rows.0['#rows']|length - 1) %}
+                        {{ row }}
+                        </div>
+                        {% set temp = 1 %}
+                    {% endif %}
+                {% endfor %}
+                {{ pager }}
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_recent_works' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb100 wow">
+                        {{ footer }}
+                    </div>
+                    <div class="col-md-6 text-right">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-md-12">
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {{ rows }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_partners' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled"
+                            data-items="4" data-items-desktop="[1200,4]"
+                            data-items-desktop-small="[980,4]"
+                            data-items-tablet="[768,3]"
+                            data-items-mobile="[479,2]">
+                            {{ rows }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_the_team_2' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-3 match-height">
+                        <div class="vertical-center">
+                            {{ footer }}
+                        </div>
+                    </div>
+                    <div class="col-sm-9 match-height">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled"
+                                    data-items="3" data-items-tablet="[768,2]"
+                                    data-items-mobile="[479,1]">
+                                    {{ rows }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_apps' %}
+        <div class="section-inner">
+            <div class="container">
+                <ul class="owl-carousel-paged wow fadeIn list-unstyled"
+                    data-items="5" data-items-tablet="[768,2]"
+                    data-items-mobile="[479,1]">
+                    {{ rows }}
+                </ul>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_food_and_drink' %}
+        <div class="section-inner komplet-food-drink">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mb100 wow text-center">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12" role="tabpanel">
+                        <div class="row ptb">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <!-- Nav tabs -->
+                                {{ footer }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="komplet-content-av-wrapper"
+                                 class="col-sm-8 col-sm-offset-2">
+                                <div id="komplet-content-av" class="hidden">
+                                    {{ rows }}
+                                </div>
+                                <!-- Tab panes -->
+                                <div class="tab-content pt60"
+                                     id="tabs-collapse">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {{ header }}
+        {{ rows }}
+        {{ attachment_after }}
+        {{ empty }}
+        {{ footer }}
+        {{ pager }}
+    {% endif %}
+{% elseif id == '_komplet_section_content_2' %}
+    {% if display_id == 'block_section_content_blog_grid_3_column' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    {{ rows }}
+
+                </div>
+
+                <div class="row paging text-center">
+                    {{ pager }}
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_blog_grid_4_column' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+
+                    {{ rows }}
+
+                </div>
+
+                <div class="row paging text-center">
+                    {{ pager }}
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_slider_blog_slider_1' %}
+        <ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider"
+            data-items="1" data-items-desktop="[1200,1]"
+            data-items-desktop-small="[980,1]" data-items-tablet="[768,1]"
+            data-items-mobile="[479,1]">
+            {{ rows }}
+        </ul>
+    {% elseif display_id == 'block_slider_blog_slider_2' %}
+        <ul class="owl-carousel-paged wow fadeIn list-unstyled post-slider"
+            data-items="3" data-items-desktop="[1200,3]"
+            data-items-desktop-small="[980,3]" data-items-tablet="[768,2]"
+            data-items-mobile="[479,1]">
+            {{ rows }}
+        </ul>
+    {% elseif display_id == 'block_section_content_our_team_cooking' %}
+        <div class="section-inner nopaddingbottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mb100 wow text-center">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled"
+                            data-items="3" data-items-desktop="[1200,3]"
+                            data-items-desktop-small="[980,3]"
+                            data-items-tablet="[768,3]"
+                            data-items-mobile="[479,2]">
+                            {{ rows }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_services_type_1' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    {{ rows }}
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_services_type_2' %}
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    {{ rows }}
+                </div>
+            </div>
+        </div>
+    {% elseif display_id == 'block_section_content_services_type_1_title' %}
+        <div class="section-inner">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mb100 wow">
+                        {{ header }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    {{ rows }}
+                </div>
+            </div>
+
+        </div>
+    {% endif %}
 {% else %}
-	{{ header }}
-	{{ rows }}
-	{{ attachment_after }}
-	{{ empty }}
-	{{ footer }}
-	{{ pager }}
+    {{ header }}
+    {{ rows }}
+    {{ attachment_after }}
+    {{ empty }}
+    {{ footer }}
+    {{ pager }}
 {% endif %}

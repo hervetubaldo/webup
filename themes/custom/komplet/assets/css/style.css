@@ -1,8 +1,6 @@
 /*-----------------------------------------------------------------------------------*/
 /*  TABLE OF CONTENTS
 /*-----------------------------------------------------------------------------------*/
-
-
 /*  1 - FONT IMPORT
 /*  2 - BASE
 /*  3 - BUTTONS
@@ -25,19 +23,13 @@
 /*  20 - SHOP
 /*  21 - SIDE NAV
 /*-----------------------------------------------------------------------------------*/
-
-
 /*-----------------------------------------------------------------------------------*/
-
-
 /*  1 - FONT IMPORT
 /*-----------------------------------------------------------------------------------*/
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,300,700,900|Montserrat:400,700|Nothing+You+Could+Do);
 @import url(https://fonts.googleapis.com/css?family=Crete+Round:400,400italic);
 
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  2 - BASE
 /*-----------------------------------------------------------------------------------*/
@@ -173,20 +165,20 @@ h6 {
 }
 
 .nopaddingtop {
-    padding-top: 0!important
+    padding-top: 0 !important
 }
 
 .nopaddingbottom {
-    padding-bottom: 0!important
+    padding-bottom: 0 !important
 }
 
 .nopadding-lr {
-    padding-left: 0!important;
-    padding-right: 0!important
+    padding-left: 0 !important;
+    padding-right: 0 !important
 }
 
 .nopadding-l {
-    padding-left: 0!important
+    padding-left: 0 !important
 }
 
 .pad-sides-60 {
@@ -242,10 +234,10 @@ body {
 }
 
 .img-responsive,
-.thumbnail>img,
-.thumbnail a>img,
-.carousel-inner>.item>img,
-.carousel-inner>.item>a>img {
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
     width: 100%
 }
 
@@ -326,9 +318,7 @@ body {
     }
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  3 - BUTTONS
 /*-----------------------------------------------------------------------------------*/
@@ -366,7 +356,7 @@ body {
 }
 
 .btn-primary.btn-transparent {
-    border-color: transparent!important
+    border-color: transparent !important
 }
 
 .btn-primary.btn-transparent:hover,
@@ -374,8 +364,8 @@ body {
 .btn-primary.btn-transparent:focus,
 .btn-primary.btn-transparent.active {
     color: #a7a7a7;
-    border-color: transparent!important;
-    background-color: transparent!important
+    border-color: transparent !important;
+    background-color: transparent !important
 }
 
 .btn-primary:hover,
@@ -434,12 +424,10 @@ fieldset[disabled] .btn-primary.active {
 .btn-primary.active {
     border-color: #888;
     color: #888;
-    background-color: transparent!important
+    background-color: transparent !important
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*   4 NAV
 /*-----------------------------------------------------------------------------------*/
@@ -556,9 +544,9 @@ fieldset[disabled] .btn-primary.active {
     color: #fff;
 }
 
-.dropdown-menu>.active>a,
-.dropdown-menu>.active>a:hover,
-.dropdown-menu>.active>a:focus {
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
     background-color: transparent;
 }
 
@@ -590,7 +578,7 @@ fieldset[disabled] .btn-primary.active {
     color: #333
 }
 
-.navbar-default .navbar-nav>.active>a {
+.navbar-default .navbar-nav > .active > a {
     border-radius: 0;
     background-color: transparent;
     color: #333;
@@ -601,7 +589,7 @@ fieldset[disabled] .btn-primary.active {
     transition: all .5s ease-in-out
 }
 
-.navbar-default.navbar-shrink .nav li.active>a {
+.navbar-default.navbar-shrink .nav li.active > a {
     border-radius: 0;
     color: #fff;
     background-color: #333;
@@ -617,8 +605,8 @@ fieldset[disabled] .btn-primary.active {
     color: #333;
 }
 
-.navbar-default .navbar-nav>.active>a:hover,
-.navbar-default .navbar-nav>.active>a:focus {
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
     color: #333;
     background-color: #333
 }
@@ -655,16 +643,14 @@ fieldset[disabled] .btn-primary.active {
     background-color: #eee;
 }
 
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:hover,
-.navbar-default .navbar-nav>.open>a:focus {
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
     background-color: transparent;
     color: #000;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  5 - HEADER
 /*-----------------------------------------------------------------------------------*/
@@ -675,7 +661,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .opaque {
-    background-color: transparent!important
+    background-color: transparent !important
 }
 
 .backstretch:before {
@@ -720,8 +706,8 @@ fieldset[disabled] .btn-primary.active {
 }
 
 #tubular-container {
-    z-index: -1!important;
-    position: absolute!important
+    z-index: -1 !important;
+    position: absolute !important
 }
 
 header {
@@ -754,7 +740,6 @@ header .intro-text .intro-heading {
     line-height: 30px
 }
 
-
 /* HEADER STYLES */
 
 .header-2 {
@@ -785,7 +770,6 @@ header .intro-text .intro-heading {
     color: #222 !important;
 }
 
-
 /* HEADER 3 */
 
 .header-3 .top-bar {
@@ -800,7 +784,6 @@ header .intro-text .intro-heading {
     background-color: transparent;
 }
 
-
 /* HEADER 5 */
 
 .header-5 {
@@ -811,7 +794,6 @@ header .intro-text .intro-heading {
 .header-5.navbar-shrink .top-bar {
     height: 53px !important;
 }
-
 
 /* HEADER 6 */
 
@@ -829,6 +811,7 @@ header .intro-text .intro-heading {
     .header-6 .navbar-nav {
         width: 100%;
     }
+
     .header-6 .navbar-nav > li {
         float: none;
         display: inline-block;
@@ -855,9 +838,7 @@ header .intro-text .intro-heading {
     color: #fff !important;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  6 - SECTIONS
 /*-----------------------------------------------------------------------------------*/
@@ -1014,9 +995,7 @@ section h3.section-subheading {
     position: relative;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  7 - PORTFOLIO
 /*-----------------------------------------------------------------------------------*/
@@ -1064,9 +1043,7 @@ section h3.section-subheading {
     border-color: #222;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  8 - BLOG
 /*-----------------------------------------------------------------------------------*/
@@ -1114,11 +1091,9 @@ section h3.section-subheading {
     margin-bottom: 45px;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
 
-
-/* 9 - COMMENTS 
+/* 9 - COMMENTS
 /*-----------------------------------------------------------------------------------*/
 
 textarea#comments {
@@ -1151,11 +1126,9 @@ textarea#comments {
     height: auto;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
 
-
-/*  10 - HOVER CAPTIONS 
+/*  10 - HOVER CAPTIONS
 /*-----------------------------------------------------------------------------------*/
 
 .hover-item {
@@ -1335,9 +1308,7 @@ textarea#comments {
     display: none;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  11 - FOOTER
 /*-----------------------------------------------------------------------------------*/
@@ -1384,7 +1355,6 @@ footer.white-wrapper .social-links li a {
     padding-right: 20px;
 }
 
-
 /* FOOTER STYLES */
 
 .footer-image-bg {
@@ -1421,9 +1391,7 @@ footer.white-wrapper .social-links li a {
     color: #ddd;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  12 - CAROUSEL STYLES
 /*-----------------------------------------------------------------------------------*/
@@ -1437,9 +1405,7 @@ footer.white-wrapper .social-links li a {
     font-size: 20px
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  13 - SEARCH
 /*-----------------------------------------------------------------------------------*/
@@ -1509,9 +1475,7 @@ footer.white-wrapper .social-links li a {
     outline: none;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  14 - SPLASH
 /*-----------------------------------------------------------------------------------*/
@@ -1570,8 +1534,7 @@ footer.white-wrapper .social-links li a {
         opacity: 1;
     }
     50% {
-        opacity: 0.8;
-        ;
+        opacity: 0.8;;
     }
     100% {
         opacity: 1;
@@ -1597,9 +1560,7 @@ footer.white-wrapper .social-links li a {
     animation: flickerAnimation 2s infinite;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  15 - MAP
 /*-----------------------------------------------------------------------------------*/
@@ -1611,9 +1572,7 @@ footer.white-wrapper .social-links li a {
     display: block;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  16 - FORM CONTROL
 /*-----------------------------------------------------------------------------------*/
@@ -1760,7 +1719,8 @@ footer.white-wrapper .social-links li a {
     z-index: 10;
 }
 
-#contact-tabs .tab-content .tab-pane {}
+#contact-tabs .tab-content .tab-pane {
+}
 
 #contact-tabs .icon-tabs li {
     border-right: none;
@@ -1770,9 +1730,7 @@ footer.white-wrapper .social-links li a {
     background-color: #edeff0;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  17 -  TABS
 /*-----------------------------------------------------------------------------------*/
@@ -1872,14 +1830,13 @@ footer.white-wrapper .social-links li a {
         right: 20px;
         bottom: 0px;
     }
+
     #headerwrap.fullheight {
         min-height: 100vh;
     }
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  18 - COUNTDOWN
 /*-----------------------------------------------------------------------------------*/
@@ -1911,9 +1868,7 @@ footer.white-wrapper .social-links li a {
     text-align: left;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  SKILL BARS
 /*-----------------------------------------------------------------------------------*/
@@ -1944,9 +1899,7 @@ footer.white-wrapper .social-links li a {
     margin: 0 0 5px 0;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  19 - MEDIA QUERIES
 /*-----------------------------------------------------------------------------------*/
@@ -1963,6 +1916,7 @@ footer.white-wrapper .social-links li a {
         max-width: 1600px;
         margin: 0 auto;
     }
+
     .boxed-layout .navbar-fixed-top {
         max-width: 1600px;
         margin: 0 auto;
@@ -1977,11 +1931,12 @@ footer.white-wrapper .social-links li a {
     }
 }
 
-@media(min-width:767px) {
+@media (min-width: 767px) {
     header .intro-text {
         padding-top: 420px;
         padding-bottom: 100px
     }
+
     header .intro-text .intro-lead-in {
         margin-bottom: 20px;
         font-size: 40px;
@@ -1989,6 +1944,7 @@ footer.white-wrapper .social-links li a {
         line-height: 40px;
         letter-spacing: -1px
     }
+
     header .intro-text .intro-heading {
         margin-bottom: 20px;
         text-transform: uppercase;
@@ -1997,20 +1953,24 @@ footer.white-wrapper .social-links li a {
         letter-spacing: 6px;
         line-height: 38px
     }
+
     .intro-sub-heading {
         font-size: 34px;
         text-transform: lowercase;
         letter-spacing: 2px;
         font-weight: 300;
     }
+
     .navbar-fixed-top .container-fluid {
         padding-left: 30px;
         padding-right: 30px;
     }
+
     .navbar li.dropdown:hover > ul.dropdown-menu {
         opacity: 1;
     }
-    .navbar li.dropdown:hover> ul.dropdown-menu {
+
+    .navbar li.dropdown:hover > ul.dropdown-menu {
         display: block;
         -webkit-animation: fadeIn 0.4s;
         animation: fadeIn 0.4s;
@@ -2019,11 +1979,12 @@ footer.white-wrapper .social-links li a {
     }
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     .pad-sides-120 {
         padding-left: 120px !important;
         padding-right: 120px !important;
     }
+
     .navbar-default {
         padding: 10px 0;
         border: 0;
@@ -2034,12 +1995,14 @@ footer.white-wrapper .social-links li a {
         -ms-transition: all .5s ease-in-out;
         transition: all .5s ease-in-out
     }
+
     .navbar-default .navbar-brand {
         font-size: 2em;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s
     }
+
     .navbar-default.navbar-shrink {
         padding: 0;
         background-color: rgba(255, 255, 255, 0.95);
@@ -2049,68 +2012,82 @@ footer.white-wrapper .social-links li a {
         -ms-transition: all .5s ease-in-out;
         transition: all .5s ease-in-out
     }
+
     .special-max-height {
         max-height: 660px !important;
         height: 660px !important;
     }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .fullheight,
     .fullheight .article-slide,
     .fullheight .article-slide .carousel-inner,
     .fullheight .article-slide .item,
     .fullheight .article-slide .item img {
-        height: auto!important;
+        height: auto !important;
         min-height: 600px
     }
+
     .icon-tabs .fa-4x {
         font-size: 46px;
     }
+
     .icon-tabs li .tabtitle {
         font-size: 12px;
         letter-spacing: 4px
     }
+
     .dark-wrapper .icon-tabs li {
         border-right: none;
     }
+
     .form-control.col-md-4,
     .dark-wrapper.form-control.col-md-4 {
         width: 100% !important;
     }
+
     .navbar-default .navbar-brand {
         margin-top: 0;
     }
+
     .navbar-fixed-top .navbar-collapse,
     .navbar-fixed-bottom .navbar-collapse {
         max-height: 900px;
     }
+
     .special-max-height {
         max-height: 560px !important;
         height: 560px !important;
     }
+
     .header-6 .navbar-brand {
         float: left;
     }
+
     .header-6.navbar-default .navbar-toggle .icon-bar {
         background-color: #333;
     }
+
     .portfolio-filter,
     .masonry-portfolio-filter {
         text-align: center;
     }
+
     .navbar-default .nav li.dropdown.open > a,
     .navbar-default .dropdown-menu a,
     .navbar-default.navbar-shrink .nav li > a,
     .navbar-default.navbar-shrink .navbar-brand {
         color: #fff !important;
     }
+
     .header-6.navbar-default .nav li.dropdown.open > a,
     .header-6.navbar-default .dropdown-menu a,
     .header-6.navbar-default.navbar-shrink .nav li > a,
     .header-6.navbar-default.navbar-shrink .navbar-brand {
         color: #333 !important;
     }
+
     section h2.section-heading,
     .section-heading {
         margin-top: 0;
@@ -2120,32 +2097,33 @@ footer.white-wrapper .social-links li a {
         font-weight: 700;
         text-align: center;
     }
+
     section h3.section-subheading {
         text-align: center;
     }
+
     #contact-tabs .icon-tabs li a {
         text-align: center;
     }
 }
 
-@media(max-width:460px) {
+@media (max-width: 460px) {
     .fullheight,
     .fullheight .article-slide,
     .fullheight .article-slide .carousel-inner,
     .fullheight .article-slide .item,
     .fullheight .article-slide .item img {
-        height: auto!important;
+        height: auto !important;
         min-height: 400px
     }
+
     .portfolio-item,
     .masonry-portfolio-item {
         width: 100%;
     }
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  20 - SHOP
 /*-----------------------------------------------------------------------------------*/
@@ -2220,9 +2198,7 @@ footer.white-wrapper .social-links li a {
     margin: 0 auto;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  21 - SIDE NAV
 /*-----------------------------------------------------------------------------------*/
@@ -2274,9 +2250,9 @@ footer.white-wrapper .social-links li a {
     padding: 0 !important;
 }
 
-.side-nav-active .side-menu .nav>li>a:hover,
-.side-nav-active .side-menu .nav>li>a:focus,
-.side-nav-active .navbar-default.navbar-shrink .nav li.active>a {
+.side-nav-active .side-menu .nav > li > a:hover,
+.side-nav-active .side-menu .nav > li > a:focus,
+.side-nav-active .navbar-default.navbar-shrink .nav li.active > a {
     background-color: transparent;
     color: #000;
 }
@@ -2311,24 +2287,27 @@ footer.white-wrapper .social-links li a {
     padding: 12px 18px;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     #side-wrapper {
         display: none;
         background-color: #fcfcfc;
     }
+
     .side-nav-active .master-wrapper {
         padding-left: 0;
     }
+
     #side-wrapper .navbar-default .nav li a {
         padding: 10px 20px;
     }
+
     .navbar-default .nav li a {
         padding: 10px 20px;
     }
 }
 
 .side-menu .dropdown-menu,
-.side-menu .dropdown-submenu>.dropdown-menu {
+.side-menu .dropdown-submenu > .dropdown-menu {
     position: relative;
     width: 100%;
     background-color: transparent;
@@ -2339,21 +2318,21 @@ footer.white-wrapper .social-links li a {
     padding: 0 0 20px;
 }
 
-.side-menu .dropdown-submenu >.dropdown-menu {
+.side-menu .dropdown-submenu > .dropdown-menu {
     display: none;
 }
 
-.side-menu .dropdown-submenu.open >.dropdown-menu {
+.side-menu .dropdown-submenu.open > .dropdown-menu {
     display: block;
 }
 
-.side-menu .nav .open>a,
-.side-menu .nav .open>a:hover,
-.side-menu .nav .open>a:focus,
-.side-menu .nav>li>a:hover,
-.side-menu .nav>li>a:focus,
-.side-menu .dropdown-menu>li>a:hover,
-.side-menu .dropdown-menu>li>a:focus {
+.side-menu .nav .open > a,
+.side-menu .nav .open > a:hover,
+.side-menu .nav .open > a:focus,
+.side-menu .nav > li > a:hover,
+.side-menu .nav > li > a:focus,
+.side-menu .dropdown-menu > li > a:hover,
+.side-menu .dropdown-menu > li > a:focus {
     background-color: transparent;
 }
 
@@ -2371,7 +2350,7 @@ footer.white-wrapper .social-links li a {
     letter-spacing: 1px;
 }
 
-.side-menu .dropdown-menu>li>a {
+.side-menu .dropdown-menu > li > a {
     padding: 10px 0px;
     font-size: 11px;
     font-weight: 400;
