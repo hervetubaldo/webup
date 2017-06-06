@@ -2063,7 +2063,8 @@ var cbpAnimatedHeader = function () {
           backgroundImage: "url(" + this.imageSrc + ")",
           backgroundSize: "cover",
           backgroundPosition: this.position
-        })
+        });
+        this.$element.addClass('add-opaqued');
       }
       return this
     }
@@ -2073,7 +2074,9 @@ var cbpAnimatedHeader = function () {
           backgroundImage: "url(" + this.imageSrc + ")",
           backgroundSize: "cover",
           backgroundPosition: this.position
-        })
+        });
+
+        this.$element.addClass('add-opaqued');
       }
       return this
     }
