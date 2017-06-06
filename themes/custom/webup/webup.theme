@@ -734,19 +734,26 @@ function webup_breadcrumb($variables) {
   }
   $breadcrumb = $variables['breadcrumb'];
 
-  $output = '';
   if (!empty($breadcrumb)) {
+    $output = '<ul class="breadcrumb">';
     foreach ($breadcrumb as $crumb) {
+      $text = $crumb['text'];
+      if (is_array($text) && !empty($text['#markup'])) {
+        $text = $text['#markup'];
+      }
+
       if ($crumb['url']) {
-        $output .= '<li><a href="' . $crumb['url'] . '">' . $crumb['text'] . '</a></li>';
+        $output .= '<li><a href="' . $crumb['url'] . '">' . $text . '</a></li>';
 
       }
       else {
-        $output .= '<li>' . $crumb['text'] . '</li>';
+        $output .= '<li>' . $text . '</li>';
       }
 
     }
     $output .= '<li class="active">' . render($current_title) . '</li>';
+
+    $output .= '</ul>';
   }
   return $output;
 }

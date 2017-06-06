@@ -79,9 +79,9 @@ var WEBUP_Global_Scroll = (function ($) {
           $(domEl).attr('style', '');
         }
       });
-      sr.reveal('#comments-list');
+      sr.reveal('#comments-list, .block-linked-articles');
       sr.reveal('.block-text');
-      sr.reveal('.path-blog .blog-item');
+      //sr.reveal('.path-blog .blog-item');
     },
 
     initBlocNumbers: function () {

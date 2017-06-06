@@ -475,7 +475,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .navbar-brand.logo img {
-    max-height: 70px;
+    max-height: 50px;
     top: -3px;
     position: relative;
 }
@@ -2446,4 +2446,15 @@ section#welcome .wrapper-img img {
 
 #edit-comment-body-wrapper #edit-comment-body-0-format {
     display: none;
+}
+
+.portfolio-items .col-sm-4 {
+    width: 33.3%;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+.breadcrumb li+li:before {
+    content:"» ";
 }

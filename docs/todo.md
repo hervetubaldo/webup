@@ -7,7 +7,7 @@
 - Redirections Helpdrupal
 - Redirections webup
 - bug scroll sur page de base avec image header
-
+- bug homepage firefox
 
 
 #A vérifier

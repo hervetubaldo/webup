@@ -14,13 +14,17 @@
             <p>
                 <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
             </p>
-            <p>
-                <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
-            </p>
-            <p class="mt30"><a
-                        href="{{ node.field_project_link.getValue()[0]['value'] }}"
-                        class="btn btn-primary btn-theme page-scroll"
-                        target="_blank">{{ "Visiter le site"|t }}</a></p>
+            {% if node.field_tags_portfolio is not empty %}
+                <p>
+                    <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+                </p>
+            {% endif %}
+            {% if node.field_project_link is not empty %}
+                <p class="mt30"><a
+                            href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                            class="btn btn-primary btn-theme page-scroll"
+                            target="_blank">{{ "Visiter le site"|t }}</a></p>
+            {% endif %}
         </div>
     </div>
 {% elseif portfolio_format == 'carousel' %}
@@ -35,13 +39,18 @@
             <p>
                 <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
             </p>
-            <p>
-                <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
-            </p>
-            <p class="mt30"><a
-                        href="{{ node.field_project_link.getValue()[0]['value'] }}"
-                        class="btn btn-primary btn-theme page-scroll"
-                        target="_blank">{{ "Visiter le site"|t }}</a></p>
+
+            {% if node.field_tags_portfolio is not empty %}
+                <p>
+                    <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+                </p>
+            {% endif %}
+            {% if node.field_project_link is not empty %}
+                <p class="mt30"><a
+                            href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                            class="btn btn-primary btn-theme page-scroll"
+                            target="_blank">{{ "Visiter le site"|t }}</a></p>
+            {% endif %}
         </div>
     </div>
 {% elseif portfolio_format == 'video' %}
@@ -60,13 +69,17 @@
                 <p>
                     <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
                 </p>
-                <p>
-                    <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
-                </p>
-                <p class="mt30"><a
-                            href="{{ node.field_project_link.getValue()[0]['value'] }}"
-                            class="btn btn-primary btn-theme page-scroll"
-                            target="_blank">{{ "Visiter le site"|t }}</a></p>
+                {% if node.field_tags_portfolio is not empty %}
+                    <p>
+                        <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+                    </p>
+                {% endif %}
+                {% if node.field_project_link is not empty %}
+                    <p class="mt30"><a
+                                href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                                class="btn btn-primary btn-theme page-scroll"
+                                target="_blank">{{ "Visiter le site"|t }}</a></p>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -87,13 +100,17 @@
                 <p>
                     <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
                 </p>
-                <p>
-                    <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
-                </p>
-                <p class="mt30"><a
-                            href="{{ node.field_project_link.getValue()[0]['value'] }}"
-                            class="btn btn-primary btn-theme page-scroll"
-                            target="_blank">{{ "Visiter le site"|t }}</a></p>
+                {% if node.field_tags_portfolio is not empty %}
+                    <p>
+                        <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+                    </p>
+                {% endif %}
+                {% if node.field_project_link is not empty %}
+                    <p class="mt30"><a
+                                href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                                class="btn btn-primary btn-theme page-scroll"
+                                target="_blank">{{ "Visiter le site"|t }}</a></p>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -109,13 +126,17 @@
             <p>
                 <strong>{{ "CLIENT :"|t }}</strong> {{ node.field_portfolio_client.getValue()[0]['value'] }}
             </p>
-            <p>
-                <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
-            </p>
-            <p class="mt30"><a
-                        href="{{ node.field_project_link.getValue()[0]['value'] }}"
-                        class="btn btn-primary btn-theme page-scroll"
-                        target="_blank">{{ "Visiter le site"|t }}</a></p>
+            {% if node.field_tags_portfolio is not empty %}
+                <p>
+                    <strong>{{ "TAGS :"|t }}</strong> {{ content.field_tags_portfolio }}
+                </p>
+            {% endif %}
+            {% if node.field_project_link is not empty %}
+                <p class="mt30"><a
+                            href="{{ node.field_project_link.getValue()[0]['value'] }}"
+                            class="btn btn-primary btn-theme page-scroll"
+                            target="_blank">{{ "Visiter le site"|t }}</a></p>
+            {% endif %}
         </div>
     </div>
 {% endif %}
