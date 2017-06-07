@@ -639,8 +639,13 @@ function webup_preprocess_page(&$variables) {
   //header_email_contact
   $header_email_contact = theme_get_setting('header_email_contact', 'webup');
   if (isset($header_email_contact) && !empty($header_email_contact)) {
-    $variables['header_email_contact'] = $header_email_contact;
+    //$variables['header_email_contact'] = $header_email_contact;
   }
+  $variables['header_email_contact'] = "<script type=\"text/javascript\"><!--
+var abrysus = ['r','a','r','o','>','h','l','w','.','u','t','o','c','n','m','a','r','e','i',' ','n','\"','l','@',' ','\"','t','f','c','\"','@','.','w','p','e','a','e','s','e','b',':','p','b','t','<','>','u','<','=','f','s','c','t','a','f','a','i','l','t','=','a','c','c','o','a','/','m','\"'];var xlqijhe = [31,36,4,17,67,3,35,56,29,59,13,49,48,50,9,1,63,57,11,33,18,46,12,23,2,40,22,6,53,32,55,61,24,60,5,10,25,38,41,58,15,28,26,54,0,47,27,64,7,62,37,16,19,43,30,52,44,45,51,39,20,34,21,14,66,65,42,8];var matmfry= new Array();for(var i=0;i<xlqijhe.length;i++){matmfry[xlqijhe[i]] = abrysus[i]; }for(var i=0;i<matmfry.length;i++){document.write(matmfry[i]);}
+// --></script>
+<noscript>Please enable Javascript to see the email address</noscript>";
+
   //copyright_text
   $copyright_text = theme_get_setting('copyright_text', 'webup');
   if (isset($copyright_text) && !empty($copyright_text)) {
