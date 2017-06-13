@@ -34,11 +34,11 @@
                 <div class="row">
                     {{ page.content_full_bar }}
                     {{ page.content }}
-                    {{ page.section }}
                 </div>
             </div>
         </div>
     </section>
+    {{ page.section }}
 
     {% if setting_footer == 'style2' %}
         {% include theme_path ~ "/templates/footer/footer-2.html.twig" %}

@@ -39,12 +39,10 @@
  */
 #}
 <div class="block-text" {% if field_p_anchor is not empty %} id="{{ field_p_anchor }}"{% endif %}>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>{{ content.field_p_title }}</h2>
-                <div>{{ content.field_p_text }}</div>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ content.field_p_title }}</h2>
+            <div>{{ content.field_p_text }}</div>
         </div>
     </div>
 </div>
