@@ -421,6 +421,16 @@ function webup_preprocess_node(&$vars) {
   }
   $vars['pageURL'] = $pageURL;
 
+
+  if ($vars['node']) {
+    $node = $vars['node'];
+    if($node->field_blog_image[0]){
+      $cover_image = $node->field_blog_image[0]->entity->getFileUri();
+      $image_url = ImageStyle::load('blog')->buildUrl($cover_image);
+      $vars['blog_image'] = $image_url;
+    }
+  }
+
   //get current term (tid)
   /*if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
       $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
